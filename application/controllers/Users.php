@@ -65,6 +65,8 @@ class  Users extends CI_Controller{
             return false;
         }
     }
+//customer registration
+    public function register(){
 
-
+    }
 }

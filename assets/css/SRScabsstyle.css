@@ -1,0 +1,20 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#mainheder{
+	height: 50px;
+	background-color: #0A5754;
+	width: 100%;
+	color: aliceblue;
+	margin: 0 auto;
+}
+a{
+	/*text-decoration: none;*/
+}
+#logo a{
+	color: aliceblue;
+	font-size: 1.8em;
+	float: left;
+	margin-top: 7px;
+}

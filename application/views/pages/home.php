@@ -16,10 +16,9 @@
 <!-- Intro -->
 <div class="container text-center">
     <br> <br>
-    <h2 class="thin">The best place to tell people why they are here</h2>
+    <h2 class="thin">The best place to find your ride in Sri Lanka</h2>
     <p class="text-muted">
-        The difference between involvement and commitment is like an eggs-and-ham breakfast:<br>
-        the chicken was involved; the pig was committed.
+        With over 5 years of experience in the industry, we strive to offer the highest levels of customer service and a highly personalised service to all our customers who are on the lookout for Sri Lanka car rental opportunities. With one of the largest and most modern and varied fleets in Sri Lanka, our service is backed by a networked front office, fully-fledged mechanical servicing and valet servicing onsite.
     </p>
 </div>
 <!-- /Intro-->

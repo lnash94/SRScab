@@ -25,17 +25,6 @@
     <script src="<?php echo base_url();?>/assets/js/html5shiv.js"></script>
     <script src="<?php echo base_url();?>/assets/js/respond.min.js"></script>
 <!--    <![endif]-->
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </head>
 
 <body class="home">
@@ -66,17 +55,6 @@
 </div>
 <!-- /.navbar -->
 
-<!-- Header -->
-<header id="head">
-    <div class="container">
-        <div class="row">
-            <h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-            <p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-            <p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p>
-        </div>
-    </div>
-</header>
-<!-- /Header -->
 <div class="content-wrapper">
 
 

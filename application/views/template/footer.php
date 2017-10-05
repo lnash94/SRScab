@@ -1,16 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: PC
- * Date: 9/5/2017
- * Time: 10:29 PM
- */?>
 
-<<<<<<< HEAD
-</div>
-=======
 </div><!--container-->
->>>>>>> sumudu
+
 <footer id="footer" class="top-space">
 
     <div class="footer1">

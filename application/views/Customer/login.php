@@ -1,9 +1,8 @@
 <?php form_open("users/login");?>
-<<<<<<< HEAD
-<!--<header id="head" class="secondary"></header>
+<div style="margin-top: 100px;"></div>
 <!-- container -->
 	<div class="container">
--->
+
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
 			<li class="active">User access</li>
@@ -32,7 +31,7 @@
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
 									<input type="password" class="form-control">
-=======
+
 
 
         <br>
@@ -54,7 +53,7 @@
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
 									<input type="password" class="form-control" name="password">
->>>>>>> sumudu
+
 								</div>
 
 								<hr>
@@ -67,22 +66,16 @@
 										<button class="btn btn-action" type="submit">Sign in</button>
 									</div>
 								</div>
-<<<<<<< HEAD
+
 							</form>
 						</div>
 					</div>
                 </div>
             </article>
-<!--			<!-- /Article -->
+		<!-- /Article -->
         </div>
 	</div>	<!-- /container -->
---><?php form_close();?>
-=======
 
-						</div>
-					</div>
-                </div>
-        </div>
 
 <?php form_close();?>
->>>>>>> sumudu
+

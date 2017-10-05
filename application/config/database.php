@@ -76,15 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-<<<<<<< HEAD
-	'username' => '',
-	'password' => '',
-	'database' => '',
-=======
 	'username' => 'root',
 	'password' => '',
 	'database' => 'srscab',
->>>>>>> sumudu
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

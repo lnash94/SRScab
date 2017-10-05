@@ -37,15 +37,26 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="about">About</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                        <li><a href="sidebar-left.html">Self-Drive</a></li>
+                        <li><a href="sidebar-right.html">With Driver/Tours</a></li>
+                        <li><a href="sidebar-right.html">Airport/City</a></li>
+                        <li><a href="sidebar-right.html">Wedding and Events</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sidebar-left.html">Luxury Cars</a></li>
+                        <li><a href="sidebar-right.html">Genaral Cars</a></li>
+                        <li><a href="sidebar-right.html">Bus,Van,4WD,SUV</a></li>
+                        <li><a href="sidebar-right.html">Classic And Vintage</a></li>
+                    </ul>
+                </li>
+                <li><a href="about">About us</a></li>
+                <li><a href="contact">Contact us</a></li>
                 <li><a href="<?php echo site_url('users/login') ?>" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SIGN IN / SIGN UP</a></li>
             </ul>
         </div><!--/.nav-collapse -->

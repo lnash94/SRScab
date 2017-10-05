@@ -4,6 +4,9 @@
  * User: PC
  * Date: 9/12/2017
  * Time: 8:28 PM
+<<<<<<< HEAD
+ */
+=======
  */?>
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-default">
@@ -56,3 +59,4 @@
 
 </div>
 
+>>>>>>> sumudu

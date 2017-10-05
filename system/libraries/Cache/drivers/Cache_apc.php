@@ -80,6 +80,9 @@ class CI_Cache_apc extends CI_Driver {
 		$success = FALSE;
 		$data = apc_fetch($id, $success);
 
+<<<<<<< HEAD
+		return ($success === TRUE) ? $data : FALSE;
+=======
 		if ($success === TRUE)
 		{
 			return is_array($data)
@@ -88,6 +91,7 @@ class CI_Cache_apc extends CI_Driver {
 		}
 
 		return FALSE;
+>>>>>>> sumudu
 	}
 
 	// ------------------------------------------------------------------------
@@ -98,11 +102,18 @@ class CI_Cache_apc extends CI_Driver {
 	 * @param	string	$id	Cache ID
 	 * @param	mixed	$data	Data to store
 	 * @param	int	$ttl	Length of time (in seconds) to cache the data
+<<<<<<< HEAD
+	 * @param	bool	$raw	Whether to store the raw value (unused)
+=======
 	 * @param	bool	$raw	Whether to store the raw value
+>>>>>>> sumudu
 	 * @return	bool	TRUE on success, FALSE on failure
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
+<<<<<<< HEAD
+		return apc_store($id, $data, (int) $ttl);
+=======
 		$ttl = (int) $ttl;
 
 		return apc_store(
@@ -110,6 +121,7 @@ class CI_Cache_apc extends CI_Driver {
 			($raw === TRUE ? $data : array(serialize($data), time(), $ttl)),
 			$ttl
 		);
+>>>>>>> sumudu
 	}
 
 	// ------------------------------------------------------------------------
@@ -188,14 +200,39 @@ class CI_Cache_apc extends CI_Driver {
 	 */
 	public function get_metadata($id)
 	{
+<<<<<<< HEAD
+		$cache_info = apc_cache_info('user', FALSE);
+		if (empty($cache_info) OR empty($cache_info['cache_list']))
+=======
 		$success = FALSE;
 		$stored = apc_fetch($id, $success);
 
 		if ($success === FALSE OR count($stored) !== 3)
+>>>>>>> sumudu
 		{
 			return FALSE;
 		}
 
+<<<<<<< HEAD
+		foreach ($cache_info['cache_list'] as &$entry)
+		{
+			if ($entry['info'] !== $id)
+			{
+				continue;
+			}
+
+			$success  = FALSE;
+			$metadata = array(
+				'expire' => ($entry['ttl'] ? $entry['mtime'] + $entry['ttl'] : 0),
+				'mtime'  => $entry['ttl'],
+				'data'   => apc_fetch($id, $success)
+			);
+
+			return ($success === TRUE) ? $metadata : FALSE;
+		}
+
+		return FALSE;
+=======
 		list($data, $time, $ttl) = $stored;
 
 		return array(
@@ -203,6 +240,7 @@ class CI_Cache_apc extends CI_Driver {
 			'mtime'		=> $time,
 			'data'		=> unserialize($data)
 		);
+>>>>>>> sumudu
 	}
 
 	// ------------------------------------------------------------------------

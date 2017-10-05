@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+=======
 <?php?>
 
 
@@ -33,6 +38,7 @@ bfhfdhdfhhfh
 <?php
 /*defined('BASEPATH') OR exit('No direct script access allowed');
 */?><!--<!DOCTYPE html>
+>>>>>>> sumudu
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -114,9 +120,17 @@ bfhfdhdfhhfh
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
 
+<<<<<<< HEAD
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+</div>
+
+</body>
+</html>
+=======
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php /*echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' */?></p>
 </div>
 
 </body>
 </html>
 -->
+>>>>>>> sumudu

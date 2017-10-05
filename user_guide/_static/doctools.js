@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
+<<<<<<< HEAD
+ * :copyright: Copyright 2007-2017 by the Sphinx team, see AUTHORS.
+=======
  * :copyright: Copyright 2007-2014 by the Sphinx team, see AUTHORS.
+>>>>>>> sumudu
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -91,6 +95,33 @@ jQuery.fn.highlightText = function(text, className) {
   });
 };
 
+<<<<<<< HEAD
+/*
+ * backward compatibility for jQuery.browser
+ * This will be supported until firefox bug is fixed.
+ */
+if (!jQuery.browser) {
+  jQuery.uaMatch = function(ua) {
+    ua = ua.toLowerCase();
+
+    var match = /(chrome)[ \/]([\w.]+)/.exec(ua) ||
+      /(webkit)[ \/]([\w.]+)/.exec(ua) ||
+      /(opera)(?:.*version|)[ \/]([\w.]+)/.exec(ua) ||
+      /(msie) ([\w.]+)/.exec(ua) ||
+      ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec(ua) ||
+      [];
+
+    return {
+      browser: match[ 1 ] || "",
+      version: match[ 2 ] || "0"
+    };
+  };
+  jQuery.browser = {};
+  jQuery.browser[jQuery.uaMatch(navigator.userAgent).browser] = true;
+}
+
+=======
+>>>>>>> sumudu
 /**
  * Small JavaScript module for the documentation.
  */
@@ -100,6 +131,10 @@ var Documentation = {
     this.fixFirefoxAnchorBug();
     this.highlightSearchWords();
     this.initIndexTable();
+<<<<<<< HEAD
+    
+=======
+>>>>>>> sumudu
   },
 
   /**
@@ -152,9 +187,16 @@ var Documentation = {
 
   /**
    * workaround a firefox stupidity
+<<<<<<< HEAD
+   * see: https://bugzilla.mozilla.org/show_bug.cgi?id=645075
+   */
+  fixFirefoxAnchorBug : function() {
+    if (document.location.hash)
+=======
    */
   fixFirefoxAnchorBug : function() {
     if (document.location.hash && $.browser.mozilla)
+>>>>>>> sumudu
       window.setTimeout(function() {
         document.location.href += '';
       }, 10);
@@ -227,6 +269,32 @@ var Documentation = {
     });
     var url = parts.join('/');
     return path.substring(url.lastIndexOf('/') + 1, path.length - 1);
+<<<<<<< HEAD
+  },
+
+  initOnKeyListeners: function() {
+    $(document).keyup(function(event) {
+      var activeElementType = document.activeElement.tagName;
+      // don't navigate when in search box or textarea
+      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT') {
+        switch (event.keyCode) {
+          case 37: // left
+            var prevHref = $('link[rel="prev"]').prop('href');
+            if (prevHref) {
+              window.location.href = prevHref;
+              return false;
+            }
+          case 39: // right
+            var nextHref = $('link[rel="next"]').prop('href');
+            if (nextHref) {
+              window.location.href = nextHref;
+              return false;
+            }
+        }
+      }
+    });
+=======
+>>>>>>> sumudu
   }
 };
 
@@ -235,4 +303,8 @@ _ = Documentation.gettext;
 
 $(document).ready(function() {
   Documentation.init();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> sumudu

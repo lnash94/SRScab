@@ -19,12 +19,10 @@
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/main.css">
+	 <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>-->
-    <script src="<?php echo base_url();?>/assets/js/html5shiv.js"></script>
-    <script src="<?php echo base_url();?>/assets/js/respond.min.js"></script>
-<!--    <![endif]-->
+    
 </head>
 
 <body class="home">
@@ -34,30 +32,37 @@
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="index.html"><img src="<?php echo base_url();?>/assets/images/logo.png" alt="Progressus HTML5 template"></a>
+            <a class="navbar-brand" href="home"><img src="assets/images/logo.jpg" alt="Progressus HTML5 template"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="home">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                        <li><a href="sidebar-left.html">Self-Drive</a></li>
+                        <li><a href="sidebar-right.html">With Driver/Tours</a></li>
+                        <li><a href="sidebar-right.html">Airport/City</a></li>
+                        <li><a href="sidebar-right.html">Wedding and Events</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sidebar-left.html">Luxury Cars</a></li>
+                        <li><a href="sidebar-right.html">Genaral Cars</a></li>
+                        <li><a href="sidebar-right.html">Bus,Van,4WD,SUV</a></li>
+                        <li><a href="sidebar-right.html">Classic And Vintage</a></li>
+                    </ul>
+                </li>
+                <li><a href="about">About us</a></li>
+                <li><a href="contact">Contact us</a></li>
                 <li><a href="<?php echo site_url('users/login') ?>" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SIGN IN / SIGN UP</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
-<!-- /.navbar -->
-
 <div class="content-wrapper">
-
-
     <?php  if ($this->session->flashdata('user_registered')):?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
     <?php endif; ?>
@@ -68,9 +73,3 @@
     <?php  if ($this->session->flashdata('user_loggedin')):?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>';?>
     <?php endif; ?>
-
-
-
-
-
-

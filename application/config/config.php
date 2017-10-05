@@ -1,3 +1,5 @@
+$config['index_page'] = '';
+$config['base_url'] = 'http://localhost/srscabs/';
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -23,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/srscabs/';
+$config['base_url'] = 'http://localhost/SRSCabs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +37,7 @@ $config['base_url'] = 'http://localhost/srscabs/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

@@ -45,19 +45,19 @@
                     </ul>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a class="btn" href="<?php echo base_url();?>/users/login">SIGN IN / SIGN UP</a></li>
+                <li><a href="<?php echo site_url('users/login') ?>" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SIGN IN / SIGN UP</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
-<!-- /.navbar -->
-
-
 <div class="content-wrapper">
+    <?php  if ($this->session->flashdata('user_registered')):?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
+    <?php endif; ?>
+    <?php  if ($this->session->flashdata('login_failed')):?>
+        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>';?>
+    <?php endif; ?>
 
-
-
-
-
-
-
+    <?php  if ($this->session->flashdata('user_loggedin')):?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>';?>
+    <?php endif; ?>

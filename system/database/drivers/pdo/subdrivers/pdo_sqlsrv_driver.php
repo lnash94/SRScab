@@ -316,7 +316,11 @@ class CI_DB_pdo_sqlsrv_driver extends CI_DB_pdo_driver {
 			$sql = trim(substr($sql, 0, strrpos($sql, $orderby)));
 
 			// Get the fields to select from our subquery, so that we can avoid CI_rownum appearing in the actual results
+<<<<<<< HEAD
 			if (count($this->qb_select) === 0 OR strpos(implode(',', $this->qb_select), '*') !== FALSE)
+=======
+			if (count($this->qb_select) === 0)
+>>>>>>> sumudu
 			{
 				$select = '*'; // Inevitable
 			}

@@ -4,7 +4,11 @@
  *
  * Sphinx stylesheet -- basic theme.
  *
+<<<<<<< HEAD
  * :copyright: Copyright 2007-2017 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2014 by the Sphinx team, see AUTHORS.
+>>>>>>> sumudu
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -52,8 +56,11 @@ div.sphinxsidebar {
     width: 230px;
     margin-left: -100%;
     font-size: 90%;
+<<<<<<< HEAD
     word-wrap: break-word;
     overflow-wrap : break-word;
+=======
+>>>>>>> sumudu
 }
 
 div.sphinxsidebar ul {
@@ -85,6 +92,13 @@ div.sphinxsidebar #searchbox input[type="text"] {
     width: 170px;
 }
 
+<<<<<<< HEAD
+=======
+div.sphinxsidebar #searchbox input[type="submit"] {
+    width: 30px;
+}
+
+>>>>>>> sumudu
 img {
     border: 0;
     max-width: 100%;
@@ -122,8 +136,11 @@ ul.keywordmatches li.goodmatch a {
 
 table.contentstable {
     width: 90%;
+<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto;
+=======
+>>>>>>> sumudu
 }
 
 table.contentstable p.biglink {
@@ -151,6 +168,7 @@ table.indextable td {
     vertical-align: top;
 }
 
+<<<<<<< HEAD
 table.indextable ul {
     margin-top: 0;
     margin-bottom: 0;
@@ -159,6 +177,11 @@ table.indextable ul {
 
 table.indextable > tbody > tr > td > ul {
     padding-left: 0em;
+=======
+table.indextable dl, table.indextable dd {
+    margin-top: 0;
+    margin-bottom: 0;
+>>>>>>> sumudu
 }
 
 table.indextable tr.pcap {
@@ -190,6 +213,7 @@ div.genindex-jumpbox {
     padding: 0.4em;
 }
 
+<<<<<<< HEAD
 /* -- domain module index --------------------------------------------------- */
 
 table.modindextable td {
@@ -206,6 +230,10 @@ div.body p, div.body dd, div.body li, div.body blockquote {
     hyphens: auto;
 }
 
+=======
+/* -- general body styles --------------------------------------------------- */
+
+>>>>>>> sumudu
 a.headerlink {
     visibility: hidden;
 }
@@ -216,10 +244,14 @@ h3:hover > a.headerlink,
 h4:hover > a.headerlink,
 h5:hover > a.headerlink,
 h6:hover > a.headerlink,
+<<<<<<< HEAD
 dt:hover > a.headerlink,
 caption:hover > a.headerlink,
 p.caption:hover > a.headerlink,
 div.code-block-caption:hover > a.headerlink {
+=======
+dt:hover > a.headerlink {
+>>>>>>> sumudu
     visibility: visible;
 }
 
@@ -231,6 +263,13 @@ div.body td {
     text-align: left;
 }
 
+<<<<<<< HEAD
+=======
+.field-list ul {
+    padding-left: 1em;
+}
+
+>>>>>>> sumudu
 .first {
     margin-top: 0 !important;
 }
@@ -332,6 +371,7 @@ table.docutils {
     border-collapse: collapse;
 }
 
+<<<<<<< HEAD
 table caption span.caption-number {
     font-style: italic;
 }
@@ -339,6 +379,8 @@ table caption span.caption-number {
 table caption span.caption-text {
 }
 
+=======
+>>>>>>> sumudu
 table.docutils td, table.docutils th {
     padding: 1px 8px 1px 5px;
     border-top: 0;
@@ -347,6 +389,13 @@ table.docutils td, table.docutils th {
     border-bottom: 1px solid #aaa;
 }
 
+<<<<<<< HEAD
+=======
+table.field-list td, table.field-list th {
+    border: 0 !important;
+}
+
+>>>>>>> sumudu
 table.footnote td, table.footnote th {
     border: 0 !important;
 }
@@ -365,6 +414,7 @@ table.citation td {
     border-bottom: none;
 }
 
+<<<<<<< HEAD
 /* -- figures --------------------------------------------------------------- */
 
 div.figure {
@@ -405,6 +455,8 @@ table.field-list td, table.field-list th {
     hyphens: manual;
 }
 
+=======
+>>>>>>> sumudu
 /* -- other body styles ----------------------------------------------------- */
 
 ol.arabic {
@@ -454,12 +506,26 @@ dl.glossary dt {
     font-size: 1.1em;
 }
 
+<<<<<<< HEAD
 .optional {
     font-size: 1.3em;
 }
 
 .sig-paren {
     font-size: larger;
+=======
+.field-list ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.field-list p {
+    margin: 0;
+}
+
+.optional {
+    font-size: 1.3em;
+>>>>>>> sumudu
 }
 
 .versionmodified {
@@ -512,6 +578,7 @@ pre {
     overflow-y: hidden;  /* fixes display issues on Chrome browsers */
 }
 
+<<<<<<< HEAD
 span.pre {
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -519,6 +586,8 @@ span.pre {
     hyphens: none;
 }
 
+=======
+>>>>>>> sumudu
 td.linenos pre {
     padding: 5px 0px;
     border: 0;
@@ -534,6 +603,7 @@ table.highlighttable td {
     padding: 0 0.5em 0 0.5em;
 }
 
+<<<<<<< HEAD
 div.code-block-caption {
     padding: 2px 5px;
     font-size: small;
@@ -564,21 +634,36 @@ div.literal-block-wrapper div.highlight {
 }
 
 code.descname {
+=======
+tt.descname {
+>>>>>>> sumudu
     background-color: transparent;
     font-weight: bold;
     font-size: 1.2em;
 }
 
+<<<<<<< HEAD
 code.descclassname {
     background-color: transparent;
 }
 
 code.xref, a code {
+=======
+tt.descclassname {
+    background-color: transparent;
+}
+
+tt.xref, a tt {
+>>>>>>> sumudu
     background-color: transparent;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+=======
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+>>>>>>> sumudu
     background-color: transparent;
 }
 
@@ -610,6 +695,7 @@ span.eqno {
     float: right;
 }
 
+<<<<<<< HEAD
 span.eqno a.headerlink {
     position: relative;
     left: 0px;
@@ -620,6 +706,8 @@ div.math:hover a.headerlink {
     visibility: visible;
 }
 
+=======
+>>>>>>> sumudu
 /* -- printout stylesheet --------------------------------------------------- */
 
 @media print {

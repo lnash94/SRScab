@@ -6,7 +6,11 @@
  * Time: 10:29 PM
  */?>
 
+<<<<<<< HEAD
 </div>
+=======
+</div><!--container-->
+>>>>>>> sumudu
 <footer id="footer" class="top-space">
 
     <div class="footer1">

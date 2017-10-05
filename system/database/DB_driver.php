@@ -916,7 +916,10 @@ abstract class CI_DB_driver {
 
 		if ($this->_trans_begin())
 		{
+<<<<<<< HEAD
 			$this->_trans_status = TRUE;
+=======
+>>>>>>> sumudu
 			$this->_trans_depth++;
 			return TRUE;
 		}
@@ -1045,7 +1048,11 @@ abstract class CI_DB_driver {
 	 */
 	public function is_write_type($sql)
 	{
+<<<<<<< HEAD
 		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX|MERGE)\s/i', $sql);
+=======
+		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX)\s/i', $sql);
+>>>>>>> sumudu
 	}
 
 	// --------------------------------------------------------------------

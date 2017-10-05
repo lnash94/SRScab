@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
+<<<<<<< HEAD
  * :copyright: Copyright 2007-2017 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2014 by the Sphinx team, see AUTHORS.
+>>>>>>> sumudu
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -91,6 +95,7 @@ jQuery.fn.highlightText = function(text, className) {
   });
 };
 
+<<<<<<< HEAD
 /*
  * backward compatibility for jQuery.browser
  * This will be supported until firefox bug is fixed.
@@ -115,6 +120,8 @@ if (!jQuery.browser) {
   jQuery.browser[jQuery.uaMatch(navigator.userAgent).browser] = true;
 }
 
+=======
+>>>>>>> sumudu
 /**
  * Small JavaScript module for the documentation.
  */
@@ -124,7 +131,10 @@ var Documentation = {
     this.fixFirefoxAnchorBug();
     this.highlightSearchWords();
     this.initIndexTable();
+<<<<<<< HEAD
     
+=======
+>>>>>>> sumudu
   },
 
   /**
@@ -177,10 +187,16 @@ var Documentation = {
 
   /**
    * workaround a firefox stupidity
+<<<<<<< HEAD
    * see: https://bugzilla.mozilla.org/show_bug.cgi?id=645075
    */
   fixFirefoxAnchorBug : function() {
     if (document.location.hash)
+=======
+   */
+  fixFirefoxAnchorBug : function() {
+    if (document.location.hash && $.browser.mozilla)
+>>>>>>> sumudu
       window.setTimeout(function() {
         document.location.href += '';
       }, 10);
@@ -253,6 +269,7 @@ var Documentation = {
     });
     var url = parts.join('/');
     return path.substring(url.lastIndexOf('/') + 1, path.length - 1);
+<<<<<<< HEAD
   },
 
   initOnKeyListeners: function() {
@@ -276,6 +293,8 @@ var Documentation = {
         }
       }
     });
+=======
+>>>>>>> sumudu
   }
 };
 
@@ -284,4 +303,8 @@ _ = Documentation.gettext;
 
 $(document).ready(function() {
   Documentation.init();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> sumudu

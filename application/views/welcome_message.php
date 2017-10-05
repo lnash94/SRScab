@@ -1,6 +1,44 @@
+<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+=======
+<?php?>
+
+
+<html>
+<head>
+    <!--        add css sheet-->
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/SRScabsstyle.css">
+</head>
+<body>
+<div id="mainheder">
+    <div id="logo">
+        <a href="#">
+            SRS<span>Cabs</span>
+        </a>
+    </div>
+
+</div>
+bfhfdhdfhhfh
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+/*defined('BASEPATH') OR exit('No direct script access allowed');
+*/?><!--<!DOCTYPE html>
+>>>>>>> sumudu
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -82,8 +120,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
 
+<<<<<<< HEAD
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
 </body>
 </html>
+=======
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php /*echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' */?></p>
+</div>
+
+</body>
+</html>
+-->
+>>>>>>> sumudu

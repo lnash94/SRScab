@@ -55,7 +55,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @var	string
  *
  */
+<<<<<<< HEAD
 	const CI_VERSION = '3.1.6';
+=======
+	const CI_VERSION = '3.1.5';
+>>>>>>> sumudu
 
 /*
  * ------------------------------------------------------

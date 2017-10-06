@@ -1,10 +1,4 @@
  <?php
-/**
- * Created by PhpStorm.
- * User: PC
- * Date: 9/12/2017
- * Time: 8:31 PM
- */
 class  Users extends CI_Controller{
     public function login()
     {
@@ -55,6 +49,11 @@ class  Users extends CI_Controller{
             }
         }
     }
+	public function adminlogin(){
+		 	$this->load->view('template/header');
+            $this->load->view('Admin/addvehicle',array('path'=>'assets/images/empty.png'));
+            $this->load->view('template/footer');
+	}
 
     //check if email exists
     public function check_email_exists($username)

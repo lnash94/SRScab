@@ -32,11 +32,11 @@
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="home"><img src="assets/images/logo.jpg" alt="Progressus HTML5 template"></a>
+            <a class="navbar-brand" href="home"><img src="<?php echo base_url();?>assets/images/logo.jpg" alt="Progressus HTML5 template"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="home">Home</a></li>
+                <li class="active"><a href="<?php echo base_url();?>home">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -55,8 +55,9 @@
                         <li><a href="sidebar-right.html">Classic And Vintage</a></li>
                     </ul>
                 </li>
-                <li><a href="about">About us</a></li>
-                <li><a href="contact">Contact us</a></li>
+                <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
+                <li><a href="<?php echo base_url();?>about">About us</a></li>
+                <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
                 <li><a href="<?php echo site_url('users/login') ?>" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SIGN IN / SIGN UP</a></li>
             </ul>
         </div><!--/.nav-collapse -->

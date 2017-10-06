@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['users/login']='users/login';
-$route['(:any)/(:any)']='pages/view/$2';
+$route['users/adminlogin']='users/adminlogin';
+//$route['(:any)/(:any)']='pages/view/$2';
 $route['(:any)']='pages/view/$1';
 
 $route['default_controller'] = 'pages/view';

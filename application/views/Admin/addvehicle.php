@@ -31,8 +31,8 @@
 		</div>
 		<div class="pull-right col-md-4">
 		<label>Vehicle image</label>
-		<input type="file" name="userfile"/>
-		<button type="submit" class="btn btn-xs" name="submit"><i class="fa fa-folder-open" aria-hidden="true"></i>Upload</button>
+			<input type="file" name="userfile"/></br>
+		<button type="submit" class="btn btn-xs" name="submit"><i class="fa fa-folder-open" aria-hidden="true"></i>Upload</button></br></br>
 		<img src="<?php echo base_url().$path?>" height="170px;" width="100%"></div>
 	</form>
 	

@@ -5,23 +5,23 @@
 			<li><a href="index.html">Admin</a></li>
 			<li class="active">New Vehicle</li>
 		</ol>
-		<header class="page-header">
+		<header class="page-header" id="pheader">
 					<h1 class="page-title">Register New Vehicle</h1>
 		</header>
 		<div id="newvehicleform" class="col-md-10 col-md-offset-1">
 		<?php echo form_open('Addvehicle/add')?>
 		<div class="col-md-7">
 		<label>Select vehicle type</label>
-		<select class="form-control" name="type">
+		<select class="form-control" name="type" id="vtype">
 			<option value="Luxury">Luxury Cars</option>
 			<option value="Genaral">Genaral Cars</option>
 			<option value="4wd">Bus,Van,4WD,SUV</option>
 			<option value="Classic">Classic And Vintage</option>
 		</select></br>
 		<label>Licence plate number</label>
-		<input type="text" class="form-control" name="licenno" placeholder="Licence number" required></br>
+		<input type="text" class="form-control" name="licenno" id="licenno" placeholder="Licence number" required></br>
 		<label>Select vehicle Brand</label>
-		<select class="form-control" name="brand">
+		<select class="form-control" name="brand" id="brand">
 			<option value="Audi">Audi</option>
 			<option value="Benz">Benz</option>
 			<option value="BMW">BMW</option>
@@ -38,17 +38,17 @@
 			<option value="Toyota">Toyota</option>
 		</select></br>
 		<label>Model</label>
-		<input type="text" class="form-control" name="model"/ placeholder="Enter vehicle model" required></br>
+		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required></br>
 		<label>Other details</label>
-		<input type="text" class="form-control" name="details"/ placeholder="Enter details such as A/C,CD player etc."></br>
+		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
 		<label style="margin-right: 15px;">With driver only</label>
 		<label class="switch">
   		<input type="checkbox" name="withdriver" id="checkboxtogal" value="false">
   		<span class="slider round"></span>
 		</label></br></br>
-		<button type="submit" class="btn btn-success btn-xs">Register</button>
+		<button type="button" class="btn btn-success btn-xs" id="submitbtn">Register</button>
 		</div>
-		<input type="hidden" name="imageLink" value="<?php echo $path?>">
+		<input type="hidden" name="imageLink" id="imageLink" value="<?php echo $path?>">
 		</form>
 		
 		<?php echo form_open_multipart('upload/index')?>
@@ -73,19 +73,33 @@
 		}
 	});
 </script>
-<!--<script>
-	$('#uploadbtn').click(function(){
-		var userfile=document.getElementById('userfile1').files[0];
-		var form_data =new FormData();
-		form_data.append("file",userfile);
-		//alert(userfile);
+<script>
+	$('#submitbtn').click(function(){
+		var type=$('#vtype').val();
+		var licenno=$('#licenno').val();
+		var brand=$('#brand').val();
+		var vmodel=$('#vmodel').val();
+		var details=$('#details').val();
+		var withdriver=$('#checkboxtogal').val();
+		var imageLink=$('#imageLink').val();
+		//alert(withdriveronly);
+		
+		
 				$.ajax({
 					type:'post',
-					data:form_data,
-					url:'<?php echo base_url('upload/index')?>',
+					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'details':details,'withdriver':withdriver,'imageLink':imageLink},
+					url:'<?php echo base_url('Addvehicle/add')?>',
 					success:function(data){
-						alert(data);
+						if($('#alert')!=null){
+							$('#alert').remove();
+						}
+						if(data=="success"){
+							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>New Vehicle Successfully added to the system</div>").insertAfter('#pheader');
+						}
+						else{
+						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+						}
 					}
 				});
 						  });
-</script>	-->
+</script>

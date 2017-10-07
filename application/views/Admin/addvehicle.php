@@ -39,6 +39,8 @@
 		</select></br>
 		<label>Model</label>
 		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required></br>
+		<label>Number of seats</label>
+		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required></br>
 		<label>Other details</label>
 		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
 		<label style="margin-right: 15px;">With driver only</label>
@@ -79,6 +81,7 @@
 		var licenno=$('#licenno').val();
 		var brand=$('#brand').val();
 		var vmodel=$('#vmodel').val();
+		var seats=$('#seats').val();
 		var details=$('#details').val();
 		var withdriver=$('#checkboxtogal').val();
 		var imageLink=$('#imageLink').val();
@@ -87,7 +90,7 @@
 		
 				$.ajax({
 					type:'post',
-					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'details':details,'withdriver':withdriver,'imageLink':imageLink},
+					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'seats':seats, 'details':details,'withdriver':withdriver,'imageLink':imageLink},
 					url:'<?php echo base_url('Addvehicle/add')?>',
 					success:function(data){
 						if($('#alert')!=null){

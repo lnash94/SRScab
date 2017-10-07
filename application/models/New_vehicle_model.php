@@ -16,6 +16,7 @@ class New_vehicle_model extends CI_Model{
 			'model'=>$this->input->post('model'),
 			'brand'=>$this->input->post('brand'),
 			'type'=>$this->input->post('type'),
+			'No_seats'=>$this->input->post('seats'),
 			'details'=>$this->input->post('details'),
 			'imageLink'=>$this->input->post('imageLink'),
 			'with_driver'=>$this->input->post('withdriver')

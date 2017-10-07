@@ -51,7 +51,7 @@ class  Users extends CI_Controller{
     }
 	public function adminlogin(){
 		 	$this->load->view('template/header');
-            $this->load->view('Admin/addvehicle',array('path'=>'assets/images/empty.png'));
+            $this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
             $this->load->view('template/footer');
 	}
 

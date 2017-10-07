@@ -13,7 +13,7 @@ class  upload extends CI_Controller{
 		}
 		else{
 			$filedata=$this->upload->data();
-			$data['path']='assets/images/vehicles/'.$filedata['file_name'];
+			$data['path']=$filedata['file_name'];
 			$this->load->view('template/header');
             $this->load->view('Admin/addvehicle',$data);
             $this->load->view('template/footer');

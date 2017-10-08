@@ -98,6 +98,13 @@
 						}
 						if(data=="success"){
 							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>New Vehicle Successfully added to the system</div>").insertAfter('#pheader');
+							
+							('#licenno').val()="";
+							
+							('#vmodel').val()=""
+							('#seats').val()=""
+							('#details').val()=""
+							//('#imageLink').val();
 						}
 						else{
 						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');

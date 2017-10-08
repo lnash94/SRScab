@@ -17,19 +17,19 @@ class User_model extends CI_Model{
         else{
             return false;
         }
-
-
     }
     //check email exist
-    public function check_email_exists($username)
+    public function check_email_exists($email)
     {
-        $query = $this->db->get_where('user',array('email'=>$username));
+        $query = $this->db->get_where('user',array('email'=>$email));
         if (empty($query->row_array())){
             return true;
         }else{
             return false;
         }
     }
+//cusmoter registration
+    public function register($npassword){
 
-
+    }
 }

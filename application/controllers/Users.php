@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -6,6 +7,25 @@
  * Time: 8:31 PM
  */
 class  Users extends CI_Controller{
+
+    //customer registration
+    public function register(){
+        $data['title']='registration';
+        $this->form_validation->set_rules('fname','First name','required');
+        $this->form_validation->set_rules('lname','Last name','required');
+        $this->form_validation->set_rules('email','Email','required|valid_email|callback_check_email_exists');
+        $this->form_validation->set_rules('password','Password','required|min_length[06]');
+        $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
+
+        if ($this->form_validation->run() === FALSE){
+            $this->load->view('template/header');
+            $this->load->view('customer/customer_registration');
+            $this->load->view('template/footer');
+        }
+    }
+
+//customer login
+
     public function login()
     {
         $data['title'] = 'Log in';
@@ -15,7 +35,7 @@ class  Users extends CI_Controller{
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
             $this->load->view('customer/login', $data);
-            $this->load->view('pages/home',$data);
+            $this->load->view('pages/home');
             $this->load->view('template/footer');
         }
         else {
@@ -57,17 +77,14 @@ class  Users extends CI_Controller{
     }
 
     //check if email exists
-    public function check_email_exists($username)
+    public function check_email_exists($email)
     {
         $this->form_validation->set_message('check_email_exists', 'That email  is taken.Please choose a different one');
-        if ($this->user_model->check_email_exists($username)) {
+        if ($this->user_model->check_email_exists($email)) {
             return true;
         } else {
             return false;
         }
     }
-//customer registration
-    public function register(){
 
-    }
 }

@@ -57,6 +57,7 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
+                <li><a href="<?php echo base_url();?>users/customerbooking">Reservation Test test</a></li>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
                 <li><a href="<?php echo site_url('users/login') ?>" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SIGN IN / SIGN UP</a></li>

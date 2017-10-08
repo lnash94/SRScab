@@ -54,6 +54,11 @@ class  Users extends CI_Controller{
             $this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
             $this->load->view('template/footer');
 	}
+    public function customerbooking(){
+            $this->load->view('template/header');
+            $this->load->view('Customer/reservation',array('path'=>'empty.png'));
+            $this->load->view('template/footer');
+    }
 
     //check if email exists
     public function check_email_exists($username)

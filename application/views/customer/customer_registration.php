@@ -1,6 +1,6 @@
 <!--validation -->
 <?php echo validation_errors();?>
-<?php form_open('users/register')?>
+<?php //form_open('users/register')?>
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-default">
         <div class="panel-body">
@@ -8,7 +8,7 @@
             <p class="text-center text-muted">click here to login <a href="signin.html">Login</a></p>
             <hr>
 
-            <form>
+            <form method="post" action="<?php echo base_url()?>/users/register">
                 <div class="top-margin">
                     <label>First Name</label>
                     <input type="text" class="form-control" name="fname">
@@ -25,11 +25,11 @@
                 <div class="row top-margin">
                     <div class="col-sm-6">
                         <label>Password <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password">
                     </div>
                     <div class="col-sm-6">
                         <label>Confirm Password <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="password2">
+                        <input type="password" class="form-control" name="password2">
                     </div>
                 </div>
 
@@ -51,4 +51,4 @@
     </div>
 
 </div>
-<?php form_close();?>
+<?php //form_close();?>

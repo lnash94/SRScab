@@ -29,7 +29,12 @@ class User_model extends CI_Model{
         }
     }
 //cusmoter registration
-    public function register($npassword){
-
+    public function register($enc_password){
+        $data = array(
+            'email'=> $this->input->post('email',TRUE),
+            'password'=>$enc_password
+        );
+        //insert date to table
+        return $this->db->insert('user',$data);
     }
 }

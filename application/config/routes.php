@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['users/login']='users/login';
 $route['users/adminlogin']='users/adminlogin';
-$route['Gcarview']='pages/view/$1';
+$route['Gcarview']='Gcarview';
 //$route['(:any)/(:any)']='pages/view/$2';
 $route['(:any)']='pages/view/$1';
 

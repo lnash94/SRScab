@@ -30,19 +30,19 @@
         <h3 class="text-center thin">What you need?</h3>
 
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/self_drive.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/self_drive.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Self-Drive</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/with_driver.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/with_driver.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">With diver/Tours</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/airport.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/airport.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Airport/City</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/wedding.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/wedding.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Weddings and events</div>
             </a>    
             </div>
@@ -58,19 +58,19 @@
         <h3 class="text-center thin">Choose Your Ride</h3>
 
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/vehicles/luxury/bmw-m3.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/luxury/bmw-m3.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Luxury Cars</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/vehicles/genaral/genaral.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/genaral/genaral.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Genaral Cars</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/vehicles/vanbus4wd/nissand21.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/vanbus4wd/nissand21.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Buses,Vans,4WD/SUV</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(assets/images/vehicles/classic/classic.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/classic/classic.jpg);padding: 0 ;"><a href="#" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Classic And Vintage</div>
             </a>    
             </div>

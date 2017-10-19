@@ -44,13 +44,13 @@
                 </div>
                  <div class="form-group has-feedback">
                     <label>Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="password" required>
                 </div>
+                    <input type="password" class="form-control" name="password" required>
 
                   <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
-                    <a  style="color: black;font-style: italic;font-weight:500" href="#">Forgot Password?</a>
-                  </p>
-              </form>
+               <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
+              </p>
+            </form>
           </div>
           <div class="modal-footer">
                <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/register">Register here</a></div>
@@ -91,11 +91,11 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
-                <li><a href="<?php echo base_url();?>users/customerbooking">Reservation Test</a></li>
+                
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
-                 <li> <button  data-toggle="modal" class="btn btn-md btn-warning" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
+                 <li> <button  data-toggle="modal" class="btn btn-md btn-warning navbar-btn" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>

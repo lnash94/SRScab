@@ -50,10 +50,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Luxury Cars</a></li>
-                        <li><a href="sidebar-right.html">Genaral Cars</a></li>
-                        <li><a href="sidebar-right.html">Bus,Van,4WD,SUV</a></li>
-                        <li><a href="sidebar-right.html">Classic And Vintage</a></li>
+                        <li><a href="<?php echo base_url();?>Lcarview">Luxury Cars</a></li>
+                        <li><a href="<?php echo base_url();?>Gcarview">Genaral Cars</a></li>
+                        <li><a href="<?php echo base_url();?>Vbusview">Bus,Van,4WD,SUV</a></li>
+                        <li><a href="<?php echo base_url();?>Ccarview">Classic And Vintage</a></li>
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>

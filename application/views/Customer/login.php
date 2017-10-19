@@ -3,7 +3,7 @@
 <!-- container -->
 	<div class="container">
 
-			<div class="col-md-4 col-md-offset-7 col-sm-8 col-sm-offset-2 ">
+			<div class="col-md-5 col-md-offset-6 col-sm-8 col-sm-offset-2 ">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Sign in to your account</h3>
@@ -12,11 +12,11 @@
 
 								<div class="top-margin ">
 									<label>Username/Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="username">
+									<input type="text" class="form-control" name="username" required>
 								</div>
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control" name="password">
+									<input type="password" class="form-control" name="password" required>
 
 								</div>
 
@@ -35,10 +35,9 @@
 						</div>
 					</div>
              </div>
-//            </article>
 		<!-- /Article -->
         </div>
-//	</div>	<!-- /container -->
+	<!-- /container -->
 
 
 <?php form_close();?>

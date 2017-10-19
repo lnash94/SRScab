@@ -1,3 +1,4 @@
+<body>
 <div style="margin-top: 100px;"></div>
 <div  class="container">
 
@@ -31,11 +32,9 @@
 					<label>No of Passengers :</label>
 					<input type="text" class="form-control" name="passengers" id="passengers" placeholder="No-of-passengers..." required></br>
 					
-					<button type="button" class="btn btn-success btn-xs" id="submitbtn">Search</button>
+					<button type="button" class="btn btn-success btn-xs" id="searchbtn">Search</button>
 					
 					</div><!-- colmd7 -->
 				</div><!-- div id -->
 		</div><!-- container -->
-
 </body>
-</html>

@@ -24,7 +24,8 @@
 	 <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    
+   
+
 </head>
 
 <body class="home">
@@ -48,7 +49,7 @@
       		</div>
   
               <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
-               <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
+                <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>/users/logedin">Forgot Password?</a>
               </p>
             </form>
           </div>
@@ -95,19 +96,18 @@
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
-                 <li> <button  data-toggle="modal" class="btn btn-md btn-warning navbar-btn" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
+                 <li> <div class="dropdown">
+				  <button class="btn btn-sm btn-default dropdown-toggle" style="background-color:transparent; color: azure;" type="button" data-toggle="dropdown"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Username
+				  <span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+					<li><a href="<?php echo base_url();?>users/dashbord">Dashbord</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="<?php echo base_url();?>">Logout</a></li>
+				  </ul>
+				</div></li><!--signin model is defined at the top -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
 <div class="content-wrapper">
-    <?php  if ($this->session->flashdata('user_registered')):?>
-        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
-    <?php endif; ?>
-    <?php  if ($this->session->flashdata('login_failed')):?>
-        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>';?>
-    <?php endif; ?>
-
-    <?php  if ($this->session->flashdata('user_loggedin')):?>
-        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>';?>
-    <?php endif; ?>
+    

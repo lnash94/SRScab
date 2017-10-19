@@ -53,11 +53,11 @@ class  Users extends CI_Controller{
             $this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
             $this->load->view('template/footer');
 	}
-    public function customerbooking(){
+    /*public function customerbooking(){
             $this->load->view('template/header');
             $this->load->view('Customer/reservation',array('path'=>'empty.png'));
             $this->load->view('template/footer');
-    }
+    }*/
     public function customerpayment(){
             $this->load->view('template/header');
             $this->load->view('Customer/paymentdetails',array('path'=>'empty.png'));
@@ -103,4 +103,18 @@ class  Users extends CI_Controller{
          }
 
      }
+	//controler to test user logedin header
+	public function logedin(){
+		 $this->load->view('template/logedinheader');
+         $this->load->view('pages/home');
+             
+         $this->load->view('template/footer');
+	}
+	public function dashbord($page='myreservation'){
+		 $this->load->view('template/logedinheader');
+		$this->load->view('Customer/dashbord');
+		$this->load->view('Customer/'.$page);
+		$this->load->view('template/footer');
+	}
+
 }

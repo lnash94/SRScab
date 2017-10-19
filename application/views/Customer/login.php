@@ -1,4 +1,4 @@
-<?php form_open("users/login");?>$this->load->view('template/header');
+<?php //form_open("users/login");?><!--$this->load->view('template/header');-->
 
 <div style="margin-top: 100px;"></div>
 <!-- container -->
@@ -10,7 +10,7 @@
 							<h3 class="thin text-center">Sign in to your account</h3>
 							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="<?php echo base_url()?>/users/register">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
 							<hr>
-
+                            <form role="form" data-toggle="validator" method="get" action="<?php echo base_url()?>/users/login">
 								<div class="top-margin ">
 									<label>Username/Email <span class="text-danger">*</span></label>
 									<input type="text" class="form-control" name="username" required>
@@ -41,5 +41,5 @@
 	<!-- /container -->
 
 
-<?php form_close();?>
+<?php //form_close();?>
 

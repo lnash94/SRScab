@@ -1,1 +1,0 @@
-this folder contains View files in php,html

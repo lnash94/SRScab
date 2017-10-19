@@ -32,7 +32,7 @@
 					<label>No of Passengers :</label>
 					<input type="text" class="form-control" name="passengers" id="passengers" placeholder="No-of-passengers..." required></br>
 					
-					<button type="button" class="btn btn-success btn-xs" id="searchbtn">Search</button>
+					<button type="button" class="btn btn-success btn-md" id="searchbtn">Search</button>
 					
 					</div><!-- colmd7 -->
 				</div><!-- div id -->

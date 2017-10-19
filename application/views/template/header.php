@@ -11,7 +11,7 @@
     <title>SRScabs</title>
 
     <link rel="shortcut icon" href="<?php echo base_url();?>/assets/images/gt_favicon.png">
-
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
@@ -19,7 +19,7 @@
 	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>
    <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
     <!-- Custom styles for our template -->
-    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-theme.css" media="screen" >
+
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/main.css">
 	 <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
 
@@ -47,14 +47,14 @@
 				<input type="password" class="form-control" name="password">
       		</div>
   
-              <p><button type="submit" class="btn btn-xs btn-primary">Sign in</button>
+              <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
                 <a  style="color: black;font-style: italic;font-weight:500" href="#">Forgot Password?</a>
               </p>
             </form>
           </div>
           <div class="modal-footer">
                <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="#">Register here</a></div>
-                <button type="button" class="btn btn-warning btn-xs pull-right" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning btn-sm pull-right" data-dismiss="modal">Close</button>
                 
               </div>
 			 </div>
@@ -95,7 +95,7 @@
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
-                 <button  data-toggle="modal" class="btn btn-xs btn-warning" data-target="#loginModal" >Sign In</button><!--signin model is defined at the top -->
+                 <li> <button  data-toggle="modal" class="btn btn-md btn-warning" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>

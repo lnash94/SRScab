@@ -7,7 +7,7 @@
 <header id="head">
     <div class="container">
         <div class="row pull-left" style="margin-top: 220px;">
-            <p><a class="btn btn-default btn-lg" role="button">Check Reservations</a> <a class="btn btn-action btn-lg" role="button">Reserve Now</a></p>
+            <p><a class="btn btn-default btn-lg" role="button">Check Reservations</a> <button class="btn btn-warning btn-lg">Reserve Now</button></p>
         </div>
     </div>
 </header>

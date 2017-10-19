@@ -9,7 +9,7 @@ class  Users extends CI_Controller{
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
             $this->load->view('customer/login', $data);
-            $this->load->view('pages/home',$data);
+//            $this->load->view('pages/home',$data);
             $this->load->view('template/footer');
         }
         else {

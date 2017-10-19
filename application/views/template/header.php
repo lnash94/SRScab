@@ -37,7 +37,7 @@
 				<h3 style="color: black;font-style: italic;font-weight:500"><img src="<?php echo base_url();?>assets/images/logo.jpg" alt="Progressus HTML5 template"> </h3>
           </div>
           <div class="modal-body">
-            <form method="post" action="php/user.php" name="login_form">
+            <form method="post" action="<?php echo base_url()?>/users/login" name="login_form">
              <div class="form-group has-feedback">
         		<label>Username/Email <span class="text-danger">*</span></label>
 				<input type="text" class="form-control" name="username">
@@ -53,7 +53,7 @@
             </form>
           </div>
           <div class="modal-footer">
-               <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="#">Register here</a></div>
+               <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/register">Register here</a></div>
                 <button type="button" class="btn btn-warning btn-xs pull-right" data-dismiss="modal">Close</button>
                 
               </div>

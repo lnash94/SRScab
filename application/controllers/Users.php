@@ -3,13 +3,12 @@ class  Users extends CI_Controller{
     public function login()
     {
         $data['title'] = 'Log in';
-        $this->form_validation->set_rules('username', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('username', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
             $this->load->view('customer/login', $data);
-//            $this->load->view('pages/home',$data);
             $this->load->view('template/footer');
         }
         else {

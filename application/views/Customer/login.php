@@ -1,4 +1,5 @@
-<?php form_open("users/login");?>
+<?php form_open("users/login");?>$this->load->view('template/header');
+
 <div style="margin-top: 100px;"></div>
 <!-- container -->
 	<div class="container">

@@ -81,6 +81,7 @@ class  Users extends CI_Controller{
 
          if ($this->form_validation->run() === FALSE){
              $this->load->view('template/header');
+             $this->load->view('pages/home');
              $this->load->view('customer/customer_registration');
              $this->load->view('template/footer');
          }

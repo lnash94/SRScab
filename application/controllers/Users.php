@@ -22,9 +22,6 @@ class  Users extends CI_Controller{
 //            $this->user_model->login($username,$enc_password);
             redirect('users/sing_up');
 
-
-
-
         }
     }
 
@@ -79,11 +76,24 @@ class  Users extends CI_Controller{
             $this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
             $this->load->view('template/footer');
 	}
-    /*public function customerbooking(){
-            $this->load->view('template/header');
-            $this->load->view('Customer/reservation',array('path'=>'empty.png'));
-            $this->load->view('template/footer');
-    }*/
+     public function logout(){
+         //unset user data
+         $this->session->unset_userdata('logged_in');
+         $this->session->unset_userdata('user_id');
+         $this->session->unset_userdata('user_username');
+
+         //set message
+         $this->session->set_flashdata('user_loggedout','You are now logged out');
+         redirect('pages/view');
+     }
+
+
+
+     /*public function customerbooking(){
+             $this->load->view('template/header');
+             $this->load->view('Customer/reservation',array('path'=>'empty.png'));
+             $this->load->view('template/footer');
+     }*/
     public function customerpayment(){
             $this->load->view('template/header');
             $this->load->view('Customer/paymentdetails',array('path'=>'empty.png'));

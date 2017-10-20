@@ -30,6 +30,8 @@
     
 </head>
 
+
+
 <body class="home">
 <!--signin modal-->
  <div class="modal fade" id="loginModal">
@@ -38,8 +40,8 @@
     <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3 style="color: black;font-style: italic;font-weight:500"><img src="<?php echo base_url();?>assets/images/logo.jpg" alt="Progressus HTML5 template"> </h3>
-          </div>
-          <div class="modal-body">
+    </div>
+             <div class="modal-body">
               <form role="form" data-toggle="validator" method="post" action="<?php echo base_url()?>/users/login" name="login_form">
                  <div class="form-group has-feedback">
                          <label for="inputEmail" class="control-label">Email<span class="text-danger">*</span></label>
@@ -50,7 +52,8 @@
                     <label>Password <span class="text-danger">*</span></label>
                 </div>
                     <input type="password" class="form-control" name="password" required>
-
+                  <br>
+                  <br>
                   <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
                <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
               </p>
@@ -95,11 +98,31 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
-                
+                <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
+                <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
+
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
-                 <li> <button  data-toggle="modal" class="btn btn-md btn-warning navbar-btn" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
+                <?php if (!$this->session->userdata('logged_in')):?>
+
+                <li> <button  data-toggle="modal" class="btn btn-md btn-warning navbar-btn" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
+                <?php endif;?>
+
+                <?php if ($this->session->userdata('logged_in')):?>
+                <li class="dropdown">
+
+<!--                    --><?php //echo $this->session->userdata('customer name')?>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url();?>/users/register">Edit profile</a></li>
+                        <li><a class="nav-link" id="logoutBtn"  href="<?php echo base_url()?>/users/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                        </li>
+                         </ul>
+                </li>
+                <?php endif;?>
+
             </ul>
         </div><!--/.nav-collapse -->
     </div>

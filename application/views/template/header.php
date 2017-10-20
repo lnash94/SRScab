@@ -15,9 +15,12 @@
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
-      <!-- JQuery -->
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+    <!-- JQuery -->
 	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>
-   <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
+    <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
     <!-- Custom styles for our template -->
 
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/main.css">
@@ -39,8 +42,9 @@
           <div class="modal-body">
               <form role="form" data-toggle="validator" method="post" action="<?php echo base_url()?>/users/login" name="login_form">
                  <div class="form-group has-feedback">
-                    <label>Username/Email <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="username" required>
+                         <label for="inputEmail" class="control-label">Email<span class="text-danger">*</span></label>
+                         <input type="email" class="form-control" id="inputEmail" name="username" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+                         <div class="help-block with-errors"></div>
                 </div>
                  <div class="form-group has-feedback">
                     <label>Password <span class="text-danger">*</span></label>
@@ -53,7 +57,7 @@
             </form>
           </div>
           <div class="modal-footer">
-               <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/register">Register here</a></div>
+               <div class="pull-left">Are you new to here?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/sing_up">Create SRScabs account here</a></div>
                 <button type="button" class="btn btn-warning btn-sm pull-right" data-dismiss="modal">Close</button>
                 
               </div>

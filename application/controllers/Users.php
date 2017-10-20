@@ -1,5 +1,34 @@
  <?php
 class  Users extends CI_Controller{
+//    create basic sing up
+    public function sing_up(){
+        $data['title']='Sign Up';
+        $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
+        if ($this->form_validation->run()=== FALSE){
+            $this->load->view('template/header');
+            $this->load->view('customer/sign_up', $data);
+            $this->load->view('template/footer');
+        }
+        else{
+//            insert basic data to database
+            $username=$this->input->post('customer_email');
+            //Encrypte password
+            $enc_password = md5($this->input->post('customer_password'));
+            $this->user_model->sing_up($enc_password);
+
+            //set message
+            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+
+//            $this->user_model->login($username,$enc_password);
+            redirect('users/sing_up');
+
+
+
+
+        }
+    }
+
+
     public function login()
     {
         $data['title'] = 'Log in';
@@ -15,13 +44,10 @@ class  Users extends CI_Controller{
             //get username
             $username = $this->input->post('username');
             //get password
-            $password = $this->input->post('password');
+            $password = md5($this->input->post('password'));
             //loggin user
 
             $user_id = $this->user_model->login($username, $password);
-            //$this->user_model->update_lastlogin($employee_id);
-
-
             if ($user_id) {
                 //create the session
                 //die('SUCCESS');
@@ -66,10 +92,10 @@ class  Users extends CI_Controller{
 
 
     //check if email exists
-    public function check_email_exists($username)
+    public function check_email_exists($customer_email)
     {
         $this->form_validation->set_message('check_email_exists', 'That email  is taken.Please choose a different one');
-        if ($this->user_model->check_email_exists($username)) {
+        if ($this->user_model->check_email_exists($customer_email)) {
             return true;
         } else {
             return false;

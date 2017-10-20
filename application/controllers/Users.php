@@ -62,7 +62,7 @@ class  Users extends CI_Controller{
 
 
 
-                redirect('pages/view');
+                redirect('users/dashbord');
             } else {
                 //set message
                 $this->session->set_flashdata('login_failed', 'You are logged into fail');
@@ -139,16 +139,17 @@ class  Users extends CI_Controller{
          }
 
      }
-	//controler to test user logedin header
+	/*//controler to test user logedin header
 	public function logedin(){
 		 $this->load->view('template/logedinheader');
          $this->load->view('pages/home');
              
          $this->load->view('template/footer');
-	}
+	}*/
 	public function dashbord($page='myreservation'){
-		 $this->load->view('template/logedinheader');
-		$this->load->view('Customer/dashbord');
+//		 $this->load->view('template/logedinheader');
+		$this->load->view('template/header');
+        $this->load->view('Customer/dashbord');
 		$this->load->view('Customer/'.$page);
 		$this->load->view('template/footer');
 	}

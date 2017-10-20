@@ -48,7 +48,7 @@
   		<input type="checkbox" name="withdriver" id="checkboxtogal" value="false">
   		<span class="slider round"></span>
 		</label></br></br>
-		<button type="button" class="btn btn-success btn-xs" id="submitbtn">Register</button>
+		<button type="button" class="btn btn-success btn-md" id="submitbtn">Register</button>
 		</div>
 		<input type="hidden" name="imageLink" id="imageLink" value="<?php echo $path?>">
 		</form>
@@ -57,7 +57,7 @@
 		<div class="pull-right col-md-4">
 		<label>Vehicle image</label>
 		<input type="file" name="userfile"/></br>
-		<button type="submit" class="btn btn-xs" name="uploadbtn"><i class="fa fa-folder-open" aria-hidden="true"></i>Upload</button></br></br>
+		<button type="submit" class="btn btn-md" name="uploadbtn"><i class="fa fa-folder-open" aria-hidden="true"></i>Upload</button></br></br>
 		<img src="<?php echo base_url().'assets/images/vehicles/'.$path?>" height="170px;" width="100%"></div>
 		</form>
 	

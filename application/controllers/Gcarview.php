@@ -6,7 +6,9 @@ class Gcarview extends CI_Controller{
         $this->load->model('Gcarsview');
         $hello = $this->Gcarsview->get_gcar();
         $data = array('hello' =>$hello);
+        $this->load->view('template/header');
         $this->load->view('pages/Generalcars', $data);
+        $this->load->view('template/footer');
    }
 }
 ?>

@@ -5,28 +5,23 @@
  * Date: 9/12/2017
  * Time: 8:28 PM
 <<<<<<< HEAD
- */
-=======
+
  */?>
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-default">
         <div class="panel-body">
-            <h3 class="thin text-center">Register a new account</h3>
-            <p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signin.html">Login</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
-            <hr>
-
-            <form>
+            <form method="post" action="<?php echo base_url()?>/users/register">
                 <div class="top-margin">
                     <label>First Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="fname" required>
                 </div>
                 <div class="top-margin">
                     <label>Last Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="lname" required>
                 </div>
                 <div class="top-margin">
                     <label>Email Address <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" >
                 </div>
 
                 <div class="row top-margin">
@@ -59,4 +54,3 @@
 
 </div>
 
->>>>>>> sumudu

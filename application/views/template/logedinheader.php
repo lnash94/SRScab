@@ -15,22 +15,18 @@
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
-
-    <!-- JQuery -->
+      <!-- JQuery -->
 	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>
-    <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
+   <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
     <!-- Custom styles for our template -->
 
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/main.css">
 	 <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    
+   
+
 </head>
-
-
 
 <body class="home">
 <!--signin modal-->
@@ -40,27 +36,25 @@
     <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3 style="color: black;font-style: italic;font-weight:500"><img src="<?php echo base_url();?>assets/images/logo.jpg" alt="Progressus HTML5 template"> </h3>
-    </div>
-             <div class="modal-body">
-              <form role="form" data-toggle="validator" method="post" action="<?php echo base_url()?>/users/login" name="login_form">
-                 <div class="form-group has-feedback">
-                         <label for="inputEmail" class="control-label">Email<span class="text-danger">*</span></label>
-                         <input type="email" class="form-control" id="inputEmail" name="username" placeholder="Email" data-error="Bruh, that email address is invalid" required>
-                         <div class="help-block with-errors"></div>
-                </div>
-                 <div class="form-group has-feedback">
-                    <label>Password <span class="text-danger">*</span></label>
-                </div>
-                    <input type="password" class="form-control" name="password" required>
-                  <br>
-                  <br>
-                  <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
-               <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="<?php echo base_url()?>/users/login" name="login_form">
+             <div class="form-group has-feedback">
+        		<label>Username/Email <span class="text-danger">*</span></label>
+				<input type="text" class="form-control" name="username">
+      		</div>
+             <div class="form-group has-feedback">
+        		<label>Password <span class="text-danger">*</span></label>
+				<input type="password" class="form-control" name="password">
+      		</div>
+  
+              <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
+                <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>/users/logedin">Forgot Password?</a>
               </p>
             </form>
           </div>
           <div class="modal-footer">
-               <div class="pull-left">Are you new to here?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/sing_up">Create SRScabs account here</a></div>
+               <div class="pull-left">New cusomer?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>/users/register">Register here</a></div>
                 <button type="button" class="btn btn-warning btn-sm pull-right" data-dismiss="modal">Close</button>
                 
               </div>
@@ -98,43 +92,22 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
-                <?php if ($this->session->userdata('logged_in')):?>
+                
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
-                <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
-
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
-                <?php if (!$this->session->userdata('logged_in')):?>
-
-                <li> <button  data-toggle="modal" class="btn btn-md btn-warning navbar-btn" data-target="#loginModal" >Sign In</button></li><!--signin model is defined at the top -->
-                <?php endif;?>
-
-                <?php if ($this->session->userdata('logged_in')):?>
-                <li class="dropdown">
-
-<!--                    --><?php //echo $this->session->userdata('customer name')?>
-
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="<?php echo base_url();?>/users/register">Edit profile</a></li>
-                        <li><a class="nav-link" id="logoutBtn"  href="<?php echo base_url()?>/users/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-                        </li>
-                         </ul>
-                </li>
-                <?php endif;?>
-
+                 <li> <div class="dropdown">
+				  <button class="btn btn-sm btn-default dropdown-toggle" style="background-color:transparent; color: azure;" type="button" data-toggle="dropdown"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Username
+				  <span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+					<li><a href="<?php echo base_url();?>users/dashbord">Dashbord</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="<?php echo base_url();?>">Logout</a></li>
+				  </ul>
+				</div></li><!--signin model is defined at the top -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
 <div class="content-wrapper">
-    <?php  if ($this->session->flashdata('user_registered')):?>
-        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
-    <?php endif; ?>
-    <?php  if ($this->session->flashdata('login_failed')):?>
-        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>';?>
-    <?php endif; ?>
-
-    <?php  if ($this->session->flashdata('user_loggedin')):?>
-        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>';?>
-    <?php endif; ?>
+    

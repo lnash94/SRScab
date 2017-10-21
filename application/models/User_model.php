@@ -10,7 +10,7 @@ class User_model extends CI_Model{
         $this->db->where('customer_email',$username);
         $this->db->where('customer_password',$password);
 
-        $result= $this->db->get('customer1');
+        $result= $this->db->get('customer_credintial');
 
         if ($result->num_rows()==1){
             return $result->row(0)->customer_id;
@@ -33,18 +33,28 @@ class User_model extends CI_Model{
 
         );
         //insert data
-        return $this->db->insert('customer1', $data);
+        return $this->db->insert('customer_credintial', $data);
     }
 
     //check email exist
     public function check_email_exists($customer_email)
     {
-        $query = $this->db->get_where('customer1',array('customer_email'=>$customer_email));
+        $query = $this->db->get_where('customer_credintial',array('customer_email'=>$customer_email));
         if (empty($query->row_array())){
             return true;
         }else{
             return false;
         }
+    }
+//
+    public function get_customer($customer_id){
+        $this->db->where('customer_id',$customer_id);
+        $result = $this->db->get('customer1');
+        return $result->row_array();
+    }
+//    insert customer details to database
+    public function register($user_id){
+
     }
 
 

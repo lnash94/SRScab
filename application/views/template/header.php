@@ -15,12 +15,15 @@
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
 
     <!-- JQuery -->
 	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>
     <script src="<?php echo base_url();?>/assets/js/bootstrap.js"></script>
+    <script src="<?php echo base_url();?>/assets/js/customer_registration.js"></script>
     <!-- Custom styles for our template -->
 
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/main.css">
@@ -29,7 +32,9 @@
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     
 </head>
-
+<style>
+    #success_message{ display: none;}
+</style>
 
 
 <body class="home">
@@ -116,7 +121,8 @@
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo base_url();?>/users/register">Edit profile</a></li>
+                       <li><a href="<?php echo base_url();?>users/dashbord"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashbord</a></li>
+                        <li><a href="<?php echo base_url();?>/users/register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit profile</a></li>
                         <li><a class="nav-link" id="logoutBtn"  href="<?php echo base_url()?>/users/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
                         </li>
                          </ul>

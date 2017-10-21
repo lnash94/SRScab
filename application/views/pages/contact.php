@@ -28,22 +28,12 @@
                                 </span>
                                 <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject</label>
-                            <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="service">General Customer Service</option>
-                                <option value="suggestions">Suggestions</option>
-                                <option value="product">Product Support</option>
-                            </select>
-                        </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="name">
                                 Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="6" cols="25" required="required"
+                            <textarea name="message" id="message" class="form-control" rows="8" cols="25" required="required"
                                 placeholder="Message"></textarea>
                         </div>
                     </div>

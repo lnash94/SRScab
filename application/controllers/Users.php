@@ -127,15 +127,14 @@ class  Users extends CI_Controller{
      }
 	/*//controler to test user logedin header
 	public function logedin(){
-		 $this->load->view('template/logedinheader');
+		 $this->load->view('template/header');
          $this->load->view('pages/home');
              
          $this->load->view('template/footer');
 	}*/
 	public function dashbord($page='myreservation'){
-//		 $this->load->view('template/logedinheader');
-		$this->load->view('template/header');
-        $this->load->view('Customer/dashbord');
+		 $this->load->view('template/header');
+		$this->load->view('Customer/dashbord');
 		$this->load->view('Customer/'.$page);
 		$this->load->view('template/footer');
 	}

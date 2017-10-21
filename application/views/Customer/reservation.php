@@ -42,5 +42,7 @@
 		var pickupdate=$('#pickupdate').val();
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
+
+		
 	}
 </script>

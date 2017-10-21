@@ -1,6 +1,5 @@
 <div style="margin-top: 100px;"></div>
-<div class="container">
-	
+<div class="container">	
 		<ol class="breadcrumb">
 			<li><a href="index.html">Admin</a></li>
 			<li class="active">New Vehicle</li>
@@ -76,6 +75,7 @@
 	});
 </script>
 <script>
+	
 	$('#submitbtn').click(function(){
 		var type=$('#vtype').val();
 		var licenno=$('#licenno').val();
@@ -86,8 +86,7 @@
 		var withdriver=$('#checkboxtogal').val();
 		var imageLink=$('#imageLink').val();
 		//alert(withdriveronly);
-		
-		
+
 				$.ajax({
 					type:'post',
 					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'seats':seats, 'details':details,'withdriver':withdriver,'imageLink':imageLink},
@@ -101,9 +100,9 @@
 							
 							('#licenno').val()="";
 							
-							('#vmodel').val()=""
-							('#seats').val()=""
-							('#details').val()=""
+							('#vmodel').val()="";
+							('#seats').val()="";
+							('#details').val()=""; 
 							//('#imageLink').val();
 						}
 						else{

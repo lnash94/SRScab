@@ -101,9 +101,9 @@
 							
 							('#licenno').val()="";
 							
-							('#vmodel').val()=""
-							('#seats').val()=""
-							('#details').val()=""
+							('#vmodel').val()="";
+							('#seats').val()="";
+							('#details').val()="";
 							//('#imageLink').val();
 						}
 						else{

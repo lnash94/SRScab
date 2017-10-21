@@ -112,19 +112,47 @@ class  Users extends CI_Controller{
         }
     }
 //customer registration
-     public function register(){
+     public function edit(){
          //check login
          if (!$this->session->userdata('logged_in')){
              redirect('users/login');
          }
          $customer_id=$this->session->userdata('user_id');
          $data['customer']=$this->user_model->get_customer($customer_id);
+
+
          $data['title']='Edit Profile';
 
          $this->load->view('template/header');
          $this->load->view('customer/customer_registration',$data);
          $this->load->view('template/footer');
      }
+//     insert customer data
+    public  function register(){
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
+        $data['title']='edit profile';
+
+        $customer_id=$this->session->userdata('user_id');
+        $this->form_validation->set_rules('customer_fname','First Name','required');
+        $this->form_validation->set_rules('customer_lname','Last Name','required');
+        $this->form_validation->set_rules('customer_nic','Nic','required');
+        $this->form_validation->set_rules('customer_email','Email','required');
+        $this->form_validation->set_rules('customer_contact_no','Contact','required');
+        $this->form_validation->set_rules('customer_address','Address','required');
+        if ($this->form_validation->run()=== FALSE){
+            $this->load->view('template/header');
+            $this->load->view('customer/customer_registration',$data);
+            $this->load->view('template/footer');
+        }
+        else{
+            $this->user_model->register($customer_id);
+
+        }
+
+    }
 	/*//controler to test user logedin header
 	public function logedin(){
 		 $this->load->view('template/header');

@@ -11,7 +11,7 @@
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="container">
 
-        <form class="well form-horizontal" action=" " method="post"  id="reg_form">
+        <form class="well form-horizontal" action="<?php echo base_url()?>/users/register " method="post"  id="reg_form">
             <fieldset>
 
                 <!-- Form Name -->
@@ -96,7 +96,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4"><br>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" id="sub" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                        <button type="submit" id="sub" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
                     </div>
                 </div>
 

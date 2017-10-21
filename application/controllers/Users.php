@@ -117,7 +117,7 @@ class  Users extends CI_Controller{
          if (!$this->session->userdata('logged_in')){
              redirect('users/login');
          }
-         $customer_id=$this->session->userdate('user_id');
+         $customer_id=$this->session->userdata('user_id');
          $data['customer']=$this->user_model->get_customer($customer_id);
          $data['title']='Edit Profile';
 

@@ -102,7 +102,7 @@
 							
 							('#vmodel').val()="";
 							('#seats').val()="";
-							('#details').val()=""; 
+							('#details').val()="";
 							//('#imageLink').val();
 						}
 						else{

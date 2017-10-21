@@ -112,40 +112,54 @@ class  Users extends CI_Controller{
         }
     }
 //customer registration
-     public function register(){
-         $data['title']='registration';
-         $this->form_validation->set_rules('fname','First name','required');
-         $this->form_validation->set_rules('lname','Last name','required');
-         $this->form_validation->set_rules('email','Email','required|valid_email|callback_check_email_exists');
-         $this->form_validation->set_rules('password','Password','required|min_length[06]');
-         $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
-
-         if ($this->form_validation->run() === FALSE){
-             $this->load->view('template/header');
-             $this->load->view('pages/home');
-             $this->load->view('customer/customer_registration');
-             $this->load->view('template/footer');
+     public function edit(){
+         //check login
+         if (!$this->session->userdata('logged_in')){
+             redirect('users/login');
          }
-         else {
+         $customer_id=$this->session->userdata('user_id');
+         $data['customer']=$this->user_model->get_customer($customer_id);
 
-             //Encrypte password
-             $enc_password = md5($this->input->post('password'));
-             $this->user_model->register($enc_password);
 
-             //set message
-             $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+         $data['title']='Edit Profile';
 
-             redirect('users/register');
-         }
-
+         $this->load->view('template/header');
+         $this->load->view('customer/customer_registration',$data);
+         $this->load->view('template/footer');
      }
-	//controler to test user logedin header
+//     insert customer data
+    public  function register(){
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
+        $data['title']='edit profile';
+
+        $customer_id=$this->session->userdata('user_id');
+        $this->form_validation->set_rules('customer_fname','First Name','required');
+        $this->form_validation->set_rules('customer_lname','Last Name','required');
+        $this->form_validation->set_rules('customer_nic','Nic','required');
+        $this->form_validation->set_rules('customer_email','Email','required');
+        $this->form_validation->set_rules('customer_contact_no','Contact','required');
+        $this->form_validation->set_rules('customer_address','Address','required');
+        if ($this->form_validation->run()=== FALSE){
+            $this->load->view('template/header');
+            $this->load->view('customer/customer_registration',$data);
+            $this->load->view('template/footer');
+        }
+        else{
+            $this->user_model->register($customer_id);
+
+        }
+
+    }
+	/*//controler to test user logedin header
 	public function logedin(){
 		 $this->load->view('template/header');
          $this->load->view('pages/home');
              
          $this->load->view('template/footer');
-	}
+	}*/
 	public function dashbord($page='myreservation'){
 		 $this->load->view('template/header');
 		$this->load->view('Customer/dashbord');

@@ -7,50 +7,214 @@
 <<<<<<< HEAD
 
  */?>
+
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <form method="post" action="<?php echo base_url()?>/users/register">
-                <div class="top-margin">
-                    <label>First Name</label>
-                    <input type="text" class="form-control" name="fname" required>
-                </div>
-                <div class="top-margin">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control" name="lname" required>
-                </div>
-                <div class="top-margin">
-                    <label>Email Address <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" >
-                </div>
+    <div class="container">
 
-                <div class="row top-margin">
-                    <div class="col-sm-6">
-                        <label>Password <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-sm-6">
-                        <label>Confirm Password <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control">
+        <form class="well form-horizontal" action="<?php echo base_url()?>/users/register " method="post"  id="reg_form">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input  name="customer_fname" placeholder="First Name" class="form-control"  type="text">
+                        </div>
                     </div>
                 </div>
 
-                <hr>
+                <!-- Text input-->
 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            I've read the <a href="page_terms.html">Terms and Conditions</a>
-                        </label>
-                    </div>
-                    <div class="col-lg-4 text-right">
-                        <button class="btn btn-action" type="submit">Register</button>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="customer_lname" placeholder="Last Name" class="form-control"  type="text">
+                        </div>
                     </div>
                 </div>
-            </form>
-        </div>
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Customer NIC.</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="customer_nic" placeholder="nic" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="customer_email" placeholder="E-Mail Address" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Contact No.</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="customer_contact_no" placeholder="(0710000)" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Address</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="customer_address" placeholder="Address" class="form-control"  type="textarea">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+
+                <!-- Success message -->
+                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        <button type="submit" id="sub" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
     </div>
-
+</div><!-- /.container -->
 </div>
+<!--<script>
 
+    document.getElementBy
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        alert("juju");
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            customer_fname: {
+                validators: {
+                    stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your First Name'
+                    }
+                }
+            },
+            customer_lname: {
+                validators: {
+                    stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Last Name'
+                    }
+                }
+            },
+            user_name: {
+                validators: {
+                    stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Username'
+                    }
+                }
+            },
+            user_password: {
+                validators: {
+                    stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Password'
+                    }
+                }
+            },
+            confirm_password: {
+                validators: {
+                    stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please confirm your Password'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter your Email Address'
+                    },
+                    emailAddress: {
+                        message: 'Please enter a valid Email Address'
+                    }
+                }
+            },
+            contact_no: {
+                validators: {
+                    stringLength: {
+                        min: 12,
+                            max: 12,
+                            notEmpty: {
+                            message: 'Please enter your Contact No.'
+                        }
+                    }
+                },
+                department: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your Department/Office'
+                        }
+                    }
+                },
+            }
+        }
+    })
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+            $('#contact_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+
+</script>
+
+-->

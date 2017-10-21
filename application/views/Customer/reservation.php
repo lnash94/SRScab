@@ -31,9 +31,18 @@
 					<label>No of Passengers :</label>
 					<input type="text" class="form-control" name="passengers" id="passengers" placeholder="No-of-passengers..." required></br>
 					
-					<button type="button" class="btn btn-success btn-md" id="searchbtn">Search</button>
+					<button type="button" class="btn btn-success btn-md" id="nextbtn">Next</button>
 					
 					</div><!-- colmd7 -->
 				</div><!-- div id -->
 		</div><!-- container -->
+<script>
+	$('#nextbtn').click(function(){
+		var location=$('#location').val();
+		var pickupdate=$('#pickupdate').val();
+		var dropoffdate=$('#dropoffdate').val();
+		var passengers=$('#passengers').val();
 
+		
+	}
+</script>

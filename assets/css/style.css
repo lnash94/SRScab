@@ -44,6 +44,10 @@
   background-color: #F3F3F3;
   padding: 15px;
 }
+#paymentdetailsform{
+  background-color: #F3F3F3;
+  padding: 15px;
+}
 
 
 .switch {
@@ -102,5 +106,26 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-	
+#contactuscover {
+	background:#181015 url( ../images/contactus.jpg) no-repeat;
+	background-size: cover; min-height:520px; text-align: center; padding-top:240px; 
+	color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300;
+}
+#aboutuscover{
+	background:#181015 url( ../images/about.PNG) no-repeat;
+	background-size: cover; min-height:520px; text-align: center; padding-top:240px; 
+	color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300;	
+}
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}

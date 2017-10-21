@@ -1,3 +1,4 @@
+ <link href="assest/css/style.css" rel="stylesheet">
 <div style="margin-top: 100px;"></div>
 <div  class="container">
 
@@ -9,7 +10,7 @@
 					<h1 class="page-title">Payment Details</h1>
 		</header>
 			<div id="paymentdetailsform" class="col-md-10 col-md-offset-1">
-				<div class="col-md-7">
+				<div class="col-md-8">
 				
 				<table>
 				<tr>
@@ -17,9 +18,9 @@
 				<input type="radio" name="paymentmethod" id="paymentmethod" value="mastercard" checked> 
 				<img src="<?php echo base_url();?>assets/images/mastercard.png" alt="Master Card Logo">
 		        <input type="radio" name="paymentmethod" id="paymentmethod" value="visa" checked> 
-		        <i class="fa fa-cc-visa" aria-hidden="true"></i>
+		        <img src="<?php echo base_url();?>assets/images/Visa_Logo.png" alt="Visa Logo">
 				<input type="radio" name="paymentmethod" id="paymentmethod" value="paypal" checked>
-				<i class="fa fa-paypal" aria-hidden="true"></i>
+				<img src="<?php echo base_url();?>assets/images/PayPal_Logo1.png" alt="Paypal Logo">
 				</tr>
 				</table>
 				</br>

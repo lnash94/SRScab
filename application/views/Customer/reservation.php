@@ -1,4 +1,3 @@
-<body>
 <div style="margin-top: 100px;"></div>
 <div  class="container">
 
@@ -37,4 +36,4 @@
 					</div><!-- colmd7 -->
 				</div><!-- div id -->
 		</div><!-- container -->
-</body>
+

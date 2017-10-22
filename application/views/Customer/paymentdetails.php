@@ -1,6 +1,6 @@
 
 <div style="margin-top: 100px;"></div>
-<div  class="container">
+<div  class="container" id="payment_space">
 
 		<ol class="breadcrumb">
 			<li><a href="index.html">Customer</a></li>
@@ -24,29 +24,23 @@
 				</tr>
 				</table>
 				</br>
-				<table>
-					<tr>
+				
 					<label>Cardholder's Name :</label>
 					<input type="text" class="form-control" name="holdername" id="holdername" placeholder="Lalanga Ariyasinghe..." required></br>
-					<label>Card Number :</label>
-					<input type="password" name="password" id="password" placeholder="Password Field.... ">
-					</tr>
-				</table>
+					<label>Card Number :</label></br>
+					<input type="password" name="password" id="password" placeholder="--Card Number--" required="">
+					<br></br>
 
-				<table>
-					<tr>
-					<td>
+				
 					<label>Expiry Date :</label>
-					</td>
-					<td>
-					<input type="date" name="pickupdate" id="pickupdate" class="form-control" required>
-					</td>
-					<td>
+					<input type="date" name="expirydate" id="expirydate" class="form-control" required>
+					</br>
 					<label>CVV/CVC :</label>
-					<input type="number" name="cvvno" id="cvvno" class="form-control" required>
-					</td>
-					</tr>
-				</table>
+					<input type="number" name="cvvno" id="cvvno" class="form-control" placeholder="--CVV/CVC--" required="">
+
+					<br></br>
+					<button type="button" class="btn btn-success btn-md" id="paymentsubmitbtn">Submit</button>
+					
 			</div><!--colmd7-->
 		</div><!--paymentdetailsform-->
 

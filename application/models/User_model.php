@@ -58,15 +58,14 @@ class User_model extends CI_Model{
     }
 //
     public function get_customer($customer_id){
-        $this->db->where('customer_id',$customer_id);
-        $result = $this->db->get('customer1');
+        $result = $this->db->get_where('customer1',array('customer_id'=>$customer_id));
         return $result->row_array();
     }
 //    insert customer details to database
     public function register($user_id){
         $this->db->where('customer_id',$user_id);
         $data =array(
-            'customer_id'=> $this->db->insert_id(),
+            'customer_id'=> $user_id,
             'customer_fname'=>$this->input->post('customer_fname'),
             'customer_lname'=>$this->input->post('customer_lname'),
             'customer_email'=>$this->input->post('customer_email'),

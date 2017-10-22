@@ -5,8 +5,32 @@
 	width: 530px;
 }
 #passengers{
-	width: 530px;
+	width: 240px;
 }
 #nextbtn{
 	width: 100px;
+}
+#paymentmethod{
+	margin-left: 2px;
+}
+#password{
+	margin-left: 15px;
+	width: 300px;
+}
+#expirydate{
+	margin-left: 15px;
+	width: 300px;
+}
+#cvvno{
+	margin-left: 15px;
+	width: 300px;	
+}
+#holdername{
+	margin-left: 15px;
+	width: 300px;
+}
+
+#paymentsubmitbtn{
+	margin-left: 0px;
+	width: 150px;
 }

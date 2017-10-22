@@ -12,8 +12,19 @@
 			<div id="newvehiclereserveform" class="col-md-10 col-md-offset-1">
 				<div class="col-md-7">
 
-				<button type="button" class="btn btn-success btn-md" id="nextpagebtn">Next Page</button>
+				<button type="button" class="btn btn-success btn-md" id="nextpagebtn">Next</button>
+
+				<button type="button" class="btn btn-success btn-md" id="backpagebtn">Back</button>
 
 				</div>
 			</div>
 		</div>
+<script>
+$('#nextpagebtn').click(function(){
+		$("#changing_space").load("paymentdetails.php #payment_space");
+	});
+$('#backpagebtn').click(function(){
+		$("#vehiclechoose_space").load("reservation.php #changing_space");
+	});
+
+</script>

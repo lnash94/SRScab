@@ -56,10 +56,10 @@
                 </div>
                  <div class="form-group has-feedback">
                     <label>Password <span class="text-danger">*</span></label>
-                </div>
-                    <input type="password" class="form-control" name="password" required>
+                     <input type="password" class="form-control" name="password" placeholder="Password" required>
                   <br>
                   <br>
+                 </div>
                   <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
                <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
               </p>

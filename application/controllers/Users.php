@@ -4,6 +4,9 @@ class  Users extends CI_Controller{
     public function sing_up(){
         $data['title']='Sign Up';
         $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
+        $this->form_validation->set_rules('customer_password','Password','required|min_length[6]');
+        $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
+
         if ($this->form_validation->run()=== FALSE){
             $this->load->view('template/header');
             $this->load->view('customer/sign_up', $data);
@@ -166,5 +169,15 @@ class  Users extends CI_Controller{
 		$this->load->view('Customer/'.$page);
 		$this->load->view('template/footer');
 	}
+  /*   public function dashbord($page='dashbord'){
+         $this->load->view('template/header');
+         $this->load->view('template/cusleftbar');
+         //$this->load->view('Customer/dashbord');
+         $this->load->view('Customer/'.$page);
+         $this->load->view('template/curight');
+         $this->load->view('template/footer');
+     }
+
+ }*/
 
 }

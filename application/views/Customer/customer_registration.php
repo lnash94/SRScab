@@ -7,22 +7,24 @@
 <<<<<<< HEAD
 
  */?>
-<div style="margin-top: 100px;"></div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div style="margin-top: 95px;" ></div>
 <div class="col-md-8 col-md-offset-3">
-<!--    <div class="alert alert-danger">--><?php //echo validation_errors();?><!--</div>-->
+    <div class="alert alert-danger" id="cid"><?php echo validation_errors();?></div>
 
         <form class="well form-horizontal" action="<?php echo base_url()?>/users/register " method="post"  id="reg_form">
             <fieldset>
 
                 <!-- Form Name -->
-                <legend id="cid"><center><h2><b>Registration Form</b></h2></center></legend><br>
+                <legend id="cid"><center><h4><b>Registration Form</b></h4></center></legend><br>
 
                 <div class="form-group">
                     <label class="col-md-4 control-label">Customer id</label>
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  name="customer_id" placeholder="First Name" class="form-control"  type="text" value="<?php echo $this->session->userdata('user_id');?>" disabled">
+                            <input  name="customer_id" placeholder="First Name" class="form-control"  type="text" value="<?php echo $this->session->userdata('user_id');?>" disabled>
                         </div>
                     </div>
                 </div>
@@ -52,13 +54,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Gender</label>
+                    <input type="radio"  value="male" name="customer_gender" required>Male
+                    <input type="radio"  value="female" name="customer_gender" required>Female
+                </div>
+
+
+
+
                 <!-- Text input-->
 
                 <div class="form-group">
                     <label class="col-md-4 control-label">Customer NIC.</label>
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
                             <input name="customer_nic" placeholder="nic" class="form-control" type="text" value="<?php echo $customer['customer_nic'];?>">
                         </div>
                     </div>

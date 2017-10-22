@@ -8,7 +8,6 @@ $route['Lcarview']='Lcarview';
 $route['Vbusview']='Vbusview';
 $route['Ccarview']='Ccarview';
 
-
 //$route['(:any)/(:any)']='pages/view/$2';
 $route['(:any)']='pages/view/$1';
 

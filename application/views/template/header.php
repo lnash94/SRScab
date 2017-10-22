@@ -103,7 +103,7 @@
                         <li><a href="<?php echo base_url();?>Ccarview">Classic And Vintage</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url();?>users/adminlogin">Admin test</a></li>
+                <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
                 <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>

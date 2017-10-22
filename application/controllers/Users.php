@@ -71,11 +71,20 @@ class  Users extends CI_Controller{
             }
         }
     }
-	public function adminlogin(){
-		 	$this->load->view('template/header');
-            $this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
-            $this->load->view('template/footer');
+	public function admindashbord($page='manage_vehicle'){
+		if($page=="addvehicle"){
+			$this->load->view('Admin/dashbord');
+			$this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
+		}
+		else{
+		$this->load->view('Admin/dashbord');
+		$this->load->view('Admin/'.$page);
+		
+		}
+		$this->load->view('template/header');
+		$this->load->view('template/footer');
 	}
+
      public function logout(){
          //unset user data
          $this->session->unset_userdata('logged_in');
@@ -161,7 +170,7 @@ class  Users extends CI_Controller{
          $this->load->view('template/footer');
 	}*/
 	public function dashbord($page='myreservation'){
-		 $this->load->view('template/header');
+		$this->load->view('template/header');
 		$this->load->view('Customer/dashbord');
 		$this->load->view('Customer/'.$page);
 		$this->load->view('template/footer');

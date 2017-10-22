@@ -40,13 +40,18 @@
 		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required></br>
 		<label>Number of seats</label>
 		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required></br>
-		<label>Other details</label>
-		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
+		<label style="margin-right: 15px;">Transmission<br> Type Auto</label>
+		<label class="switch">
+  		<input type="checkbox" name="Transmission" id="checkboxtogal1" value="false">
+  		<span class="slider round"></span>
+		</label></br></br>
 		<label style="margin-right: 15px;">With driver only</label>
 		<label class="switch">
   		<input type="checkbox" name="withdriver" id="checkboxtogal" value="false">
   		<span class="slider round"></span>
 		</label></br></br>
+		<label>Other details</label>
+		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
 		<button type="button" class="btn btn-success btn-md" id="submitbtn">Register</button>
 		</div>
 		<input type="hidden" name="imageLink" id="imageLink" value="<?php echo $path?>">

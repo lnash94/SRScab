@@ -1,5 +1,6 @@
+
 <div style="margin-top: 100px;"></div>
-<div  class="container">
+<div  class="container" id="changing_space">
 
 		<ol class="breadcrumb">
 			<li><a href="index.html">Customer</a></li>
@@ -7,6 +8,7 @@
 		</ol>
 		<header class="page-header" id="pheader">
 					<h1 class="page-title">Reservation</h1>
+					
 		</header>
 			<div id="newreservationform" class="col-md-10 col-md-offset-1">
 				<div class="col-md-7">
@@ -37,12 +39,11 @@
 				</div><!-- div id -->
 		</div><!-- container -->
 <script>
-	$('#nextbtn').click(function(){
 		var location=$('#location').val();
 		var pickupdate=$('#pickupdate').val();
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
-
-		
-	}
+	$('#nextbtn').click(function(){
+			$("#changing_space").load("choose_vehicle #vehiclechoose_space");
+	});
 </script>

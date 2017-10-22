@@ -1,50 +1,56 @@
  <?php
 class  Users extends CI_Controller{
 //    create basic sing up
-    public function sing_up(){
-        $data['title']='Sign Up';
-        $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
-        $this->form_validation->set_rules('customer_password','Password','required|min_length[6]');
-        $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
+    public function sing_up()
+    {
 
-        if ($this->form_validation->run()=== FALSE){
-            $this->load->view('template/header');
-            $this->load->view('customer/sign_up', $data);
-            $this->load->view('template/footer');
-        }
+
         //check login
-        if (!$this->session->userdata('logged_in')){
-            if ($this->form_validation->run()=== FALSE){
-                $data['title']='Sign Up';
-                $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
-                $this->form_validation->set_rules('customer_password','Password','required|min_length[6]');
-                $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');}
-            else{
-            $this->load->view('template/header');
-            $this->load->view('customer/sign_up', $data);
-            $this->load->view('template/footer');
-//            insert basic data to database
-            $username=$this->input->post('customer_email');
-            //Encrypte password
-            $enc_password = md5($this->input->post('customer_password'));
-            $this->user_model->sing_up($enc_password);
+        if (!$this->session->userdata('logged_in')) {
+            $data['title'] = 'Sign Up';
+            $this->form_validation->set_rules('customer_email', 'Email', 'required|callback_check_email_exists');
+            $this->form_validation->set_rules('customer_password', 'Password', 'required|min_length[6]');
+            $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
 
-            //set message
-            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+            if ($this->form_validation->run() === FALSE) {
+                $this->load->view('template/header');
+                $this->load->view('customer/sign_up', $data);
+                $this->load->view('template/footer');
+            } else {
+//                insert basic data to database
+                $username = $this->input->post('customer_email');
+                //Encrypte password
+                $enc_password = md5($this->input->post('customer_password'));
+                $this->user_model->sing_up($enc_password);
+
+                //set message
+                $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
 //            $this->user_model->login($username,$enc_password);
-            redirect('users/dashbord');}
-        }else{
-            $customer_id =$this->session->userdata('user_id');
-            $username=$this->input->post('customer_email');
-            //Encrypte password
-            $enc_password = md5($this->input->post('customer_password'));
-            $this->user_model->sing_up_update($customer_id,$enc_password);
-            redirect('users/dashbord');
+                redirect('users/dashbord');
+            }
+        } else {
+            $data['title'] = 'Change password';
+            $this->form_validation->set_rules('customer_email', 'Email', 'required');
+            $this->form_validation->set_rules('customer_password', 'Password', 'required|min_length[6]');
+            $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
 
+            if ($this->form_validation->run() === FALSE) {
+                $this->load->view('template/header');
+                $this->load->view('customer/changepassword', $data);
+                $this->load->view('template/footer');
+            } else {
+//
+                $customer_id = $this->session->userdata('user_id');
+                $username = $this->input->post('customer_email');
+                //Encrypte password
+                $enc_password = md5($this->input->post('customer_password'));
+                $this->user_model->sing_up_update($customer_id, $enc_password);
+                redirect('users/dashbord');
+
+            }
         }
     }
-
 
     public function login()
     {
@@ -54,7 +60,7 @@ class  Users extends CI_Controller{
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
-            $this->load->view('customer/login', $data);
+            $this->load->view('pages/home', $data);
             $this->load->view('template/footer');
         }
         else {

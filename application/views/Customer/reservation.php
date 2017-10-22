@@ -81,8 +81,8 @@
 						else{
 						
 						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
-							alert(($('.home').scrollTop()));
-							//$('body').scrollTop(0);
+							//alert(($('.home').scrollTop()));
+							window.scrollTo(0,0);
 						}
 					}
 			});

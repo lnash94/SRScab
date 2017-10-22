@@ -16,7 +16,7 @@
 				
 					<label>Pick-up Location :</label>
 					
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.61041766155!2d79.861315!3d6.90225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2db2c18a68712863!2sUniversity+of+Colombo+School+of+Computing+(UCSC)!5e0!3m2!1sen!2slk!4v1508653282987" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.61041766155!2d79.861315!3d6.90225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2db2c18a68712863!2sUniversity+of+Colombo+School+of+Computing+(UCSC)!5e0!3m2!1sen!2slk!4v1508653282987" width="600" height="300" frameborder="0" style="border:0" id="location" allowfullscreen></iframe>
 
 					<br></br>
 					<table>
@@ -66,7 +66,29 @@
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
 
-			<?php echo base_url('Reservation/reservecar')?>;
+			$.ajax({
+				type:'post',
+				data:{'location':location,'pickupdate':pickupdate,'dropoffdate':dropoffdate,'Nopassengers':passengers},
+				url:'<?php echo base_url('Reservation/reservecar')?>',
+				success:function(data){
+						if($('#alert')!=null){
+							$('#alert').remove();
+						}
+						if(data=="success"){
+							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>Please Next Page</div>").insertAfter('#pheader');
+
+							('#location').val()="";
+							
+							('#pickupdate').val()="";
+							('#dropoffdate').val()="";
+							('#passengers').val()="";
+					}
+						else{
+						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+						}
+					}
+			});
 			$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");
+			
 	});
 </script>

@@ -44,6 +44,6 @@
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
 	$('#nextbtn').click(function(){
-			$("#changing_space").load("choose_vehicle #vehiclechoose_space");
+			$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");
 	});
 </script>

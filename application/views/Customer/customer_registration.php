@@ -7,15 +7,15 @@
 <<<<<<< HEAD
 
  */?>
-
-<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="container">
+<div style="margin-top: 100px;"></div>
+<div class="col-md-8 col-md-offset-3">
+<!--    <div class="alert alert-danger">--><?php //echo validation_errors();?><!--</div>-->
 
         <form class="well form-horizontal" action="<?php echo base_url()?>/users/register " method="post"  id="reg_form">
             <fieldset>
 
                 <!-- Form Name -->
-                <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+                <legend id="cid"><center><h2><b>Registration Form</b></h2></center></legend><br>
 
                 <div class="form-group">
                     <label class="col-md-4 control-label">Customer id</label>
@@ -36,7 +36,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  name="customer_fname" placeholder="First Name" class="form-control"  type="text">
+                            <input  name="customer_fname" placeholder="First Name" class="form-control"  type="text" value="<?php echo $customer['customer_fname'];?>">
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="customer_lname" placeholder="Last Name" class="form-control"  type="text">
+                            <input name="customer_lname" placeholder="Last Name" class="form-control"  type="text" value="<?php echo $customer['customer_lname'];?>">
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="customer_nic" placeholder="nic" class="form-control" type="text">
+                            <input name="customer_nic" placeholder="nic" class="form-control" type="text" value="<?php echo $customer['customer_nic'];?>">
                         </div>
                     </div>
                 </div>
@@ -84,12 +84,12 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="customer_contact_no" placeholder="(0710000)" class="form-control" type="text">
+                            <input name="customer_contact_no" placeholder="(0710000)" class="form-control" type="text" value="<?php echo $customer['customer_contacte_number'];?>">
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="col-md-4 control-label" >Address</label>
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-
+-->
                 <!-- Select Basic -->
 
                 <!-- Success message -->
@@ -108,12 +108,59 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4"><br>
-                        <button type="submit" id="sub" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+                        <button id="sub" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
                     </div>
                 </div>
 
             </fieldset>
         </form>
     </div>
-</div><!-- /.container -->
 </div>
+
+<script>
+    $('#sub').click(function()){
+        var customer_id=$('#customer_id').val();
+        var customer_fname=$('#customer_fname').val();
+        var customer_lname=$('#customer_lname').val();
+        var customer_nic=$('#customer_nic').val();
+        var customer_email=$('#customer_email').val();
+        var customer_contact_no=$('#customer_contact_no').val();
+
+        $.ajax({
+            type:'post',
+            data:{'customer_id':customer_id,'customer_fname':customer_fname,'customer_lname':customer_lname,'customer_nic':customer_nic,'customer_email':customer_email,'customer_contact_no':customer_contact_no},
+            url:'<?php echo base_url('users/edit')?>',
+            success:function(data){
+                if($('#alert')!=null){
+                    $('#alert').remove();
+                }
+                if(data=="success"){
+                    $("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>your details successfully updated</div>").insertAfter('#cid');
+
+                }
+                else{
+                    $("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#cid');
+
+                }
+            }
+
+        })
+
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

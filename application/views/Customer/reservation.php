@@ -39,11 +39,16 @@
 				</div><!-- div id -->
 		</div><!-- container -->
 <script>
+		var location;
+		var pickupdate;
+		var dropoffdate;
+		var passengers;	
+	$('#nextbtn').click(function(){
 		var location=$('#location').val();
 		var pickupdate=$('#pickupdate').val();
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
-	$('#nextbtn').click(function(){
+
 			$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");
 	});
 </script>

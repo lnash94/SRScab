@@ -11,7 +11,16 @@ class  Reservation extends CI_Controller{
             echo validation_errors();
         }
         else{
-			echo 'success';
+            echo "success";
+            //$this->load->model('Reservation_model');
+            //if($this->Reservation_model->reserve_car()){
+            
+      //}
+    }
+        //else{
+
+			
+
 //            Insert reservation First step details to database
            // $location=$this->input->post('location');
            // $pickupdate=$this->input->post('pickupdate');

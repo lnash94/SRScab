@@ -124,6 +124,8 @@
                     <ul class="dropdown-menu">
                        <li><a href="<?php echo base_url();?>users/dashbord"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashbord</a></li>
                         <li><a href="<?php echo base_url();?>/users/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit profile</a></li>
+                        <li><a href="<?php echo base_url();?>/users/changepassword"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Security</a></li>
+
                         <li><a class="nav-link" id="logoutBtn"  href="<?php echo base_url()?>/users/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
                         </li>
                          </ul>

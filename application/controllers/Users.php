@@ -12,7 +12,17 @@ class  Users extends CI_Controller{
             $this->load->view('customer/sign_up', $data);
             $this->load->view('template/footer');
         }
-        else{
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            if ($this->form_validation->run()=== FALSE){
+                $data['title']='Sign Up';
+                $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
+                $this->form_validation->set_rules('customer_password','Password','required|min_length[6]');
+                $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');}
+            else{
+            $this->load->view('template/header');
+            $this->load->view('customer/sign_up', $data);
+            $this->load->view('template/footer');
 //            insert basic data to database
             $username=$this->input->post('customer_email');
             //Encrypte password
@@ -23,7 +33,14 @@ class  Users extends CI_Controller{
             $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
 //            $this->user_model->login($username,$enc_password);
-            redirect('users/sing_up');
+            redirect('users/dashbord');}
+        }else{
+            $customer_id =$this->session->userdata('user_id');
+            $username=$this->input->post('customer_email');
+            //Encrypte password
+            $enc_password = md5($this->input->post('customer_password'));
+            $this->user_model->sing_up_update($customer_id,$enc_password);
+            redirect('users/dashbord');
 
         }
     }
@@ -189,4 +206,21 @@ class  Users extends CI_Controller{
 
  }*/
 
+//  change username password
+public function changepassword(){
+    //check login
+    if (!$this->session->userdata('logged_in')){
+        redirect('pages/home');
+    }
+    $this->load->view('template/header');
+    $this->load->view('Customer/changepassword');
+    $this->load->view('template/footer');
+}
+//change username password
+ public function change(){
+     $this->form_validation->set_rules('customer_email','Email','required|callback_check_email_exists');
+     $this->form_validation->set_rules('customer_password','Password','required|min_length[6]');
+     $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
+
+ }
 }

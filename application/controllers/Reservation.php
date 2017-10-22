@@ -10,6 +10,12 @@ class  Users extends CI_Controller{
 		if ($this->form_validation->run()=== FALSE){
             echo validation_errors();
         }
+        else{
+            $this->load->model('Reservation_model');
+            if($this->Reservation_model->reserve_car()){
+            echo "success";
+      }
+    }
         //else{
 
 //            Insert reservation First step details to database

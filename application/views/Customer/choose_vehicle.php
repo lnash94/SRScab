@@ -21,7 +21,8 @@
 		</div>
 <script>
 $('#nextpagebtn').click(function(){
-		$("#changing_space").load("paymentdetails.php #payment_space");
+	alert ("This is a warning message!");
+		//$("#changing_space").load("paymentdetails.php #payment_space");
 	});
 $('#backpagebtn').click(function(){
 		$("#vehiclechoose_space").load("reservation.php #changing_space");

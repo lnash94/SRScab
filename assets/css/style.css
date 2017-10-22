@@ -203,3 +203,18 @@ font-size: 24px;
 {
     margin-bottom: 30px;
 }
+.gallery_product .btn1{
+	position: absolute;
+	margin-left: 30px;
+	margin-top: 100px;
+	width: 80px;
+	display: none;
+	
+}
+.gallery_product .btn2{
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 100px;
+	display: none;
+	
+}

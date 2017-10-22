@@ -35,10 +35,24 @@
 	color: aliceblue;
 	text-decoration: none;
 }
+
+.linker1{
+	 width:350px;
+   height: 220px;
+	 position:absolute;
+	text-decoration: none;
+	
+}
+.linker1 .d{
+	display: none;
+	margin-top: 90px;
+}
+
 #newvehicleform{
 	background-color: #F3F3F3;
 	padding: 15px;
 }
+
 
 #newreservationform{
   background-color: #F3F3F3;
@@ -120,4 +134,16 @@ input:checked + .slider:before {
 .h1 small {
 font-size: 24px;
 }
+.vehicletumb{
+	height: 300px;
+}
+.vehicletumb img{
+	height: 220px;
+	width: 100%;
+}
 
+.details{
+	height: 80px;
+	padding: 10px;
+	background-color: antiquewhite;
+}

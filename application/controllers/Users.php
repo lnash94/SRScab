@@ -141,17 +141,16 @@ class  Users extends CI_Controller{
         $this->form_validation->set_rules('customer_nic','Nic','required');
         $this->form_validation->set_rules('customer_email','Email','required');
         $this->form_validation->set_rules('customer_contact_no','Contact','required');
-        $this->form_validation->set_rules('customer_address','Address','required');
-        if ($this->form_validation->run()=== FALSE){
-            $this->load->view('template/header');
-            $this->load->view('customer/customer_registration',$data);
-            $this->load->view('template/footer');
+        //$this->form_validation->set_rules('customer_address','Address','required');
+        if($this->form_validation->run()==FALSE){
+            echo validation_errors();
         }
-        else{
+        else {
             $this->user_model->register($customer_id);
+            echo "success";
             redirect('users/dashbord');
-
         }
+
 
     }
 	/*//controler to test user logedin header

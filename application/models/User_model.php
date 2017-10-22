@@ -58,8 +58,7 @@ class User_model extends CI_Model{
     }
 //
     public function get_customer($customer_id){
-        $this->db->where('customer_id',$customer_id);
-        $result = $this->db->get('customer1');
+        $result = $this->db->get_where('customer1',array('customer_id'=>$customer_id));
         return $result->row_array();
     }
 //    insert customer details to database

@@ -1,5 +1,5 @@
 <?php
-class  Users extends CI_Controller{
+class  Reservation extends CI_Controller{
 	public function reservecar(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('location','Location','required');
@@ -10,8 +10,8 @@ class  Users extends CI_Controller{
 		if ($this->form_validation->run()=== FALSE){
             echo validation_errors();
         }
-        //else{
-
+        else{
+			echo 'success';
 //            Insert reservation First step details to database
            // $location=$this->input->post('location');
            // $pickupdate=$this->input->post('pickupdate');
@@ -19,7 +19,7 @@ class  Users extends CI_Controller{
            // $passengers=$this->input->post('passengers');
             
             //$this->Reservation_model->reserve_car($location,$pickupdate,$dropoffdate,$passengers);
-        //}
+        }
 
 	}
 

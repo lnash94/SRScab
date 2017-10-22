@@ -9,7 +9,7 @@
 		<header class="page-header" id="pheader">
 					<h1 class="page-title">Reservation</h1>
 					 
-		</head>
+		</header>
 			<div id="newreservationform" class="col-md-10 col-md-offset-1">
 			<?php echo form_open('Reservation/reservecar')?>
 				<div class="col-md-7">
@@ -71,24 +71,22 @@
 				data:{'location':location,'pickupdate':pickupdate,'dropoffdate':dropoffdate,'Nopassengers':passengers},
 				url:'<?php echo base_url('Reservation/reservecar')?>',
 				success:function(data){
+					
 						if($('#alert')!=null){
 							$('#alert').remove();
 						}
 						if(data=="success"){
-							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>Please Next Page</div>").insertAfter('#pheader');
-
-							('#location').val()="";
-							
-							('#pickupdate').val()="";
-							('#dropoffdate').val()="";
-							('#passengers').val()="";
+						$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");	
 					}
 						else{
+						
 						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+							alert(($('.home').scrollTop()));
+							//$('body').scrollTop(0);
 						}
 					}
 			});
-			$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");
+		
 			
 	});
 </script>

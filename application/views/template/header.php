@@ -134,7 +134,7 @@
         </div><!--/.nav-collapse -->
     </div>
 </div>
-<div class="content-wrapper">
+<div class="content-wrapper" id="pagebody">
     <?php  if ($this->session->flashdata('user_registered')):?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
     <?php endif; ?>

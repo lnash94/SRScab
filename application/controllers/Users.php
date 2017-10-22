@@ -135,7 +135,7 @@ class  Users extends CI_Controller{
         }
         $data['title']='edit profile';
 
-        $customer_id=$this->session->userdata('user_id');
+        $customer_id=$this->input->post('customer_id');
         $this->form_validation->set_rules('customer_fname','First Name','required');
         $this->form_validation->set_rules('customer_lname','Last Name','required');
         $this->form_validation->set_rules('customer_nic','Nic','required');
@@ -149,6 +149,7 @@ class  Users extends CI_Controller{
         }
         else{
             $this->user_model->register($customer_id);
+            redirect('users/dashbord');
 
         }
 

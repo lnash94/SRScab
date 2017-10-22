@@ -45,7 +45,22 @@ class User_model extends CI_Model{
         );
         return $this->db->insert('customer1',$data2);
     }
+//update username password
+    public function sing_up_update($customer_id,$enc_password){
+        $this->db->where('customer_id',$customer_id);
 
+        $email=$this->input->post('customer_email');
+        //user data array
+        $data = array(
+
+            'customer_email' => $email,
+            'customer_password' => $enc_password
+
+        );
+        $this->db->update('customer_credintial', $data);
+
+
+    }
     //check email exist
     public function check_email_exists($customer_email)
     {

@@ -13,7 +13,7 @@
     <legend>
         <?= $title; ?>
     </legend>
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-2" style="background-image: <?php echo base_url('assets/images/with_drive.jpg')?>;">
     <form data-toggle="validator" role="form" method="post"action="<?php echo base_url()?>/users/sing_up">
         <div class="form-group">
             <label for="inputEmail" class="control-label">Email</label>
@@ -28,7 +28,7 @@
                     <div class="help-block">Minimum of 6 characters</div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                    <input type="password" class="form-control" name="customer_password2" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
                     <div class="help-block with-errors"></div>
                 </div>
             </div>

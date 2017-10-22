@@ -56,10 +56,10 @@
                 </div>
                  <div class="form-group has-feedback">
                     <label>Password <span class="text-danger">*</span></label>
-                </div>
-                    <input type="password" class="form-control" name="password" required>
+                     <input type="password" class="form-control" name="password" placeholder="Password" required>
                   <br>
                   <br>
+                 </div>
                   <p><button type="submit" class="btn btn-md btn-primary">Sign in</button>
                <a  style="color: black;font-style: italic;font-weight:500" href="<?php echo base_url();?>users/logedin">Forgot Password?</a>
               </p>
@@ -124,6 +124,8 @@
                     <ul class="dropdown-menu">
                        <li><a href="<?php echo base_url();?>users/dashbord"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashbord</a></li>
                         <li><a href="<?php echo base_url();?>/users/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit profile</a></li>
+                        <li><a href="<?php echo base_url();?>/users/changepassword"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Security</a></li>
+
                         <li><a class="nav-link" id="logoutBtn"  href="<?php echo base_url()?>/users/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
                         </li>
                          </ul>

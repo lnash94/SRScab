@@ -11,3 +11,24 @@
 </nav>
 	
 </div>
+
+<!--<style>
+    @media screen and (max-width: 767px) {
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+        .row.content {height:auto;}
+</style>
+        <div class="col-sm-8 text-left">
+            <legend><h3><strong>sumudu</strong></h3></legend>
+            <label>sumudu hansani</label>
+            <br>
+            <label>sumudu@gmail.com</label>
+            <br>
+            <label>0711232123</label>
+            <hr>
+            <legend><h3><stron>previous ride</stron></h3></legend>
+            <p>ride</p>
+        </div>
+-->

@@ -1,10 +1,7 @@
 <?php
 
 class Reservation_model extends CI_Model{
-	public function __construct()
-    {
-        $this->load->database();
-    }
+	
     public function reserve_car($location,$pickupdate,$dropoffdate,$passengers){
     	$reservation_data =array(
     		'location' => $location,
@@ -14,7 +11,8 @@ class Reservation_model extends CI_Model{
     			
     		);
     	//insert reservation details into database
-        return $this->db->insert('reservation', $reservation_data);
+        $insertdata= $this->db->insert('reservation', $reservation_data);
+        return $insertdata;
 
     }
 }

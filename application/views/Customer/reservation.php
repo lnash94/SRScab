@@ -8,14 +8,17 @@
 		</ol>
 		<header class="page-header" id="pheader">
 					<h1 class="page-title">Reservation</h1>
-					
-		</header>
+					 
+		</head>
 			<div id="newreservationform" class="col-md-10 col-md-offset-1">
+			<?php echo form_open('Reservation/reservecar')?>
 				<div class="col-md-7">
 				
 					<label>Pick-up Location :</label>
-					<input type="text" class="form-control" name="location" id="location" placeholder="city,airport,station,region..." required></br>
+					
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.61041766155!2d79.861315!3d6.90225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2db2c18a68712863!2sUniversity+of+Colombo+School+of+Computing+(UCSC)!5e0!3m2!1sen!2slk!4v1508653282987" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 
+					<br></br>
 					<table>
 					<tr>
 					<td>
@@ -31,8 +34,22 @@
 
 
 					<label>No of Passengers :</label>
-					<input type="text" class="form-control" name="passengers" id="passengers" placeholder="No-of-passengers..." required></br>
-					
+					<select class="form-control" name="passengers" id="passengers">
+							
+	                        <option value="2">2</option>
+	                        <option value="3">3</option>
+	                        <option value="4">4</option>
+	                        <option value="5">5</option>
+	                        <option value="6">6</option>
+	                        <option value="7">7</option>
+	                        <option value="8">8</option>
+	                        <option value="9">9</option>
+	                        <option value="10">10</option>
+	                        <option value="11">11</option>
+	                        <option value="12">12</option>
+	                        
+	                </select>
+					<br></br>
 					<button type="button" class="btn btn-success btn-md" id="nextbtn">Next</button>
 					
 					</div><!-- colmd7 -->
@@ -49,6 +66,7 @@
 		var dropoffdate=$('#dropoffdate').val();
 		var passengers=$('#passengers').val();
 
+			<?php echo base_url('Reservation/reservecar')?>;
 			$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");
 	});
 </script>

@@ -11,11 +11,11 @@ class  Reservation extends CI_Controller{
             echo validation_errors();
         }
         else{
-
-            $this->load->model('Reservation_model');
-            if($this->Reservation_model->reserve_car()){
             echo "success";
-      }
+            //$this->load->model('Reservation_model');
+            //if($this->Reservation_model->reserve_car()){
+            
+      //}
     }
         //else{
 

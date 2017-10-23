@@ -79,10 +79,16 @@
 						$("#changing_space").load("choose_vehicle.php #vehiclechoose_space");	
 					}
 						else{
+						    $("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+                            //alert(($('.home').scrollTop()));
+                            //$('body').scrollTop(0);
+                            window.scrollTo(0,0);
+
+
 						
-						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+						//$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
 							//alert(($('.home').scrollTop()));
-							window.scrollTo(0,0);
+							
 						}
 					}
 			});

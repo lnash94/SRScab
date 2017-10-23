@@ -9,7 +9,8 @@
     <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
     <title>SRScabs</title>
-
+	 <!-- JQuery -->
+	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>
     <link rel="shortcut icon" href="<?php echo base_url();?>/assets/images/gt_favicon.png">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-theme.css" media="screen" >
     <!-- JQuery -->

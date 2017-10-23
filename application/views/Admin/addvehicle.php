@@ -117,11 +117,11 @@
 						if(data=="success"){
 							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>New Vehicle Successfully added to the system</div>").insertAfter('#pheader');
 							
-							$('#licenno').val()="";
+							$('#licenno').val("");
 							
-							$('#vmodel').val()="";
-							$('#seats').val()="";
-							$('#details').val()="";
+							$('#vmodel').val("");
+							$('#seats').val("");
+							$('#details').val("");
 							window.scrollTo(0,0);
 							//('#imageLink').val();
 						}

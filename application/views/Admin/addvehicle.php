@@ -122,6 +122,7 @@
 							$('#vmodel').val()="";
 							$('#seats').val()="";
 							$('#details').val()="";
+							window.scrollTo(0,0);
 							//('#imageLink').val();
 						}
 						else{

@@ -87,7 +87,7 @@ class User_model extends CI_Model{
             'customer_nic'=>$this->input->post('customer_nic'),
             'customer_contacte_number'=>$this->input->post('customer_contact_no')
         );
-        return $this->db->update('customer1',$data);
+        $this->db->update('customer1',$data);
 
     }
 

@@ -2,10 +2,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div style="margin-top: 95px;" ></div>
+<header id="cid">
+
+</header>
 <div class="col-md-8 col-md-offset-3">
     
 
-        <form class="well form-horizontal"  method="post"  id="reg_form">
+        <form class="well form-horizontal" action="<?php echo base_url()?>/users/register" method="post"  id="reg_form">
             <fieldset>
 
                 <!-- Form Name -->
@@ -16,7 +19,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  name="customer_id" placeholder="First Name" class="form-control"  type="text" value="<?php echo $this->session->userdata('user_id');?>" disabled>
+                            <input  name="customer_id" placeholder="First Name" class="form-control"  type="text" value="<?php echo $this->session->userdata('user_id');?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -112,7 +115,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4"><br>
-                        <button id="sub" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+                        <button id="sub"  type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
                     </div>
                 </div>
 

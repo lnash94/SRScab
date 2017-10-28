@@ -13,6 +13,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade " id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog model-lg">
         <div class="modal-content">
@@ -74,68 +75,30 @@
         </div>
     </div>
 </div>
-<div style="height: 100%;">
+			
+<div style="height: 100%; width: 100%">
 <div class=" container col-md-2"  style="background-color: white;">
 	
        <input type="text" class="form-control" placeholder="Search.." style="margin-bottom: 30px;">
        
             <button class="btn btn-default filter-button" data-filter="all" style="width: 100%">All</button>
-            <button class="btn btn-default filter-button" data-filter="hdpe" style="width: 100%">Luxury Bars</button>
-            <button class="btn btn-default filter-button" data-filter="sprinkle" style="width: 100%">Genaral Cars</button>
-            <button class="btn btn-default filter-button" data-filter="spray" style="width: 100%">Bus,van4WD,SUV</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation" style="width: 100%">Classic And Vintage</button>
+            <button class="btn btn-default filter-button" data-filter="Luxury" style="width: 100%">Luxury Bars</button>
+            <button class="btn btn-default filter-button" data-filter="Genaral" style="width: 100%">Genaral Cars</button>
+            <button class="btn btn-default filter-button" data-filter="4wd" style="width: 100%">Bus,van4WD,SUV</button>
+            <button class="btn btn-default filter-button" data-filter="Classic" style="width: 100%">Classic And Vintage</button>
         
 </div>
 <div class="container col-md-10" style="background-color: white;">	
-		 <div class="container">
-        <div class="row">
-  
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
-               <button class="btn btn-success btn-lg btn1" data-toggle="modal" data-target="#edit">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2" data-toggle="modal" data-target="#confirm-delete">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding.jpg" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter sprinkle">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter irrigation">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter spray">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter irrigation">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter spray">
-               <button class="btn btn-success btn-lg btn1">Edit</button>
-               <button class="btn btn-danger  btn-lg btn2">Delete</button>
-                <img src="<?php echo base_url()?>assets/images/wedding" class="img-responsive">
-			</div>
-        </div>
-    </div>
-</section>
-
-		
+		        
+       <?php
+	foreach($vehicles as  $vehicle){
+		 echo "<div class=\"gallery_product well col-lg-3 col-md-3 col-sm-3 col-xs-6 filter ".$vehicle['type']."\">
+               <button class=\"btn btn-success btn-lg btn1\" data-toggle=\"modal\" data-target=\"#edit\" value=\"".$vehicle['L_No']."\">Edit</button>
+               <button class=\"btn btn-danger  btn-lg btn2\" data-toggle=\"modal\" data-target=\"#confirm-delete\" value=\"".$vehicle['L_No']."\">Delete</button>
+                <img src=\"".base_url()."assets/images/vehicles/".$vehicle['imageLink']."\" class=\"port-image img-rounded\">
+			</div>";
+	}
+       ?>
 </div>
 </div>	
 <script>	

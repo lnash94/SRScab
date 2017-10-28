@@ -1,19 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: PC
- * Date: 9/12/2017
- * Time: 8:28 PM
-<<<<<<< HEAD
 
- */?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div style="margin-top: 95px;" ></div>
 <div class="col-md-8 col-md-offset-3">
-    <div class="alert alert-danger" id="cid"><?php echo validation_errors();?></div>
+    
 
-        <form class="well form-horizontal" action="<?php echo base_url()?>/users/register " method="post"  id="reg_form">
+        <form class="well form-horizontal"  method="post"  id="reg_form">
             <fieldset>
 
                 <!-- Form Name -->
@@ -127,10 +119,10 @@
             </fieldset>
         </form>
     </div>
-</div>
+
 
 <script>
-    $('#sub').click(function()){
+    $('#sub').click(function(){
         var customer_id=$('#customer_id').val();
         var customer_fname=$('#customer_fname').val();
         var customer_lname=$('#customer_lname').val();
@@ -141,7 +133,7 @@
         $.ajax({
             type:'post',
             data:{'customer_id':customer_id,'customer_fname':customer_fname,'customer_lname':customer_lname,'customer_nic':customer_nic,'customer_email':customer_email,'customer_contact_no':customer_contact_no},
-            url:'<?php echo base_url('users/edit')?>',
+            url:'<?php echo base_url('users/register')?>',
             success:function(data){
                 if($('#alert')!=null){
                     $('#alert').remove();
@@ -156,23 +148,9 @@
                 }
             }
 
-        })
+        });
 
-    }
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    });
+ </script>
 
 

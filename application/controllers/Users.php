@@ -183,7 +183,7 @@ class  Users extends CI_Controller{
         else {
             $this->user_model->register($customer_id);
             echo "success";
-            redirect('users/dashbord');
+            //redirect('users/dashbord');
         }
 
 

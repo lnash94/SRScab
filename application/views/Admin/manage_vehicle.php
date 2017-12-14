@@ -92,9 +92,9 @@
 		        
        <?php
 	foreach($vehicles as  $vehicle){
-		 echo "<div class=\"gallery_product well col-lg-3 col-md-3 col-sm-3 col-xs-6 filter ".$vehicle['type']."\">
-               <button class=\"btn btn-success btn-lg btn1\" data-toggle=\"modal\" data-target=\"#edit\" value=\"".$vehicle['L_No']."\">Edit</button>
-               <button class=\"btn btn-danger  btn-lg btn2\" data-toggle=\"modal\" data-target=\"#confirm-delete\" value=\"".$vehicle['L_No']."\">Delete</button>
+		 echo "<div class=\"gallery_product well col-lg-3 col-md-3 col-sm-3 col-xs-6 filter ".$vehicle['type']."\" id=\"".json_encode($vehicle)."\">
+               <button class=\"btn btn-success editbtn btn-lg btn1\" value=\"".$vehicle['L_No']."\">Edit</button>
+               <button class=\"btn btn-danger deletebtn btn-lg btn2\" value=\"".$vehicle['L_No']."\">Delete</button>
                 <img src=\"".base_url()."assets/images/vehicles/".$vehicle['imageLink']."\" class=\"port-image img-rounded\">
 			</div>";
 	}
@@ -137,4 +137,10 @@ $('.gallery_product').hover(function(){
 	this.getElementsByTagName('button')[1].style.display='none';
 	
 });
+$('.editbtn').click(function(){
+		var vehicledata=$(this).parent().attr('id');
+alert(vehicledata['type']);
+	/*	$("vtype select").val(vehicledata['type']);	
+		$("#edit").modal('show');*/
+});	
 	</script>

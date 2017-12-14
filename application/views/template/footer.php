@@ -127,6 +127,14 @@
 <script src="<?php echo base_url();?>/assets/js/headroom.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/jQuery.headroom.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/template.js"></script>
+<!--bootstrap confirmation box library-->
+<script src="<?php echo base_url();?>/assets/js/bootstrap-confirmation.min.js"></script>	
+<script src="<?php echo base_url();?>/assets/js/confirmation.js?v=2"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 </body>
 </html>
 

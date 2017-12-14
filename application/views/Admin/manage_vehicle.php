@@ -1,20 +1,5 @@
 <div style="margin-top: 100px;"></div>
-<div class="modal fade " id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            
-            <div class="modal-body">
-                Are You Sure You Want to delete This vehicle
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade " id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog model-lg">
         <div class="modal-content">
             
@@ -92,11 +77,33 @@
 		        
        <?php
 	foreach($vehicles as  $vehicle){
-		 echo "<div class=\"gallery_product well col-lg-3 col-md-3 col-sm-3 col-xs-6 filter ".$vehicle['type']."\" id=\"".json_encode($vehicle)."\">
-               <button class=\"btn btn-success editbtn btn-lg btn1\" value=\"".$vehicle['L_No']."\">Edit</button>
-               <button class=\"btn btn-danger deletebtn btn-lg btn2\" value=\"".$vehicle['L_No']."\">Delete</button>
-                <img src=\"".base_url()."assets/images/vehicles/".$vehicle['imageLink']."\" class=\"port-image img-rounded\">
-			</div>";
+		 echo "<div class=\"gallery_product well col-lg-6 col-md-6 col-sm-6 col-xs-12 filter ".$vehicle['type']."\" id=\"".json_encode($vehicle)."\">
+              <div class=\"col-md-6 col-xs-6\"><img src=\"".base_url()."assets/images/vehicles/".$vehicle['imageLink']."\" class=\"port-image img-rounded\"></div>
+				<div class=\"col-xs-4\">
+				<h4><b>".$vehicle['brand']."-".$vehicle['model']."</b></h4>
+				<div>
+				<i class=\"fa fa-wheelchair\" aria-hidden=\"true\" style=\"font-size:19px;\"></i>
+				</div>
+				<div><img src=\"".base_url()."assets/images/licence-plate.png\" style=\"width:25px;height:17px;\"></div>
+				<div><img src=\"".base_url()."assets/images/ac.png\" style=\"width:20px;height:25px;\"></div>
+				<div><img src=\"".base_url()."assets/images/car.png\" style=\"width:30px;height:25px;\"></div>
+				<div>
+				<i class=\"fa fa-user\" aria-hidden=\"true\" style=\"font-size:19px;\"></i>
+				</div>
+				
+				<div>
+				<img src=\"".base_url()."assets/images/rate.png\" style=\"width:20px;height:20px;\">
+				</div>
+				<div>
+				<i class=\"fa fa-plus-circle\" aria-hidden=\"true\" style=\"font-size:19px;\"></i>
+				</div>
+			</div>"; ?>
+			<div class="col-md-2" style="padding-top: 55px;">
+			<button class="btn btn-default btn-sm" class="deletebtn" style="width: 70px;">Delete</button>
+			<button class="btn btn-default btn-sm" class="editbtn" style="width: 70px; margin-top: 20px;" >Edit</button>
+			</div>
+				
+	<?php		echo"</div>";
 	}
        ?>
 </div>
@@ -104,7 +111,7 @@
 <script>	
 
 
-    $(".filter-button").click(function(){
+ $(".filter-button").click(function(){
         var value = $(this).attr('data-filter');
         
         if(value == "all")
@@ -122,21 +129,11 @@
         }
     });
     
-    if ($(".filter-button").removeClass("active")) {
+if ($(".filter-button").removeClass("active")) {
 $(this).removeClass("active");
 }
 $(this).addClass("active");
 
-$('.gallery_product').hover(function(){
-	this.getElementsByTagName('button')[0].style.display='inline';
-	this.getElementsByTagName('button')[1].style.display='inline';
-	
-});
-	$('.gallery_product').mouseleave(function(){
-	this.getElementsByTagName('button')[0].style.display='none';
-	this.getElementsByTagName('button')[1].style.display='none';
-	
-});
 $('.editbtn').click(function(){
 		var vehicledata=$(this).parent().attr('id');
 alert(vehicledata['type']);

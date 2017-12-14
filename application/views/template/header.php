@@ -7,7 +7,7 @@
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-
+	
     <title>SRScabs</title>
 	 <!-- JQuery -->
 	<script src="<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js"></script>

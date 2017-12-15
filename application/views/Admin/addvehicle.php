@@ -47,7 +47,7 @@
 		</label>
 		<label style="margin-right: 15px; margin-left: 80px;">With driver only</label>
 		<label class="switch">
-  		<input type="checkbox" name="withdriver" id="checkboxtogal" value="false">
+  		<input type="checkbox" name="withdriver" id="checkboxtogal" value="Without driver">
   		<span class="slider round"></span>
 		</label></br></br>
 		<label>Rate per Day(80km)</label>
@@ -76,10 +76,10 @@
 		
 		if(this.checked){
 			
-			document.getElementById("checkboxtogal").value="True";
+			document.getElementById("checkboxtogal").value="With driver";
 		}
 		else{
-			document.getElementById("checkboxtogal").value="False";
+			document.getElementById("checkboxtogal").value="Without driver";
 		}
 	});
 	$('#ttype').on('change',function(){

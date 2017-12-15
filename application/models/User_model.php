@@ -41,6 +41,7 @@ class User_model extends CI_Model{
             'customer_lname'=>$null,
             'customer_email'=>$email,
             'customer_nic'=>$null,
+            'customer_gender'=>$null,
             'customer_contacte_number'=>$null
         );
         return $this->db->insert('customer1',$data2);
@@ -85,10 +86,11 @@ class User_model extends CI_Model{
             'customer_lname'=>$this->input->post('customer_lname'),
             'customer_email'=>$this->input->post('customer_email'),
             'customer_nic'=>$this->input->post('customer_nic'),
+            'customer_gender'=>$this->input->post('customer_gender'),
             'customer_contacte_number'=>$this->input->post('customer_contact_no')
         );
-        $this->db->update('customer1',$data);
-
+        $query=$this->db->update('customer1',$data);
+        return $query;
     }
 
 

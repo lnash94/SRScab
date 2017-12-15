@@ -1,46 +1,81 @@
-<div class="col-md 12" style="text-align: center;">
-    <h2> <?= $title ?> </h2>
+<div style="margin-top: 100px;"></div>
+<div  class="container" id="changing_space">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">Customer</a></li>
+        <li class="active">My Reservation</li>
+    </ol>
+    <header class="page-header" id="pheader">
+        <h1 class="page-title">My Reservation</h1>
+
+    </header>
+    <div id="newreservationform" class="col-md-12">
+    <input  name="customer_id" placeholder="First Name" id="customer_id" class="form-control"  type="text" value="<?php echo $this->session->userdata('user_id');?>" readonly>
+    <table class="table table-hover table-responsive table-striped table-bordered" id="customer" style="padding-left: 140px;">
+        <thead class="thead-inverse">
+        <tr>
+            <th column-data-id="customer_rank">
+                Number
+            </th>
+            <th column-data-id="customer_pickup_location">
+                Pick up location
+            </th>
+            <th column-data-id="customer_start_date">
+                Start Date
+            </th>
+            <th column-data-id="customer_end_date">
+                End Date
+            </th>
+            <th column-data-id="customer_amount">
+                Amount
+            </th>
+        </tr>
+        </thead>
+        <tbody id="customer_reservation">
+        </tbody>
+    </table>
 </div>
-
-<div class="row detail" style="text-align: center;margin-left: 140px; ">
-    <div class="col-md-10 offset-1">
-        <table class="table table-hover table-responsive table-striped table-bordered">
-            <thead style="background-color: #365D67;">
-            <tr>
-                <th >
-                    Employee Name
-                </th>
-
-                <th>
-                    Employee NIC
-                </th>
-                <th>
-                    Occupation
-                </th>
-                <th>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($users as $user) : ?>
-                <tr>
-                    <td>
-                        <?php echo $user['employee_firstname'] ?>  <?php echo $user['employee_lastname'] ?>
-                    </td>
-
-                    <td>
-                        <?php echo $user['employee_NIC'] ?>
-                    </td>
-                    <td>
-                        <?php echo $user['employee_occupation'] ?>
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-            <?php endforeach;?>
-            </tbody>
-        </table>
-    </div>
 </div>
-</table>
+<script>
+    //gloable j is define to take reservation
+    var j=0;
+    $(document).ready(function(){
+        var customer_id=$('#customer_id').val();
+        $.ajax({
+            type:"post",
+            url:'<?php echo base_url()?>/reservation/get_last_reservation',
+            cache:false,
+            data:{'customer_id':customer_id},
+            success:function(data){
+                $('#customer_reservation').html("");
+                var obj = JSON.parse(data);
+                if (obj.length > 0) {
+                    try {
+                        var customer_data = '';
+                        $.each(obj, function (i, val) {
+                            window.j = window.j + 1;
+                            customer_data += '<tr>';
+                            customer_data += '<td>' + window.j + '</td>';
+                            customer_data += '<td>' + val.start_Date + '</td>';
+                            customer_data += '<td>' + val.end_Date + '</td>';
+                            customer_data += '<td>' + val.pickup_Location + '</td>';
+                            customer_data += '<td>' + val.amount + '</td>';
+                            customer_data += '</tr>';
+                        });
+                        //append data to table boady
+                        $('#customer_reservation').append(customer_data);
+                    } catch (e) {
+                        alert('Exception while request');
+                    }
+                }
+                else{
+                    $('#customer_reservation').html($('<div>').text("You have no reservation"));
+
+                }
+            },
+            error:function(){
+                alert('Error while request..');
+            }
+        });
+    });
+</script>

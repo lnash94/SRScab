@@ -30,6 +30,7 @@
 			<option value="Isuzu">Isuzu</option>
 			<option value="Jaguar">Jaguar</option>
 			<option value="KIA">KIA</option>
+			<option value="LandRover">LandRover</option>
 			<option value="micro">Micro</option>
 			<option value="Mitsubishi">Mitsubishi</option>
 			<option value="Mazda">Mazda</option>
@@ -42,7 +43,7 @@
 		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required></br>
 		<label style="margin-right: 15px;">Transmission Type Auto</label>
 		<label class="switch">
-  		<input type="checkbox" name="Transmission" id="ttype" value="false">
+  		<input type="checkbox" name="Transmission" id="ttype" value="Manual">
   		<span class="slider round"></span>
 		</label>
 		<label style="margin-right: 15px; margin-left: 80px;">With driver only</label>
@@ -86,10 +87,10 @@
 		
 		if(this.checked){
 			
-			document.getElementById("ttype").value="True";
+			document.getElementById("ttype").value="Auto";
 		}
 		else{
-			document.getElementById("ttype").value="False";
+			document.getElementById("ttype").value="Manual";
 		}
 	});
 	

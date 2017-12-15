@@ -8,7 +8,7 @@
 		<header class="page-header" id="pheader">
 					<h1 class="page-title">Edit Vehicle</h1>
 		</header>
-		<div id="newvehicleform" class="col-md-10 col-md-offset-1">
+		<div id="newvehicleform" class="col-md-10 col-md-offset-1" name="<?php echo($vehicle['L_No']); ?>">
 		<?php echo form_open('Addvehicle/add')?>
 		<div class="col-md-7">
 		<label>Select vehicle type</label>
@@ -19,6 +19,7 @@
 			<option value="Classic">Classic And Vintage</option>
 		</select></br>
 		<label>Licence plate number</label>
+		<!--loading relevent data to fields-->
 		<input type="text" class="form-control" name="licenno" id="licenno" placeholder="Licence number" required value="<?php echo($vehicle['L_No']); ?>"></br>
 		<label>Select vehicle Brand</label>
 		<select class="form-control" name="brand" id="brand">
@@ -31,6 +32,7 @@
 			<option value="Isuzu">Isuzu</option>
 			<option value="Jaguar">Jaguar</option>
 			<option value="KIA">KIA</option>
+			<option value="LandRover">LandRover</option>
 			<option value="micro">Micro</option>
 			<option value="Mitsubishi">Mitsubishi</option>
 			<option value="Mazda">Mazda</option>
@@ -43,7 +45,7 @@
 		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required value="<?php echo($vehicle['No_seats']); ?>"></br>
 		<label style="margin-right: 15px;">Transmission Type Auto</label>
 		<label class="switch">
-  		<input type="checkbox" name="Transmission" id="ttype" value="false">
+  		<input type="checkbox" name="Transmission" id="ttype" value="Manual">
   		<span class="slider round"></span>
 		</label>
 		<label style="margin-right: 15px; margin-left: 80px;">With driver only</label>
@@ -57,7 +59,7 @@
 		<input type="text" class="form-control" name="emc" id="emc" placeholder="Enter Excess mileage charge" required value="<?php echo($vehicle['excess_mileage']); ?>"></br>
 		<label>Other details</label>
 		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc." value="<?php echo($vehicle['details']); ?>"></br>
-		<button type="button" class="btn btn-success btn-md" id="submitbtn">Register</button>
+		<button type="button" class="btn btn-success btn-md" id="updatebtn">Save</button>
 		</div>
 		<input type="hidden" name="imageLink" id="imageLink" value="<?php echo $path?>">
 		</form>
@@ -72,3 +74,68 @@
 	
 	</div>	
 </div>
+<script>
+$(document).ready(function(){
+	//initialize dropdowns an togal buttons
+    $('#vtype').val('<?php echo($vehicle['type']); ?>');
+	$('#brand').val('<?php echo($vehicle['brand']); ?>');
+	if("<?php echo($vehicle['with_driver']); ?>"=="With driver"){
+		$('#checkboxtogal').prop('checked', true);
+	}
+	if("<?php echo($vehicle['transmission_type']); ?>"=="Auto"){
+		$('#ttype').prop('checked', true);
+	}
+});
+$('#checkboxtogal').on('change',function(){
+		if(this.checked){
+			
+			document.getElementById("checkboxtogal").value="With driver";
+		}
+		else{
+			document.getElementById("checkboxtogal").value="Without driver";
+		}
+	});
+$('#ttype').on('change',function(){
+		
+		if(this.checked){
+			
+			document.getElementById("ttype").value="Auto";
+		}
+		else{
+			document.getElementById("ttype").value="Manual";
+		}
+	});
+$('#updatebtn').click(function(){
+		var type=$('#vtype').val();
+		var licenno=$('#licenno').val();
+		var brand=$('#brand').val();
+		var vmodel=$('#vmodel').val();
+		var seats=$('#seats').val();
+		var ttype=$('#ttype').val();
+		var rpd=$('#rpd').val();
+		var emc=$('#emc').val();
+		var details=$('#details').val();
+		var withdriver=$('#checkboxtogal').val();
+		var imageLink=$('#imageLink').val();
+		var lodlicenno=$('#newvehicleform').attr('name');
+				$.ajax({
+					type:'post',
+					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'seats':seats, 'details':details,'withdriver':withdriver,'imageLink':imageLink,'ttype':ttype,'rpd':rpd,emc:emc,lodlicenno:lodlicenno},
+					url:'<?php echo base_url('editvehicles/edit')?>',
+					success:function(data){
+						if($('#alert')!=null){
+							$('#alert').remove();
+						}
+						if(data=="success"){
+							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>New Vehicle Successfully added to the system</div>").insertAfter('#pheader');
+							window.scrollTo(0,0);
+							
+						}
+						else{
+						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
+							window.scrollTo(0,0);
+						}
+					}
+				});
+						  });	
+</script>

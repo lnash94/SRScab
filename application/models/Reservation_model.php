@@ -22,4 +22,14 @@ class Reservation_model extends CI_Model{
         $result=$query->result();
         return $result;
     }
+    public function get_cancel_reservation($customer_id){
+        //        get current date to compare reservation end date days
+        $now = date('Y-m-d');
+        $this->db->select('*');
+        $this->db->where('start_Date >=',$now);
+        $this->db->where('Customer_customer_Id',$customer_id);
+        $query=$this->db->get('reservation');
+        $result=$query->result();
+        return $result;
+    }
 }

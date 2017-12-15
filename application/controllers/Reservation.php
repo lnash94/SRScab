@@ -58,6 +58,14 @@ class  Reservation extends CI_Controller{
             echo json_encode($fetch_data);
 
         }
+//        cancel reservation
+        public function cancel_reservation(){
+            $customer_id=$this->input->post('customer_id');
+            $fetch_data=$this->reservation_model->get_cancel_reservation($customer_id);
+            echo json_encode($fetch_data);
+
+
+        }
 
 
 	}

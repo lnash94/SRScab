@@ -30,7 +30,7 @@
                     Amount
                 </th>
                 <th column-data-id="customer_cancel_reservation">
-                    <button class="btn btn-default">cancel</button>
+
                 </th>
             </tr>
             </thead>
@@ -39,6 +39,9 @@
         </table>
     </div>
 </div>
+
+
+
 <script>
     //gloable j is define to take reservation
     var j=0;
@@ -63,6 +66,7 @@
                             customer_data += '<td>' + val.end_Date + '</td>';
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
+                            customer_data += '<td><button  type="button" class="btn btn-danger btn-sm cancel cancel_btn" name="cancel" data-id="'+val.reservation_No+ '" id=' + val.reservation_No + ' value="cancel"><i class="material-icons">Cancel</i></button></td>';
                             customer_data += '</tr>';
                         });
                         //append data to table boady
@@ -79,6 +83,12 @@
             error:function(){
                 alert('Error while request..');
             }
+
         });
+
+
+
     });
 </script>
+
+<!--<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" >Delete</button>-->

@@ -15,4 +15,11 @@ class Reservation_model extends CI_Model{
         return $insertdata;
 
     }
+    public function get_myreservation($customer_id){
+        $this->db->select('*');
+        $this->db->where('Customer_customer_Id',$customer_id);
+        $query=$this->db->get('reservation');
+        $result=$query->result();
+        return $result;
+    }
 }

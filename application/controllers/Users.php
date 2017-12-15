@@ -102,10 +102,17 @@ class  Users extends CI_Controller{
 			$this->load->view('Admin/dashbord');
 			$this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
 		}
-		else{
-		$this->load->view('Admin/dashbord');
-		$this->load->view('Admin/'.$page);
+		else if($page=="manage_vehicle"){
+			$this->load->model('manage_vehicle');
+			$vehicles['vehicles']=$this->manage_vehicle->get_vehicle();
+			$this->load->view('Admin/dashbord');
+			$this->load->view('Admin/'.$page,$vehicles);
 		
+		}
+		else{
+			
+			$this->load->view('Admin/dashbord');
+			$this->load->view('Admin/'.$page);
 		}
 		$this->load->view('template/header');
 		$this->load->view('template/footer');

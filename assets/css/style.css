@@ -152,22 +152,6 @@ font-size: 24px;
 	font-size: 20px;
 }
 
-.gallery-title
-{
-    font-size: 36px;
-    color: #42B32F;
-    text-align: center;
-    font-weight: 500;
-    margin-bottom: 70px;
-}
-.gallery-title:after {
-    content: "";
-    position: absolute;
-    width: 7.5%;
-    left: 46.5%;
-    height: 45px;
-    border-bottom: 1px solid #5e5e5e;
-}
 .filter-button
 {
     font-size: 18px;
@@ -195,26 +179,13 @@ font-size: 24px;
 }
 
 .port-image
-{
-    width: 100%;
+{	vertical-align: middle;
+	height:100%;
+    width:100%;
 }
 
 .gallery_product
-{
+{	height: 230px;
+	line-height: 230px;
     margin-bottom: 30px;
-}
-.gallery_product .btn1{
-	position: absolute;
-	margin-left: 30px;
-	margin-top: 100px;
-	width: 80px;
-	display: none;
-	
-}
-.gallery_product .btn2{
-	position: absolute;
-	margin-left: 150px;
-	margin-top: 100px;
-	display: none;
-	
 }

@@ -28,7 +28,7 @@
 					<label>Cardholder's Name :</label>
 					<input type="text" class="form-control" name="holdername" id="holdername" placeholder="Lalanga Ariyasinghe..." required></br>
 					<label>Card Number :</label></br>
-					<input type="password" name="password" id="password" placeholder="--Card Number--" required="">
+					<input type="password" class="form-control" name="password" id="password" placeholder="--Card Number--" required="">
 					<br></br>
 
 				

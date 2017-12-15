@@ -1,66 +1,4 @@
-<div style="margin-top: 100px;"></div>
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-lg">
-        <div class="modal-content">
-            
-            <div class="modal-body">
-              <div class="col-md-12">
-		<label>Select vehicle type</label>
-		<select class="form-control" name="type" id="vtype">
-			<option value="Luxury">Luxury Cars</option>
-			<option value="Genaral">Genaral Cars</option>
-			<option value="4wd">Bus,Van,4WD,SUV</option>
-			<option value="Classic">Classic And Vintage</option>
-		</select></br>
-		<label>Licence plate number</label>
-		<input type="text" class="form-control" name="licenno" id="licenno" placeholder="Licence number" required></br>
-		<label>Select vehicle Brand</label>
-		<select class="form-control" name="brand" id="brand">
-			<option value="Audi">Audi</option>
-			<option value="Benz">Benz</option>
-			<option value="BMW">BMW</option>
-			<option value="Ford">Ford</option>
-			<option value="Honda">Honda</option>
-			<option value="hyundai">Hyundai</option>
-			<option value="Isuzu">Isuzu</option>
-			<option value="Jaguar">Jaguar</option>
-			<option value="KIA">KIA</option>
-			<option value="micro">Micro</option>
-			<option value="Mitsubishi">Mitsubishi</option>
-			<option value="Mazda">Mazda</option>
-			<option value="Nissan">Nissan</option>
-			<option value="Toyota">Toyota</option>
-		</select></br>
-		<label>Model</label>
-		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required></br>
-		<label>Number of seats</label>
-		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required></br>
-		<label style="margin-right: 15px;">Transmission Type Auto</label>
-		<label class="switch">
-  		<input type="checkbox" name="Transmission" id="ttype" value="false">
-  		<span class="slider round"></span>
-		</label>
-		<label style="margin-right: 15px; margin-left: 80px;">With driver only</label>
-		<label class="switch">
-  		<input type="checkbox" name="withdriver" id="checkboxtogal" value="false">
-  		<span class="slider round"></span>
-		</label></br></br>
-		<label>Rate per Day(80km)</label>
-		<input type="text" class="form-control" name="rpd" id="rpd" placeholder="Enter rate per day" ></br>
-		<label>Excess mileage charge</label>
-		<input type="text" class="form-control" name="emc" id="emc" placeholder="Enter Excess mileage charge" required></br>
-		<label>Other details</label>
-		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
-		</div>  
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-success btn-ok">Save</a>
-            </div>
-        </div>
-    </div>
-</div>
-			
+<div style="margin-top: 100px;"></div>			
 <div style="height: 100%; width: 100%">
 <div class=" container col-md-2"  style="background-color: white;">
 	
@@ -77,7 +15,7 @@
 		        
        <?php
 	foreach($vehicles as  $vehicle){
-		 echo "<div class=\"gallery_product well col-lg-6 col-md-6 col-sm-6 col-xs-12 filter ".$vehicle['type']."\" id=\"".json_encode($vehicle)."\" name=\"".$vehicle['brand']."\">
+		 echo "<div class=\"gallery_product well col-lg-6 col-md-6 col-sm-6 col-xs-12 filter ".$vehicle['type']."\" id=\"".$vehicle['L_No']."\" name=\"".$vehicle['brand']."\">
               <div class=\"col-md-6 col-xs-6\"><img src=\"".base_url()."assets/images/vehicles/".$vehicle['imageLink']."\" class=\"port-image img-rounded\"></div>
 				<div class=\"col-xs-5\">
 				<h4><b>".$vehicle['brand']."-".$vehicle['model']."</b></h4>
@@ -103,8 +41,8 @@
 				</div>
 			</div>"; ?>
 			<div class="col-md-1" style="padding-top: 55px; padding-left: 0px;">
-			<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;">Delete</button>
-			<button class="btn btn-default btn-sm" class="editbtn" style="width: 60px; margin-top: 20px;" >Edit</button>
+			<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" >Delete</button>
+			<button class="btn btn-default btn-sm editbtn" style="width: 60px; margin-top: 20px;" >Edit</button>
 			</div>
 				
 	<?php		echo"</div>";
@@ -137,10 +75,17 @@ $(this).removeClass("active");
 $(this).addClass("active");
 
 $('.editbtn').click(function(){
-		var vehicledata=$(this).parent().attr('id');
-alert(vehicledata['type']);
-	/*	$("vtype select").val(vehicledata['type']);	
-		$("#edit").modal('show');*/
+	var vehicllno=$(this).parent().parent().attr('id');
+	alert(vehicllno);
+	$.ajax({
+		type:'post',
+		data:{vehicleno:vehicllno},
+		url:'<?php echo base_url('Addvehicle/loadedit')?>',
+		success:function(data){
+			
+		}
+		
+	});
 });	
 $('#search').keyup(function(){
 	$('.filter').show('1000');

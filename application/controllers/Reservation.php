@@ -29,6 +29,16 @@ class  Reservation extends CI_Controller{
             
             //$this->Reservation_model->reserve_car($location,$pickupdate,$dropoffdate,$passengers);
         }
+        public function get_myreservation($customer_id=NULL){
+            $data['reservasion']=$this->reservation_model->get_myreservation($customer_id);
+	        $this->load->view('template/header');
+            $this->load->view('Customer/dashbord');
+            $this->load->view('Customer/myreservation',$data);
+            $this->load->view('template/footer');
+
+
+        }
+
 
 	}
 ?>

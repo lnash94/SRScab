@@ -141,7 +141,7 @@
                 if($('#alert')!=null){
                     $('#alert').remove();
                 }
-                if(data=="success"){
+                if($.trim(data)=="success"){
                     $("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>your details successfully updated</div>").insertAfter('#cid');
 
                 }

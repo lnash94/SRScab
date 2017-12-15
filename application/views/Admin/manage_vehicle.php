@@ -42,7 +42,7 @@
 			</div>"; ?>
 			<div class="col-md-1" style="padding-top: 55px; padding-left: 0px;">
 			<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" >Delete</button>
-			<button class="btn btn-default btn-sm editbtn" style="width: 60px; margin-top: 20px;" >Edit</button>
+			<button class="btn btn-default btn-sm editbtn" style="width: 60px; margin-top: 20px;"  onclick="window.location='<?php echo base_url('editvehicles/loadedit/'.$vehicle['L_No'])?>';">Edit</button>
 			</div>
 				
 	<?php		echo"</div>";
@@ -74,19 +74,7 @@ $(this).removeClass("active");
 }
 $(this).addClass("active");
 
-$('.editbtn').click(function(){
-	var vehicllno=$(this).parent().parent().attr('id');
-	alert(vehicllno);
-	$.ajax({
-		type:'post',
-		data:{vehicleno:vehicllno},
-		url:'<?php echo base_url('Addvehicle/loadedit')?>',
-		success:function(data){
-			
-		}
-		
-	});
-});	
+
 $('#search').keyup(function(){
 	$('.filter').show('1000');
 	var vehicles=$('.gallery_product');

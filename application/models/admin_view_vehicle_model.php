@@ -8,7 +8,7 @@ class admin_view_vehicle_model extends CI_Model{
         return $query->result_array();
         
 	}
-
+	
 
 }
 

@@ -1,6 +1,6 @@
 <?php
 class  editvehicles extends CI_Controller{
-public function loadedit($lno){
+public function loadedit($lno){//this will load the vehicle editing page
 
 			$this->load->model('manage_vehicle');
 			if($editingvehicle=$this->manage_vehicle->getvehicle_by_lno($lno)){
@@ -42,11 +42,19 @@ public function edit(){
 	}
 	
 	
-	public function check_if_new_lno_exsists($requested_licenno){
-		$this->load->model('manage_vehicle');
-		return $this->manage_vehicle->check_if_new_lno_exsists($requested_licenno);
+public function check_if_new_lno_exsists($requested_licenno){
+	$this->load->model('manage_vehicle');
+	return $this->manage_vehicle->check_if_new_lno_exsists($requested_licenno);
 		
 	}
+	
+public function delete(){
+	$this->load->model('manage_vehicle');
+	if($this->manage_vehicle->delete()){
+			echo "success";
+		}
+	
+}
 
 }
 ?>

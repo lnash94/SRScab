@@ -32,4 +32,9 @@ class Reservation_model extends CI_Model{
         $result=$query->result();
         return $result;
     }
+    public function delete_reservation($reservation_id){
+        $this->db->where('reservation_No',$reservation_id);
+        $query=$this->db->delete('reservation');
+        return $query;
+    }
 }

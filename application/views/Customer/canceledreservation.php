@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
 <div style="margin-top: 100px;"></div>
 <div  class="container" id="changing_space">
 
@@ -66,7 +68,7 @@
                             customer_data += '<td>' + val.end_Date + '</td>';
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
-                            customer_data += '<td><button  type="button" class="btn btn-danger btn-sm cancel cancel_btn" name="cancel" data-id="'+val.reservation_No+ '" id=' + val.reservation_No + ' value="cancel"><i class="material-icons">Cancel</i></button></td>';
+                            customer_data += '<td><a href="javascript:void(0)"  type="button" class="btn btn-danger btn-sm cancel cancel_btn" name="cancel" data-id="'+val.reservation_No+ '" id="delete_reservation"><i class="glyphicon glyphicon-trash"></i></a></td>';
                             customer_data += '</tr>';
                         });
                         //append data to table boady
@@ -86,9 +88,54 @@
 
         });
 
+//        delete reservation
+        $(document).on('click','#delete_reservation',function(e){
+            var reservation_id=$(this).data('id');
+            SwalDelete(reservation_id);
+            e.preventDefault();
+
+        });
 
 
     });
+//    SwalDelete function
+
+    function SwalDelete(reservation_id){
+        swal({
+            title: 'Are you sure?',
+            text: "It will be deleted permanently!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes,delete it!',
+            showLoaderOnConfirm: true,
+
+            preConfirm: function(){
+                return new Promise(function(resolve){
+                    $.ajax({
+                        url: '<?php echo base_url()?>/reservation/delete_reservation',
+                        type: 'post',
+                        data: {'reservation_id': reservation_id},
+                        dataType: 'json',
+                        success: function(response){
+                            console.log(response);
+                            swal('Delete!', response.message, response.status);
+//                            ****
+                            location.reload();
+                            window.scrollTo(0,0);
+                        },
+                        error: function(){
+                            swal('Oops', 'Something went wrong!', 'error');
+                        }
+                    });
+                });
+            },
+            allowOutsideClick: false
+        });
+    }
+
+
 </script>
 
 <!--<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" >Delete</button>-->

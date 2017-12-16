@@ -97,7 +97,7 @@ class  Users extends CI_Controller{
             }
         }
     }
-	//all the admin functionalities are controled by this function
+	//all the admin dashbord functionalities are controled by this function
 	public function admindashbord($page='manage_vehicle'){
 		if($page=="addvehicle"){
 			$this->load->view('Admin/dashbord');
@@ -124,6 +124,11 @@ class  Users extends CI_Controller{
 		}
 		$this->load->view('template/header');
 		$this->load->view('template/footer');
+	}
+	public function load_new_reservation_details($resevation_no){//new reservation detais in admin pannel
+		$this->load->model('Reservation_model');
+		$newservation['newservation']=$this->Reservation_model->getreservationsdetails($resevation_no);
+		$this->load->view('Admin/reservation_details',$newservation);
 	}
 
      public function logout(){

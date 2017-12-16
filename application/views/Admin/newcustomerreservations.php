@@ -42,7 +42,7 @@
     to {opacity:0;}
 }
 #newreservation a li {
-    animation: fadeIn 1s;
+    animation: fadeIn 1.5s;
 }
 }
 </style>
@@ -76,4 +76,13 @@
         <!-- newreservation details will load here--> 
         <center><h3 style="margin-top: 50px;">Select a reservation to view detatils</h3></center>
 </div>		
-</div>		
+</div>	
+<script>
+	
+$('#newreservation a li').click(function(){//element to be click to load the page in the div
+	var rno=$(this).val();
+	
+    $('#qrdetails').load('<?php echo base_url();?>Users/load_new_reservation_details/'+rno);
+
+});
+</script>	

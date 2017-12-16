@@ -48,4 +48,15 @@ class Reservation_model extends CI_Model{
         return $result;
 		
 	}
+	public function getreservationsdetails($rno){//get new reservetion details
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.reservation_No',$rno);
+        $query=$this->db->get('reservation');
+        $result=$query->row_array();
+        return $result;
+		
+	}
 }

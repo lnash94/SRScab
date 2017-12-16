@@ -59,6 +59,17 @@ class Reservation_model extends CI_Model{
         return $result;
 		
 	}
+	public function getnotification_count(){//this returens the count of new reservations by customers
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.driver_id',null);
+        $query=$this->db->get('reservation');
+        $result=$query->num_rows();
+        return $result;
+		
+	}
 	public function assigndriver(){
 		$rno=$this->input->post('rno');
 		$dfname=$this->input->post('dfname');

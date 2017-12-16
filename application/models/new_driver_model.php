@@ -24,4 +24,9 @@ class new_driver_model extends CI_Model{
 		$insert=$this->db->insert('driver',$new_driver_data);
 		return $insert;
 	}
+	
+	public function loaddriver($rno){
+		
+		
+	}
 }

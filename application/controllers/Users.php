@@ -99,6 +99,7 @@ class  Users extends CI_Controller{
     }
 	//all the admin dashbord functionalities are controled by this function
 	public function admindashbord($page='manage_vehicle'){
+		
 		if($page=="addvehicle"){
 			$this->load->view('Admin/dashbord');
 			$this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
@@ -125,8 +126,16 @@ class  Users extends CI_Controller{
 		$this->load->view('template/header');
 		$this->load->view('template/footer');
 	}
+	
+	public function updatenotification(){//this function is used to update live notification
+		$this->load->model('Reservation_model');
+		echo $this->Reservation_model->getnotification_count();
+	}
+	
 	public function load_new_reservation_details($resevation_no){//new reservation detais in admin pannel
 		$this->load->model('Reservation_model');
+		$this->load->model('new_driver_model');
+		$newservation['drivers']=$this->new_driver_model->loaddriver($resevation_no);
 		$newservation['newservation']=$this->Reservation_model->getreservationsdetails($resevation_no);
 		$this->load->view('Admin/reservation_details',$newservation);
 	}

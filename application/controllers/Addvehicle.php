@@ -30,14 +30,7 @@ class  Addvehicle extends CI_Controller{
 		
 	}
 	
-	public function loadedit(){
-
-			$this->load->model('New_vehicle_model');
-			if($this->New_vehicle_model->add()){
-			echo "success";
-			}
-		
-	}
+	
 }
 
 ?>

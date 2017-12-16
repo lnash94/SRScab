@@ -1,8 +1,4 @@
-<?php
 
-
-
-?>
 <!-- Header -->
 <header id="head">
     <div class="container">

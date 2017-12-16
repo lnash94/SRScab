@@ -7,9 +7,9 @@
 
 <!--<div class="col-md-12">-->
 <!-- Page Container -->
-<div class="container col-sm-pull-12" style="max-width:1500px;margin-top:80px">
+<div>
     <!-- The Grid -->
-    <div class="row">
+   
         <!-- Left Column -->
         <div class="col-md-2">
             <!-- Profile -->
@@ -27,9 +27,8 @@
         </div>
 
         <!-- Middle Column -->
-        <div class="col-md-5">
-            <div class="container"><br>
-                    <?php echo validation_errors();?>
+        <div class="col-md-8">
+           
 
                     <form class="well form-horizontal" action="<?php echo base_url()?>/users/register" method="post"  id="reg_form">
                         <fieldset>
@@ -130,14 +129,14 @@
 
                         </fieldset>
                     </form>
-                </div>
+                
             </div>
 
             <!-- End Middle Column -->
 
         <!-- Right Column -->
             <!-- End Right Column -->
-        </div>
+        
 
         <!-- End Grid -->
     </div>

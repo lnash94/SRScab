@@ -54,9 +54,30 @@
 				</div>
 			</div>	
 		</div>
-	</div>
 	<div>
-		
+	<div class="col-md-12">
+	<div class="col-md-12 col-md-offset-1"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.948127129003!2d79.90251311449762!3d6.8968080950165165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a1da978fdb5%3A0x819b333d83da31b2!2sDiyawanna+Rd%2C+Sri+Jayawardenepura+Kotte!5e0!3m2!1sen!2slk!4v1513430545383" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+		<form class="form-inline" action="" method="post">
+			<input type="hidden" name="rno" value="<?php echo $newservation['reservation_No']?>">
+			<h4 style="color: darkred;">Assign a driver</h4>
+			<div class="form-group col-sm-4">
+				<label>First Name</label>
+				<select name="dfname" class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-4">
+				<label>Last Name</label>
+				<select name="dlname" class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-3">
+			<label>&nbsp;</label>
+			<button class="btn btn-success btn-sm form-control" type="submit">Assign driver</button>
+			</div>		
+		</form>
+	</div>
 	</div>
 	
 	

@@ -59,4 +59,16 @@ class Reservation_model extends CI_Model{
         return $result;
 		
 	}
+	public function assigndriver(){
+		$rno=$this->input->post('rno');
+		$dfname=$this->input->post('dfname');
+		$dlname=$this->input->post('dlname');
+		//getting the driver id
+		$query=$this->db->query("SELECT driver_Id FROM driver WHERE Fname='$dfname' && Lname='$dlname';");
+		$driver=$query->row_array();
+		$did=$driver['driver_Id'];
+		$assign=$this->db->query("UPDATE reservation SET driver_id='$did' WHERE reservation_No='$rno';");
+
+		
+	}
 }

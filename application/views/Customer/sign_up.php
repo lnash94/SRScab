@@ -36,6 +36,7 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
             <a type="button" class="btn btn-warning  pull-right" href="<?php echo base_url()?>/pages/view">Close</a>
+            <a href="<?php echo base_url()?>/">login with your google account</a>
 
         </div>
     </form>

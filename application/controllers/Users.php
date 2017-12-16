@@ -97,6 +97,7 @@ class  Users extends CI_Controller{
             }
         }
     }
+	//all the admin functionalities are controled by this function
 	public function admindashbord($page='manage_vehicle'){
 		if($page=="addvehicle"){
 			$this->load->view('Admin/dashbord');
@@ -107,6 +108,13 @@ class  Users extends CI_Controller{
 			$vehicles['vehicles']=$this->manage_vehicle->get_vehicle();
 			$this->load->view('Admin/dashbord');
 			$this->load->view('Admin/'.$page,$vehicles);
+		
+		}
+		else if($page=="newcustomerreservations"){//getting the new reservations and load the new reservations view
+			$this->load->model('Reservation_model');
+			$newservations['newservations']=$this->Reservation_model->getnewreservations();
+			$this->load->view('Admin/dashbord');
+			$this->load->view('Admin/'.$page,$newservations);
 		
 		}
 		else{
@@ -183,18 +191,22 @@ class  Users extends CI_Controller{
         $data['title']='edit profile';
 
         $customer_id=$this->input->post('customer_id');
-        $this->form_validation->set_rules('customer_fname','First Name','required');
-        $this->form_validation->set_rules('customer_lname','Last Name','required');
-        $this->form_validation->set_rules('customer_nic','Nic','required');
+        $this->form_validation->set_rules('customer_fname','First Name','required|alpha');
+        $this->form_validation->set_rules('customer_lname','Last Name','required|alpha');
+        $this->form_validation->set_rules('customer_nic','Nic','required|callback_check_nic_validation');
         $this->form_validation->set_rules('customer_email','Email','required');
         $this->form_validation->set_rules('customer_contact_no','Contact','required');
+        $this->form_validation->set_rules('customer_gender','Gender','required');
+
         //$this->form_validation->set_rules('customer_address','Address','required');
         if($this->form_validation->run()===FALSE){
             echo validation_errors();
         }
         else {
-            $this->user_model->register($customer_id);
+            $result= $this->user_model->register($customer_id);
+            if($result){
             echo "success";
+            }
             //redirect('users/edit');
         }
 
@@ -241,4 +253,45 @@ public function changepassword(){
      $this->form_validation->set_rules('customer_password2', 'Confirm Password', 'matches[customer_password]');
 
  }
-}
+
+// customer profile load
+ public function load_customer_profile(){
+     if (!$this->session->userdata('logged_in')){
+         redirect('users/login');
+     }
+     $customer_id=$this->session->userdata('user_id');
+     $data['customer']=$this->user_model->get_customer($customer_id);
+
+
+     $this->load->view('template/header');
+     $this->load->view('Customer/customer_profile',$data);
+     $this->load->view('template/footer');
+ }
+     //    validate nic for new and old
+     public function check_nic_validation($nic){
+         $this->form_validation->set_message('check_nic_validation', 'NIC length should be 10 or 12.Please recheck your NIC ');
+         $len=strlen($nic);
+         $new=substr($nic, 0, -1);
+         if (($len==10)&&(is_numeric($new))){
+             if(($nic[9]=="v")||($nic[9]=="V")) {
+                 return true;
+             }
+             else{
+                 return false;
+             }
+         }
+         elseif(($len==12)&&(is_numeric($nic))){
+             return true;
+         }
+         else{
+             return false;
+         }
+
+     }
+
+
+
+
+
+
+ }

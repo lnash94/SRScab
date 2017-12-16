@@ -22,12 +22,15 @@ class  Addvehicle extends CI_Controller{
 		}
 	}
 	
+	
 	public function check_if_lno_exsists($requested_licenno){
 		$this->load->model('New_vehicle_model');
 		
 		return $this->New_vehicle_model->check_if_lno_exsists($requested_licenno);
 		
 	}
+	
+	
 }
 
 ?>

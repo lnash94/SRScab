@@ -186,21 +186,5 @@ font-size: 24px;
 
 .gallery_product
 {	height: 230px;
-	line-height: 230px;
     margin-bottom: 30px;
-}
-.gallery_product .btn1{
-	position: absolute;
-	margin-left: 20px;
-	margin-top: 85px;
-	width: 80px;
-	display: none;
-	
-}
-.gallery_product .btn2{
-	position: absolute;
-	margin-left: 140px;
-	margin-top: 85px;
-	display: none;
-	
 }

@@ -2,12 +2,13 @@
 <div class="container">	
 		<ol class="breadcrumb">
 			<li><a href="index.html">Admin</a></li>
-			<li class="active">New Vehicle</li>
+			<li class="active">Manage Vehicle</li>
+			<li class="active">Edit</li>
 		</ol>
 		<header class="page-header" id="pheader">
-					<h1 class="page-title">Register New Vehicle</h1>
+					<h1 class="page-title">Edit Vehicle</h1>
 		</header>
-		<div id="newvehicleform" class="col-md-10 col-md-offset-1">
+		<div id="newvehicleform" class="col-md-10 col-md-offset-1" name="<?php echo($vehicle['L_No']); ?>">
 		<?php echo form_open('Addvehicle/add')?>
 		<div class="col-md-7">
 		<label>Select vehicle type</label>
@@ -18,7 +19,8 @@
 			<option value="Classic">Classic And Vintage</option>
 		</select></br>
 		<label>Licence plate number</label>
-		<input type="text" class="form-control" name="licenno" id="licenno" placeholder="Licence number" required></br>
+		<!--loading relevent data to fields-->
+		<input type="text" class="form-control" name="licenno" id="licenno" placeholder="Licence number" required value="<?php echo($vehicle['L_No']); ?>"></br>
 		<label>Select vehicle Brand</label>
 		<select class="form-control" name="brand" id="brand">
 			<option value="Audi">Audi</option>
@@ -38,9 +40,9 @@
 			<option value="Toyota">Toyota</option>
 		</select></br>
 		<label>Model</label>
-		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required></br>
+		<input type="text" class="form-control" name="model" id="vmodel" placeholder="Enter vehicle model" required value="<?php echo($vehicle['model']); ?>"></br>
 		<label>Number of seats</label>
-		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required></br>
+		<input type="text" class="form-control" name="seats" id="seats" placeholder="Enter number of seats" required value="<?php echo($vehicle['No_seats']); ?>"></br>
 		<label style="margin-right: 15px;">Transmission Type Auto</label>
 		<label class="switch">
   		<input type="checkbox" name="Transmission" id="ttype" value="Manual">
@@ -52,12 +54,12 @@
   		<span class="slider round"></span>
 		</label></br></br>
 		<label>Rate per Day(80km)</label>
-		<input type="text" class="form-control" name="rpd" id="rpd" placeholder="Enter rate per day" ></br>
+		<input type="text" class="form-control" name="rpd" id="rpd" placeholder="Enter rate per day" value="<?php echo($vehicle['rate_per_day']); ?>" ></br>
 		<label>Excess mileage charge</label>
-		<input type="text" class="form-control" name="emc" id="emc" placeholder="Enter Excess mileage charge" required></br>
+		<input type="text" class="form-control" name="emc" id="emc" placeholder="Enter Excess mileage charge" required value="<?php echo($vehicle['excess_mileage']); ?>"></br>
 		<label>Other details</label>
-		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc."></br>
-		<button type="button" class="btn btn-success btn-md" id="submitbtn">Register</button>
+		<input type="text" class="form-control" name="details" id="details" placeholder="Enter details such as A/C,CD player etc." value="<?php echo($vehicle['details']); ?>"></br>
+		<button type="button" class="btn btn-success btn-md" id="updatebtn">Save</button>
 		</div>
 		<input type="hidden" name="imageLink" id="imageLink" value="<?php echo $path?>">
 		</form>
@@ -73,8 +75,18 @@
 	</div>	
 </div>
 <script>
-	$('#checkboxtogal').on('change',function(){
-		
+$(document).ready(function(){
+	//initialize dropdowns an togal buttons
+    $('#vtype').val('<?php echo($vehicle['type']); ?>');
+	$('#brand').val('<?php echo($vehicle['brand']); ?>');
+	if("<?php echo($vehicle['with_driver']); ?>"=="With driver"){
+		$('#checkboxtogal').prop('checked', true);
+	}
+	if("<?php echo($vehicle['transmission_type']); ?>"=="Auto"){
+		$('#ttype').prop('checked', true);
+	}
+});
+$('#checkboxtogal').on('change',function(){
 		if(this.checked){
 			
 			document.getElementById("checkboxtogal").value="With driver";
@@ -83,7 +95,7 @@
 			document.getElementById("checkboxtogal").value="Without driver";
 		}
 	});
-	$('#ttype').on('change',function(){
+$('#ttype').on('change',function(){
 		
 		if(this.checked){
 			
@@ -93,8 +105,7 @@
 			document.getElementById("ttype").value="Manual";
 		}
 	});
-	
-	$('#submitbtn').click(function(){
+$('#updatebtn').click(function(){
 		var type=$('#vtype').val();
 		var licenno=$('#licenno').val();
 		var brand=$('#brand').val();
@@ -106,25 +117,19 @@
 		var details=$('#details').val();
 		var withdriver=$('#checkboxtogal').val();
 		var imageLink=$('#imageLink').val();
-
+		var lodlicenno=$('#newvehicleform').attr('name');
 				$.ajax({
 					type:'post',
-					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'seats':seats, 'details':details,'withdriver':withdriver,'imageLink':imageLink,'ttype':ttype,'rpd':rpd,emc:emc},
-					url:'<?php echo base_url('Addvehicle/add')?>',
+					data:{'type':type,'licenno':licenno,'brand':brand,'model':vmodel,'seats':seats, 'details':details,'withdriver':withdriver,'imageLink':imageLink,'ttype':ttype,'rpd':rpd,emc:emc,lodlicenno:lodlicenno},
+					url:'<?php echo base_url('editvehicles/edit')?>',
 					success:function(data){
 						if($('#alert')!=null){
 							$('#alert').remove();
 						}
 						if(data=="success"){
 							$("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>New Vehicle Successfully added to the system</div>").insertAfter('#pheader');
-							
-							$('#licenno').val("");
-							
-							$('#vmodel').val("");
-							$('#seats').val("");
-							$('#details').val("");
 							window.scrollTo(0,0);
-							//('#imageLink').val();
+							
 						}
 						else{
 						$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
@@ -132,5 +137,5 @@
 						}
 					}
 				});
-						  });
+						  });	
 </script>

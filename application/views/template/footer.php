@@ -104,9 +104,9 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal
-    btn.onclick = function() {
+    /*btn.onclick = function() {
         modal.style.display = "block";
-    }
+    }*/
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
@@ -127,6 +127,14 @@
 <script src="<?php echo base_url();?>/assets/js/headroom.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/jQuery.headroom.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/template.js"></script>
+<!--bootstrap confirmation box library-->
+<script src="<?php echo base_url();?>/assets/js/bootstrap-confirmation.min.js"></script>	
+<script src="<?php echo base_url();?>/assets/js/confirmation.js?v=2"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 </body>
 </html>
 

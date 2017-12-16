@@ -141,6 +141,11 @@ class  Users extends CI_Controller{
             $this->load->view('Customer/paymentdetails',array('path'=>'empty.png'));
             $this->load->view('template/footer');
     }
+     public function newdriver(){
+         $this->load->view('template/header');
+         $this->load->view('Admin/adddriver',array('path'=>'empty.png'));
+         $this->load->view('template/footer');
+     }
 
 
     //check if email exists

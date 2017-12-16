@@ -37,4 +37,15 @@ class Reservation_model extends CI_Model{
         $query=$this->db->delete('reservation');
         return $query;
     }
+	public function getnewreservations(){//get new reservetions(reservations that not assigned a driver)
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.driver_id',null);
+        $query=$this->db->get('reservation');
+        $result=$query->result_array();
+        return $result;
+		
+	}
 }

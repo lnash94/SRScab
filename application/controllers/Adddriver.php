@@ -3,8 +3,6 @@
 class  Adddriver extends CI_Controller{
 	public function add(){
 		$this->load->library('form_validation');
-		
-		$this->form_validation->set_rules('driverid','Driver ID','required|numeric|callback_check_if_driverid_exsists');
 		$this->form_validation->set_rules('firstname','First Name','required|alpha');
 		$this->form_validation->set_rules('lastname','Last Name','required|alpha');
 		$this->form_validation->set_rules('nic','NIC','required|callback_check_nic_validation');
@@ -22,12 +20,6 @@ class  Adddriver extends CI_Controller{
 		}
 	}
 	
-	public function check_if_driverid_exsists($requested_driverid){
-		$this->load->model('new_driver_model');
-		
-		return $this->new_driver_model->check_if_driverid_exsists($requested_driverid);
-		
-	}
     public function check_nic_validation($nic){
         $this->form_validation->set_message('check_nic_validation', 'NIC length should be 10 or 12.Please recheck your NIC ');
         $len=strlen($nic);

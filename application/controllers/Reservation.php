@@ -84,8 +84,7 @@ class  Reservation extends CI_Controller{
 		
 		public function assigndriver(){
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('dfname','Select Driver First name','required');
-			$this->form_validation->set_rules('dlname','Select Driver Last name','required');
+			$this->form_validation->set_rules('did','Select Driver First name','required');
 			if ($this->form_validation->run()=== FALSE)
             	echo validation_errors();
         	else{

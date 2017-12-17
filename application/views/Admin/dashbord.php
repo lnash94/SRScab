@@ -7,6 +7,7 @@
   <li><a href="<?php echo base_url();?>users/admindashbord/customerreservations" style="color: black;">Manage Customer Reservations</a></li>
    <li><a href="<?php echo base_url();?>users/admindashbord" style="color: black;" >Manage Vehicles</a></li>
     <li><a  href="<?php echo base_url();?>users/admindashbord/addvehicle" style="color: black;" >New Vehicle</a></li>
+    <li><a  href="<?php echo base_url();?>users/admindashbord/adddriver" style="color: black;" >New Driver</a></li>
   </ul>
 </nav>
 	

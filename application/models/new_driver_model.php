@@ -12,9 +12,8 @@ class new_driver_model extends CI_Model{
 	}
 	public function add(){
 		$new_driver_data=array(
-			'driver_Id'=>$this->input->post('driverid'),
-			'first_name'=>$this->input->post('firstname'),
-			'last_name'=>$this->input->post('lastname'),
+			'Fname'=>$this->input->post('firstname'),
+			'Lname'=>$this->input->post('lastname'),
 			'nic'=>$this->input->post('nic'),
 			'contact_No'=>$this->input->post('contactno'),
 			'address'=>$this->input->post('address'),
@@ -25,8 +24,9 @@ class new_driver_model extends CI_Model{
 		return $insert;
 	}
 	
-	public function loaddriver($rno){
-		
+	public function loaddriver(){
+		$query=$this->db->get('driver');
+		return $query->result_array();
 		
 	}
 }

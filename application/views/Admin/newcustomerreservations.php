@@ -78,7 +78,7 @@
 </div>		
 </div>	
 <script>
-	
+var frgfr;
 $('#newreservation a li').click(function(){//element to be click to load the page in the div
 	var rno=$(this).val();
 	

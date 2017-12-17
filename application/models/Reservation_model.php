@@ -71,15 +71,50 @@ class Reservation_model extends CI_Model{
 		
 	}
 	public function assigndriver(){
-		$rno=$this->input->post('rno');
+		/*$rno=$this->input->post('rno');
 		$dfname=$this->input->post('dfname');
-		$dlname=$this->input->post('dlname');
+		$dlname=$this->input->post('dlname');*/
 		//getting the driver id
-		$query=$this->db->query("SELECT driver_Id FROM driver WHERE Fname='$dfname' && Lname='$dlname';");
+		/*$query=$this->db->query("SELECT driver_Id FROM driver WHERE Fname='$dfname' && Lname='$dlname';");
 		$driver=$query->row_array();
-		$did=$driver['driver_Id'];
+		$did=$driver['driver_Id'];*/
+		$did=$this->input->post('did');
+		$rno=$this->input->post('rno');
 		$assign=$this->db->query("UPDATE reservation SET driver_id='$did' WHERE reservation_No='$rno';");
 
+		
+	}
+	public function getreserved_drivers($rno){
+		$query=$this->db->query("SELECT start_Date,end_Date FROM reservation WHERE reservation_No=$rno;");
+		$result=$query->row_array();
+		$startdate=$result['start_Date'];
+		$enddate=$result['end_Date'];
+		//getting 4 types of conflicting driver assignments
+		$inrange=$this->db->query("SELECT driver_id FROM reservation WHERE start_Date>='$startdate' && end_Date<='$enddate' ;");
+		$bellowconflict=$this->db->query("SELECT driver_id FROM reservation WHERE start_Date<='$startdate' && end_Date>='$startdate' ;");
+		$aboveconflicet=$this->db->query("SELECT driver_id FROM reservation WHERE start_Date<='$enddate' && end_Date>='$enddate' ;");
+		$inrangelarge=$this->db->query("SELECT driver_id FROM reservation WHERE start_Date<='$startdate' && end_Date>='$enddate' ;");
+		$inrange_results=$inrange->result_array();
+		$bellowconflict_results=$bellowconflict->result_array();
+		$aboveconflicet_results=$aboveconflicet->result_array();
+		$inrangelarge_results=$inrangelarge->result_array();
+		$driverlist=[];
+		foreach($inrange_results as $inrange_result ){
+			array_push($driverlist,$inrange_result['driver_id']);
+		}
+		foreach($bellowconflict_results as $bellowconflict_result ){
+			array_push($driverlist,$bellowconflict_result['driver_id']);
+		}
+
+		foreach($aboveconflicet_results as $aboveconflicet_result ){
+			array_push($driverlist,$aboveconflicet_result['driver_id']);
+		}
+
+		foreach($inrangelarge_results as $inrangelarge_result ){
+			array_push($driverlist,$inrangelarge_result['driver_id']);
+		}
+
+		return $driverlist;
 		
 	}
 }

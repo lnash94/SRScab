@@ -104,9 +104,9 @@
             }
         });
         $.ajax({
-            type:'get',
+            type:'post',
             url:'<?php echo base_url()?>/charts/get_linegraph',
-            data:{'customer_id':customer_id},
+            data:{'customer_id1':customer_id},
             success:function(response){
                 console.log(response);
                 //console.log(data[0][0]);

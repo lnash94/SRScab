@@ -15,9 +15,9 @@ class Charts extends  CI_Controller
     }
 //create line graph
     public function get_linegraph(){
-        $customer_id=$this->input->post('customer_id');
+//        $customer_id=$this->input->post('customer_id1');
         $this->load->model('chart_model');
-        $results = $this->chart_model->get_linegraph($customer_id);
+        $results = $this->chart_model->get_linegraph();
         if ($results === NULL) {
             echo json_encode('No record found');
         } else {

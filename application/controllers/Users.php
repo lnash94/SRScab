@@ -98,7 +98,7 @@ class  Users extends CI_Controller{
                 }
             }
         }
-    }
+
 	//all the admin dashbord functionalities are controled by this function
 	public function admindashbord($page='manage_vehicle'){
 		

@@ -11,9 +11,9 @@
                     <h3 class="widget-title">Contact</h3>
                     <div class="widget-body">
                         <p>+234 23 9873237<br>
-                            <a href="mailto:#">some.email@somewhere.com</a><br>
+                            <a href="mailto:#">srscabs@gmail.com</a><br>
                             <br>
-                            234 Hidden Pond Road, Ashland City, TN 37015
+                            224 Polwaththa, Ambalangoda, Sri lanka
                         </p>
                     </div>
                 </div>
@@ -32,9 +32,8 @@
 
                 <div class="col-md-6 widget">
                     <h3 class="widget-title">Text widget</h3>
-                    <div class="widget-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                        <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                    <p class="widget-body">
+                        <p>The pioneer in shaping the cab/taxi service industry in Sri Lanka, SRSCabs is Sri Lanka’s Number one cab/taxi service provider occupying 70% of the market share in the industry today. Thus providing complete bouquet of end to end transportation solutions through its fleet of 400 cars varying in a wide range of luxury to semi luxury cars.</p>
                     </div>
                 </div>
 
@@ -53,7 +52,7 @@
                             <a href="about.html">About</a> |
                             <a href="sidebar-right.html">Sidebar</a> |
                             <a href="contact.html">Contact</a> |
-                            <b><a href="signup.html">Sign up</a></b>
+<!--                            <b><a href="signup.html">Sign up</a></b>-->
                         </p>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
                 <div class="col-md-6 widget">
                     <div class="widget-body">
                         <p class="text-right">
-                            Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
+                            Copyright &copy; 2017, srscabs. Designed by <a href="http://gettemplate.com/" rel="designer">srscabs</a>
                         </p>
                     </div>
                 </div>

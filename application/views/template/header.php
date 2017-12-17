@@ -91,9 +91,8 @@
                         <li><a href="sidebar-right.html">Wedding and Events</a></li>
                     </ul>
                 </li>
-    <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
 
-    <li class="dropdown">
+            <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url();?>Lcarview">Luxury Cars</a></li>

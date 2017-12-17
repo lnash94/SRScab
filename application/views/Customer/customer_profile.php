@@ -1,34 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div style="margin-top: 95px;" ></div>
+<div style="margin-top: 95px;" >
+</div>
 <header id="cid">
-
 </header>
-
-<!--<div class="col-md-12">-->
-<!-- Page Container -->
-<div>
-    <!-- The Grid -->
-   
-        <!-- Left Column -->
+ <!-- Left Column -->
         <div class="well col-md-2" style="margin-left: 10px; height:100%;">
             <!-- Profile -->
-<!--            <div class="">-->
-<!--                <div class="container card round white">-->
                     <h4 class="center">My Profile</h4>
-<!--                    <p class="center"><img src="/w3images/avatar3.png" class="circle" style="height:106px;width:106px;" alt="Avatar"></p>-->
                     <hr>
                     <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> <?php echo $customer['customer_fname'];?>  <?php echo $customer['customer_lname'];?></p>
                     <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <?php echo $customer['customer_nic'];?></p>
                     <p><i class=""><?php echo $this->session->userdata('user_username')?></p>
-<!--                </div>-->
-<!--            </div>-->
-            <!-- End Left Column -->
         </div>
 
-        <!-- Middle Column -->
+<!-- Middle Column -->
         <div class="col-md-8">
-
             <div class="col-lg-12 well">
                 <div class="row">
                     <form class="form-horizontal" action="<?php echo base_url()?>/users/register">
@@ -60,15 +47,12 @@
                             </div>
 
                             <div class="col-sm-6 form-group">
-                            <label class="col-md-3 control-label">Gender</label>
-                                <div class="col-md-4 ">
-                                    <input type="radio"  value="male" name="customer_gender" id="customer_gender" required>Male
-                                    <input type="radio"  value="female" name="customer_gender" id="customer_gender" required>Female
-                                </div>
+                                <label class="col-md-3 control-label">Gender</label>
+                                    <div class="col-md-4 ">
+                                        <input type="radio"  value="male" name="customer_gender" id="customer_gender" required>Male
+                                        <input type="radio"  value="female" name="customer_gender" id="customer_gender" required>Female
+                                    </div>
                             </div>
-
-
-
 
                             <div class="row">
                                 <div class="col-sm-6 form-group">
@@ -102,23 +86,11 @@
                                     <button id="sub"  type="button" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
+                        </div>
                     </form>
-                
+                </div>
             </div>
-            </div>
-
-            <!-- End Middle Column -->
-
-        <!-- Right Column -->
-            <!-- End Right Column -->
-        
-
-        <!-- End Grid -->
-    </div>
-
-    <!-- End Page Container -->
-<!--</div>-->
-<!--<br>-->
+        </div>
 <script>
     $('#sub').click(function(){
         var customer_id=$('#customer_id').val();

@@ -44,16 +44,21 @@
                 Number
             </th>
             <th column-data-id="customer_pickup_location">
-                Pick up location
+                Start Date
+
             </th>
             <th column-data-id="customer_start_date">
-                Start Date
+                End Date
+
             </th>
             <th column-data-id="customer_end_date">
-                End Date
+                Pick up location
             </th>
             <th column-data-id="customer_amount">
                 Amount
+            </th>
+            <th column-data-id="customer_view">
+                View
             </th>
         </tr>
         </thead>
@@ -62,6 +67,52 @@
     </table>
 </div>
 </div>
+<div class="modal fade" id="reservation_modal" role="dialog">
+    <div class="modal-dialog">
+        <!--                modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="col-md-7">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="rno">Reservation No</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="rno" disabled value="">
+                                </div>
+                            </div></br></br>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="sdate">Start Date</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="sdate" disabled  value="">
+                                </div>
+                            </div></br></br>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="edate">End Date</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="edate" disabled  value="">
+                                </div>
+                            </div></br></br>
+                        </form>
+                    </div>
+                    <div class="col-md-5 pull-left">
+                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" id="vimage" width="100%"></br></br>
+                    </div>
+                </div>
+                <div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+        </div>
+
+
+    </div>
+</div>
+
 <script>
     //gloable j is define to take reservation
     var j=0;
@@ -86,6 +137,7 @@
                             customer_data += '<td>' + val.end_Date + '</td>';
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
+                            customer_data += '<td><button  type="button" class="btn btn-default btn-sm reservation reservation_btn" name="reservation" data-id="'+val.reservation_No+ '" id="reservation"><i class="glyphicon glyphicon-eye-open"></i></button></td>';
                             customer_data += '</tr>';
                         });
                         //append data to table boady
@@ -122,7 +174,6 @@
 
                 //var paramValues=[];
                 var data={
-                    //labels:["2017-09-01", "2017-10-22", "2017-11-07", "2017-11-13", "2017-11-15", "2017-11-29", "2017-12-03"],
                     labels:parameters,
                     datasets:[{
                         label:"Number of reservation",
@@ -172,42 +223,34 @@
                     options:options
                 });
 
-
-
-                /*var mychart= new Chart(ctx,{
-                    type :'line',
-                    data:{
-                        label:parameters,
-                        datasets:{
-                            fill:true,
-                            lineTension:0.1,
-                            backgroundColor:"rgba(75,192,192,0.4)",
-                            borderColor:"rgba(75,192,192,1)",
-                            borderCapStyle:"butt",
-                            borderDash:[],
-                            borderDashOffset:0.0,
-                            borderJoinStyle:'miter',
-                            pointBorderColor:"rgba(75,192,192,1)",
-                            pointHoverWidth:10,
-                            pointHoverRadius:5,
-                            pointHoverBackgroundColor:"rgb(75,192,192,1)",
-                            pointHoverBorderColor:"rgba(220,220,220,1)",
-                            pointHoverBorderWidth:5,
-                            pointRadius:1,
-                            pointHitRadius:10,
-
-                            data:parameterv,
-                            spanGaps:false,
-                        }
-                    }
-
-                });
-*/
             },
             error:function(data){
 
             }
         });
+
+//        review reservation details
+        $(document).on('click','.reservation',function(){
+            var reservation_no=$(this).attr("data-id");
+            $.ajax({
+                method:'post',
+                url:'<?php echo base_url()?>/reservation/get_reservation',
+                data:{'reservation_no':reservation_no},
+                dataType:"json",
+                success:function(data1) {
+                    console.log(data1);
+                    $('#rno').val(data1.reservation_No);
+                    $('#sdate').val(data1.start_Date);
+                    $('#edate').val(data1.end_Date);
+                    $("#vimage").attr("src",data1.imageLink);
+                    jQuery.noConflict(); //to avoid jquery conflict
+                    $('#reservation_modal').modal('show');
+                }
+
+            });
+        });
+
     });
+
 
 </script>

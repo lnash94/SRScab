@@ -94,6 +94,17 @@ class  Reservation extends CI_Controller{
             	
 			
 		}
+//		load reservation details
+		public function get_reservation(){
+            $this->load->model('Reservation_model');
+            $reservation_no=$this->input->post('reservation_no');
+            //get reservation details from model
+            $result=$this->reservation_model->getreservationsdetails($reservation_no);
+            if ($result){
+                echo json_encode($result);
+            }
+
+        }
 
 
 	}

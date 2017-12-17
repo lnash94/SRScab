@@ -94,9 +94,8 @@
                         <li><a href="sidebar-right.html">Wedding and Events</a></li>
                     </ul>
                 </li>
-    <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
 
-    <li class="dropdown">
+            <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url();?>Lcarview">Luxury Cars</a></li>
@@ -105,9 +104,11 @@
                         <li><a href="<?php echo base_url();?>Ccarview">Classic And Vintage</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
+                <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
+
+                    <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
                 <li><a href="<?php echo base_url();?>users/newdriver">New Driver test</a></li>
-    <?php endif;?>
+                <?php endif;?>
 
                 <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>

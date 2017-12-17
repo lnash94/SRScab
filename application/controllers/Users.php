@@ -52,6 +52,7 @@ class  Users extends CI_Controller{
         }
     }
 
+    //user login
     public function login()
     {
         $data['title'] = 'Log in';

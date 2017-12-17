@@ -1,19 +1,12 @@
 <?php
 class  Reservation extends CI_Controller{
-    function __construct() {
-        parent::__construct();
-        $this->load->model('reservation_model');
-    }
-
-
-
 
     public function reservecar(){
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('location','Location','required');
+		$this->form_validation->set_rules('searchbox','Search Field','required');
 		$this->form_validation->set_rules('pickupdate','Pick up Date','required');
 		$this->form_validation->set_rules('dropoffdate','Drop off Date','required');
-		$this->form_validation->set_rules('passengers','No of Passengers','required');
+		$this->form_validation->set_rules('passengers','No of Passengers');
 
 		if ($this->form_validation->run()=== FALSE){
             echo validation_errors();
@@ -49,6 +42,14 @@ class  Reservation extends CI_Controller{
 
 
         }
+    public function get_newreservation(){
+        $this->load->view('template/header');
+        $this->load->view('Customer/dashbord');
+        $this->load->view('Customer/reservation');
+        $this->load->view('template/footer');
+
+
+    }
         public function get_last_reservation(){
 
             $customer_id=$this->input->post('customer_id');
@@ -105,7 +106,10 @@ class  Reservation extends CI_Controller{
             }
 
         }
-
+        public function load_page()
+        {
+            $this->load->view('choose_bestvehicle');
+        }
 
 	}
 ?>

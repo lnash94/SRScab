@@ -96,38 +96,10 @@
                                     <input class="form-control" id="edate" disabled  value="">
                                 </div>
                             </div></br></br>
-                            <div class="form-group">
-                                <label class="control-label col-sm-4" for="email">Customer Email</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="email" disabled  value="">
-                                </div>
-                            </div></br></br>
-                            <div class="form-group">
-                                <label class="control-label col-sm-4" for="tel">Customer Contact No</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="tel" disabled  value="">
-                                </div>
-                            </div></br></br></br>
-                            <div class="form-group">
-                                <label class="control-label col-sm-4" for="tel">Pickup Location</label>
-                            </div>
                         </form>
                     </div>
                     <div class="col-md-5 pull-left">
-                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" width="100%"></br></br>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-sm-6" for="tel">Vehicle Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <div class="col-sm-6">
-                                    <input class="form-control" id="tel" disabled  value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-6" for="tel">Licence Plate No</label>
-                                <div class="col-sm-6">
-                                    <input class="form-control" id="tel" disabled  value="">
-                                </div>
-                            </div>
+                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" id="vimage" width="100%"></br></br>
                     </div>
                 </div>
                 <div>
@@ -165,7 +137,7 @@
                             customer_data += '<td>' + val.end_Date + '</td>';
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
-                            customer_data += '<td><a href="javascript:void(0)"  type="button" class="btn btn-default btn-sm get_reservation" name="get_reservation" data-id="'+val.reservation_No+ '" id="get_reservation"><i class="glyphicon glyphicon-eye-open"></i></a></td>';
+                            customer_data += '<td><button  type="button" class="btn btn-default btn-sm reservation reservation_btn" name="reservation" data-id="'+val.reservation_No+ '" id="reservation"><i class="glyphicon glyphicon-eye-open"></i></button></td>';
 
                             customer_data += '</tr>';
                         });
@@ -203,7 +175,6 @@
 
                 //var paramValues=[];
                 var data={
-                    //labels:["2017-09-01", "2017-10-22", "2017-11-07", "2017-11-13", "2017-11-15", "2017-11-29", "2017-12-03"],
                     labels:parameters,
                     datasets:[{
                         label:"Number of reservation",
@@ -260,25 +231,27 @@
         });
 
 //        review reservation details
-        $(document).on('click','.get_reservation',function(){
+        $(document).on('click','.reservation',function(){
             var reservation_no=$(this).attr("data-id");
             $.ajax({
                 method:'post',
                 url:'<?php echo base_url()?>/reservation/get_reservation',
                 data:{'reservation_no':reservation_no},
                 dataType:"json",
-                success:function(data) {
-                    $('#rno').val(data);
-
+                success:function(data1) {
+                    console.log(data1);
+                    $('#rno').val(data1.reservation_No);
+                    $('#sdate').val(data1.start_Date);
+                    $('#edate').val(data1.end_Date);
+                    $("#vimage").attr("src",data1.imageLink);
+                    jQuery.noConflict(); //to avoid jquery conflict
+                    $('#reservation_modal').modal('show');
                 }
 
-
-                });
+            });
         });
 
-
-
-
     });
+
 
 </script>

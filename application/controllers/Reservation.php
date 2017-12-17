@@ -71,14 +71,39 @@ class  Reservation extends CI_Controller{
             $reservation_id=$this->input->post('reservation_id');
             $result=$this->reservation_model->delete_reservation($reservation_id);
             if ($result){
-                $response['status']='success';
-                $response['message']='Reservation Deleted Successfully!';
+                echo "success";
+                /*$response['status']='success';
+                $response['message']='Reservation Deleted Successfully!';*/
             }
             else{
                 $response['status']='error';
                 $response['message']='Unable to delete reservation!';
             }
-            echo json_encode($response);
+            //echo json_encode($response);
+
+        }
+		
+		public function assigndriver(){
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('dfname','Select Driver First name','required');
+			$this->form_validation->set_rules('dlname','Select Driver Last name','required');
+			if ($this->form_validation->run()=== FALSE)
+            	echo validation_errors();
+        	else{
+				$this->reservation_model->assigndriver();
+			}
+            	
+			
+		}
+//		load reservation details
+		public function get_reservation(){
+            $this->load->model('Reservation_model');
+            $reservation_no=$this->input->post('reservation_no');
+            //get reservation details from model
+            $result=$this->reservation_model->getreservationsdetails($reservation_no);
+            if ($result){
+                echo json_encode($result);
+            }
 
         }
         public function load_page()

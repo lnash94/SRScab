@@ -52,6 +52,7 @@ class  Users extends CI_Controller{
         }
     }
 
+    //user login
     public function login()
     {
         $data['title'] = 'Log in';
@@ -70,35 +71,38 @@ class  Users extends CI_Controller{
             $password = md5($this->input->post('password'));
             //loggin user
 
-            $user_id = $this->user_model->login($username, $password);
-            if ($user_id) {
-                //create the session
-                //die('SUCCESS');
-                $user_data = array(
-                    'user_id'=>$user_id,
-                    'user_username'=>$username,
-                    'logged_in'=>true
-                );
+                $user = $this->user_model->login($username, $password);
+                if ($user) {
+                    //create the session
+                    //die('SUCCESS');
+                    $user_data = array(
+                        'user_id'=>$user['customer_id'],
+                        'user_username'=>$username,
+                        'user'=>trim($user['role']),
+                        'logged_in'=>true
+                    );
 
-                $this->session->set_userdata($user_data);
-
-
-                //set message
-                $this->session->set_flashdata('user_loggedin', 'You are now logged in');
+                    $this->session->set_userdata($user_data);
 
 
+                    //set message
+                    $this->session->set_flashdata('user_loggedin', 'You are now logged in');
 
-                redirect('pages/view');
-            } else {
-                //set message
-                $this->session->set_flashdata('login_failed', 'You are logged into fail');
 
-                redirect('users/login');
+
+                    redirect('pages/view');
+                } else {
+                    //set message
+                    $this->session->set_flashdata('login_failed', 'You are logged into fail');
+
+                    redirect('users/login');
+                }
             }
         }
-    }
+
 	//all the admin dashbord functionalities are controled by this function
 	public function admindashbord($page='manage_vehicle'){
+		
 		if($page=="addvehicle"){
 			$this->load->view('Admin/dashbord');
 			$this->load->view('Admin/addvehicle',array('path'=>'empty.png'));
@@ -125,8 +129,16 @@ class  Users extends CI_Controller{
 		$this->load->view('template/header');
 		$this->load->view('template/footer');
 	}
+	
+	public function updatenotification(){//this function is used to update live notification
+		$this->load->model('Reservation_model');
+		echo $this->Reservation_model->getnotification_count();
+	}
+	
 	public function load_new_reservation_details($resevation_no){//new reservation detais in admin pannel
 		$this->load->model('Reservation_model');
+		$this->load->model('new_driver_model');
+		$newservation['drivers']=$this->new_driver_model->loaddriver($resevation_no);
 		$newservation['newservation']=$this->Reservation_model->getreservationsdetails($resevation_no);
 		$this->load->view('Admin/reservation_details',$newservation);
 	}
@@ -269,6 +281,7 @@ public function changepassword(){
 
 
      $this->load->view('template/header');
+     $this->load->view('Customer/dashbord');
      $this->load->view('Customer/customer_profile',$data);
      $this->load->view('template/footer');
  }

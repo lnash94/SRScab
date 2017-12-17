@@ -70,14 +70,15 @@ class  Reservation extends CI_Controller{
             $reservation_id=$this->input->post('reservation_id');
             $result=$this->reservation_model->delete_reservation($reservation_id);
             if ($result){
-                $response['status']='success';
-                $response['message']='Reservation Deleted Successfully!';
+                echo "success";
+                /*$response['status']='success';
+                $response['message']='Reservation Deleted Successfully!';*/
             }
             else{
                 $response['status']='error';
                 $response['message']='Unable to delete reservation!';
             }
-            echo json_encode($response);
+            //echo json_encode($response);
 
         }
 

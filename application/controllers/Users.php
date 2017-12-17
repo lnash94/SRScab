@@ -70,33 +70,35 @@ class  Users extends CI_Controller{
             $password = md5($this->input->post('password'));
             //loggin user
 
-            $user_id = $this->user_model->login($username, $password);
-            if ($user_id) {
-                //create the session
-                //die('SUCCESS');
-                $user_data = array(
-                    'user_id'=>$user_id,
-                    'user_username'=>$username,
-                    'logged_in'=>true
-                );
+                $user = $this->user_model->login($username, $password);
+                if ($user) {
+                    //create the session
+                    //die('SUCCESS');
+                    $user_data = array(
+                        'user_id'=>$user['customer_id'],
+                        'user_username'=>$username,
+                        'user'=>trim($user['role']),
+                        'logged_in'=>true
+                    );
 
-                $this->session->set_userdata($user_data);
-
-
-                //set message
-                $this->session->set_flashdata('user_loggedin', 'You are now logged in');
+                    $this->session->set_userdata($user_data);
 
 
+                    //set message
+                    $this->session->set_flashdata('user_loggedin', 'You are now logged in');
 
-                redirect('pages/view');
-            } else {
-                //set message
-                $this->session->set_flashdata('login_failed', 'You are logged into fail');
 
-                redirect('users/login');
+
+                    redirect('pages/view');
+                } else {
+                    //set message
+                    $this->session->set_flashdata('login_failed', 'You are logged into fail');
+
+                    redirect('users/login');
+                }
             }
         }
-    }
+
 	public function admindashbord($page='manage_vehicle'){
 		if($page=="addvehicle"){
 			$this->load->view('Admin/dashbord');
@@ -251,6 +253,7 @@ public function changepassword(){
 
 
      $this->load->view('template/header');
+     $this->load->view('Customer/dashbord');
      $this->load->view('Customer/customer_profile',$data);
      $this->load->view('template/footer');
  }

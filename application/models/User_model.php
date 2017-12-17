@@ -7,13 +7,14 @@ class User_model extends CI_Model{
     }
     public function login($username,$password){
         //validate
-        $this->db->where('customer_email',$username);
-        $this->db->where('customer_password',$password);
+        $this->db->join('customer_credintial','customer_credintial.customer_id=customer1.customer_id','left');
 
-        $result= $this->db->get('customer_credintial');
+        $this->db->where('customer_credintial.customer_email',$username);
+        $this->db->where('customer_credintial.customer_password',$password);
 
+        $result= $this->db->get('customer1');
         if ($result->num_rows()==1){
-            return $result->row(0)->customer_id;
+            return $result->row_array();
         }
         else{
             return false;
@@ -42,6 +43,7 @@ class User_model extends CI_Model{
             'customer_email'=>$email,
             'customer_nic'=>$null,
             'customer_gender'=>$null,
+            'role'=>"Customer",
             'customer_contacte_number'=>$null
         );
         return $this->db->insert('customer1',$data2);

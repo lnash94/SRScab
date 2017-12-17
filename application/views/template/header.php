@@ -7,7 +7,7 @@
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
+
     <title>SRScabs</title>
 	 <!-- JQuery -->
 	<script src="<?php echo base_url();?>assets/js/jquery-3.1.1.min.js"></script>
@@ -21,7 +21,7 @@
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>-->
 
-    
+
     <script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
     <script src="<?php echo base_url();?>assets/js/customer_registration.js"></script>
     <!-- Custom styles for our template -->
@@ -31,7 +31,7 @@
      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/reservation_styles.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    
+
 </head>
 <style>
     #success_message{ display: none;}
@@ -42,7 +42,7 @@
 <!--signin modal-->
  <div class="modal fade" id="loginModal">
          <div class="modal-dialog">
-         <div class="modal-content">   
+         <div class="modal-content">
     <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3 style="color: black;font-style: italic;font-weight:500"><img src="<?php echo base_url();?>assets/images/logo.jpg" alt="Progressus HTML5 template"> </h3>
@@ -68,7 +68,7 @@
           <div class="modal-footer">
                <div class="pull-left">Are you new to here?<a  style="color: mediumaquamarine;font-style: italic;font-weight:500" href="<?php echo base_url()?>users/sing_up">Create SRScabs account here</a></div>
                 <button type="button" class="btn btn-warning btn-sm pull-right" data-dismiss="modal">Close</button>
-                
+
               </div>
 			 </div>
 	  </div>
@@ -94,7 +94,9 @@
                         <li><a href="sidebar-right.html">Wedding and Events</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+    <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
+
+    <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicle types<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url();?>Lcarview">Luxury Cars</a></li>
@@ -104,6 +106,8 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
+    <?php endif;?>
+
                 <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>

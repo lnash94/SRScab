@@ -1,10 +1,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+<!--<script src="bower_components/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+<!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>-->
+
+
 <div style="margin-top: 100px;"></div>
 <div  class="container" id="changing_space">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Customer</a></li>
+        <li><a href="<?php echo base_url()?>/users/load_customer_profile">Customer</a></li>
         <li class="active">Cancel Reservation</li>
     </ol>
     <header class="page-header" id="pheader">
@@ -68,7 +74,7 @@
                             customer_data += '<td>' + val.end_Date + '</td>';
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
-                            customer_data += '<td><a href="javascript:void(0)"  type="button" class="btn btn-danger btn-sm cancel cancel_btn" name="cancel" data-id="'+val.reservation_No+ '" id="delete_reservation"><i class="glyphicon glyphicon-trash"></i></a></td>';
+                            customer_data += '<td><a href="javascript:void(0)"  type="button" class="btn btn-danger btn-sm cancel delete_reservation" name="delete_reservation" data-id="'+val.reservation_No+ '" id="delete_reservation"><i class="glyphicon glyphicon-trash"></i></a></td>';
                             customer_data += '</tr>';
                         });
                         //append data to table boady
@@ -91,17 +97,28 @@
 //        delete reservation
         $(document).on('click','#delete_reservation',function(e){
             var reservation_id=$(this).data('id');
-            SwalDelete(reservation_id);
+            $.ajax({
+                url: '<?php echo base_url()?>/reservation/delete_reservation',
+                type: 'post',
+                data: {'reservation_id': reservation_id},
+//                         dataType: 'json',
+                success: function(data){
+                    if($.trim(data)=="success") {
+                        location.reload();
+                        window.scrollTo(0, 0);
+                    }
+                },
+                error: function(){
+                }
+            });
+        });
             e.preventDefault();
 
         });
-
-
-    });
-//    SwalDelete function
+    //    SwalDelete function
 
     function SwalDelete(reservation_id){
-        swal({
+        /*swal({
             title: 'Are you sure?',
             text: "It will be deleted permanently!",
             type: 'warning',
@@ -114,7 +131,7 @@
             preConfirm: function(){
                 return new Promise(function(resolve){
                     $.ajax({
-                        url: '<?php echo base_url()?>/reservation/delete_reservation',
+//
                         type: 'post',
                         data: {'reservation_id': reservation_id},
                         dataType: 'json',
@@ -132,7 +149,7 @@
                 });
             },
             allowOutsideClick: false
-        });
+        });*/
     }
 
 

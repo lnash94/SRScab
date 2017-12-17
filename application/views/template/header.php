@@ -107,7 +107,7 @@
                 <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
 
                     <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
-                <li><a href="<?php echo base_url();?>users/newdriver">New Driver test</a></li>
+                    <li><a href="<?php echo base_url();?>users/newdriver">New Driver test</a></li>
                 <?php endif;?>
 
                 <?php if ($this->session->userdata('logged_in')):?>

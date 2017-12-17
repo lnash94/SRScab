@@ -1,5 +1,10 @@
 <?php
 class  Reservation extends CI_Controller{
+     public function __construct()
+     {
+         parent::__construct();
+         $this->load->model('reservation_model');
+     }
 
     public function reservecar(){
 		$this->load->library('form_validation');
@@ -54,8 +59,9 @@ class  Reservation extends CI_Controller{
 
             $customer_id=$this->input->post('customer_id');
             //echo $customer_id;
-
+            //echo $customer_id;
             $fetch_data=$this->reservation_model->get_myreservation($customer_id);
+
             echo json_encode($fetch_data);
 
         }

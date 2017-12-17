@@ -138,7 +138,6 @@
                             customer_data += '<td>' + val.pickup_Location + '</td>';
                             customer_data += '<td>' + val.amount + '</td>';
                             customer_data += '<td><button  type="button" class="btn btn-default btn-sm reservation reservation_btn" name="reservation" data-id="'+val.reservation_No+ '" id="reservation"><i class="glyphicon glyphicon-eye-open"></i></button></td>';
-
                             customer_data += '</tr>';
                         });
                         //append data to table boady

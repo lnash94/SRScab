@@ -84,7 +84,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="<?php echo base_url();?>home">Home</a></li>
+                <li class=""><a href="<?php echo base_url();?>home">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -106,8 +106,7 @@
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
-    <?php endif;?>
-
+                <li><a href="<?php echo base_url();?>users/newdriver">New Driver test</a></li>
                 <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>

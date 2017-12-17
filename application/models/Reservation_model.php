@@ -37,4 +37,49 @@ class Reservation_model extends CI_Model{
         $query=$this->db->delete('reservation');
         return $query;
     }
+	public function getnewreservations(){//get new reservetions(reservations that not assigned a driver)
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.driver_id',null);
+        $query=$this->db->get('reservation');
+        $result=$query->result_array();
+        return $result;
+		
+	}
+	public function getreservationsdetails($rno){//get new reservetion details
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.reservation_No',$rno);
+        $query=$this->db->get('reservation');
+        $result=$query->row_array();
+        return $result;
+		
+	}
+	public function getnotification_count(){//this returens the count of new reservations by customers
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.driver_id',null);
+        $query=$this->db->get('reservation');
+        $result=$query->num_rows();
+        return $result;
+		
+	}
+	public function assigndriver(){
+		$rno=$this->input->post('rno');
+		$dfname=$this->input->post('dfname');
+		$dlname=$this->input->post('dlname');
+		//getting the driver id
+		$query=$this->db->query("SELECT driver_Id FROM driver WHERE Fname='$dfname' && Lname='$dlname';");
+		$driver=$query->row_array();
+		$did=$driver['driver_Id'];
+		$assign=$this->db->query("UPDATE reservation SET driver_id='$did' WHERE reservation_No='$rno';");
+
+		
+	}
 }

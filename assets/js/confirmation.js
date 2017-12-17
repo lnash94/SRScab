@@ -10,14 +10,14 @@
     rootSelector: '[data-toggle=confirmation-singleton]',
     container: 'body',
 	onConfirm: function() {
-      deleteorder();
+     // deleteorder();
     }  
   });
   $('[data-toggle=confirmation-popout]').confirmation({
     rootSelector: '[data-toggle=confirmation-popout]',
     container: 'body',
 	  onConfirm: function() {
-      deletestock();
+      deletevehicle();
     }  
   });
 

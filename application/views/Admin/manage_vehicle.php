@@ -41,8 +41,8 @@
 				</div>
 			</div>"; ?>
 			<div class="col-md-1" style="padding-top: 55px; padding-left: 0px;">
-			<button class="btn btn-default btn-sm" class="deletebtn" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" >Delete</button>
-			<button class="btn btn-default btn-sm editbtn" style="width: 60px; margin-top: 20px;"  onclick="window.location='<?php echo base_url('editvehicles/loadedit/'.$vehicle['L_No'])?>';">Edit</button>
+				<button class="btn btn-default btn-sm" style="width: 60px;" singleton="true" data-toggle="confirmation-popout" data-placement="top" title="Delete this Vehicle?" onClick="setdeleteingvehicle(this);">Delete</button>
+				<button class="btn btn-default btn-sm editbtn" style="width: 60px; margin-top: 20px;"  onclick="window.location='<?php echo base_url('editvehicles/loadedit/'.$vehicle['L_No'])?>';">Edit</button>
 			</div>
 				
 	<?php		echo"</div>";
@@ -51,6 +51,26 @@
 </div>
 </div>	
 <script>
+var deletingvehicle;//this will be the deleting vehicles div		
+function setdeleteingvehicle(element){//setting up the deleting vehicles licence plate no
+	deletingvehicle=element.parentElement.parentElement;
+}
+function deletevehicle(){//delete the relevent vehicle
+	var deletingvehiclelno=deletingvehicle.getAttribute('id');
+	
+	
+	$.ajax({
+					type:'post',
+					data:{lno:deletingvehiclelno},
+					url:'<?php echo base_url('editvehicles/delete')?>',
+					success:function(data){
+						
+					}
+	});
+	
+	 $("#"+deletingvehiclelno).hide('3000');//hide the deleted vehicle div
+	
+}	
  $(".filter-button").click(function(){
         var value = $(this).attr('data-filter');
         
@@ -76,7 +96,9 @@ $(this).addClass("active");
 
 
 $('#search').keyup(function(){
+	if($(this).val()==""){
 	$('.filter').show('1000');
+	}
 	var vehicles=$('.gallery_product');
 	if($(this).val()!=""){
 		
@@ -85,10 +107,13 @@ $('#search').keyup(function(){
 			var brand=vehicles[i].getAttribute('name');
 			var valuetocheck=$(this).val();
 			var check1=brand.substring(0,($(this).val().length));
+			var lno=vehicles[i].getAttribute('id');
 			if(valuetocheck.toUpperCase()==check1.toUpperCase()){
+				$("#"+lno).show('3000');
 				continue;
 			}
-			vehicles[i].style.display='none';
+			
+			 $("#"+lno).hide('3000');
 			
 		}
 	}

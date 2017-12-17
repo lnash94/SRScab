@@ -44,8 +44,14 @@ class manage_vehicle extends CI_Model{
 			'with_driver'=>$this->input->post('withdriver')
 			
 		);
-		$insert=$this->db->update('vehicle',$update_vehicle_data);
-		return $insert;
+		$update=$this->db->update('vehicle',$update_vehicle_data);
+		return $update;
+	}
+	
+	function delete(){
+		$this->db->where('L_No',$this->input->post('lno'));
+		$delete=$this->db->delete('vehicle');
+		return $delete;
 	}
 
 }

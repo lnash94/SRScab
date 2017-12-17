@@ -121,6 +121,13 @@ class  Users extends CI_Controller{
 			$this->load->view('Admin/'.$page,$newservations);
 		
 		}
+		else if($page=="Manage_reservations"){//getting the new reservations and load the new reservations view
+			$this->load->model('Reservation_model');
+			$newservations['newservations']=$this->Reservation_model->getreservations();
+			$this->load->view('Admin/dashbord');
+			$this->load->view('Admin/'.$page,$newservations);
+		
+		}
 		else{
 			
 			$this->load->view('Admin/dashbord');
@@ -142,6 +149,15 @@ class  Users extends CI_Controller{
 		$newservation['reserveddrivers']=$this->Reservation_model->getreserved_drivers($resevation_no);
 		$newservation['newservation']=$this->Reservation_model->getreservationsdetails($resevation_no);
 		$this->load->view('Admin/reservation_details',$newservation);
+	}
+	
+	public function load_manage_reservation_details($resevation_no){// old detais in admin pannel
+		$this->load->model('Reservation_model');
+		$this->load->model('new_driver_model');
+		$newservation['drivers']=$this->new_driver_model->loaddriver();
+		$newservation['reserveddrivers']=$this->Reservation_model->getreserved_drivers($resevation_no);
+		$newservation['newservation']=$this->Reservation_model->get_old_reservationsdetails($resevation_no);
+		$this->load->view('Admin/manage_reservation_details',$newservation);
 	}
 
      public function logout(){

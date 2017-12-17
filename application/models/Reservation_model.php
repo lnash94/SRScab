@@ -48,11 +48,35 @@ class Reservation_model extends CI_Model{
         return $result;
 		
 	}
+	public function getreservations(){//get  reservetions(reservations that are assigned a driver)
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+		
+        $this->db->where('r.driver_id!=',0);
+        $query=$this->db->get();
+        $result=$query->result_array();
+        return $result;
+		
+	}
 	public function getreservationsdetails($rno){//get new reservetion details
 		$this->db->select('*');
 		$this->db->from('reservation r');
 		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
 		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+        $this->db->where('r.reservation_No',$rno);
+        $query=$this->db->get();
+        $result=$query->row_array();
+        return $result;
+		
+	}
+	public function get_old_reservationsdetails($rno){//get new reservetion details
+		$this->db->select('*');
+		$this->db->from('reservation r');
+		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
+		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
+		$this->db->join('driver d','d.driver_id = r.driver_id');//join the driver table
         $this->db->where('r.reservation_No',$rno);
         $query=$this->db->get();
         $result=$query->row_array();
@@ -71,19 +95,22 @@ class Reservation_model extends CI_Model{
 		
 	}
 	public function assigndriver(){
-		/*$rno=$this->input->post('rno');
-		$dfname=$this->input->post('dfname');
-		$dlname=$this->input->post('dlname');*/
-		//getting the driver id
-		/*$query=$this->db->query("SELECT driver_Id FROM driver WHERE Fname='$dfname' && Lname='$dlname';");
-		$driver=$query->row_array();
-		$did=$driver['driver_Id'];*/
+		
 		$did=$this->input->post('did');
 		$rno=$this->input->post('rno');
 		$assign=$this->db->query("UPDATE reservation SET driver_id='$did' WHERE reservation_No='$rno';");
 
 		
 	}
+	public function changedriver(){
+		
+		$did=$this->input->post('did');
+		$rno=$this->input->post('rno');
+		$assign=$this->db->query("UPDATE reservation SET driver_id='$did' WHERE reservation_No='$rno';");
+
+		
+	}
+	
 	public function getreserved_drivers($rno){
 		$query=$this->db->query("SELECT start_Date,end_Date FROM reservation WHERE reservation_No=$rno;");
 		$result=$query->row_array();

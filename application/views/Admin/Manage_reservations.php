@@ -50,11 +50,11 @@
 <div class="container">	
 		<ol class="breadcrumb">
 			<li><a href="#">Admin</a></li>
-			<li class="active">New reservations</li>
+			<li class="active">Manager reservations</li>
 			
 		</ol>
 		<header class="page-header" id="pheader">
-					<h1 class="page-title">New reservations</h1>
+					<h1 class="page-title">Manage reservations</h1>
 		</header>
 <div class="col-md-3" id="newreservationsdiv">
 <ul id="newreservation">
@@ -82,7 +82,7 @@ var frgfr;
 $('#newreservation a li').click(function(){//element to be click to load the page in the div
 	var rno=$(this).val();
 	
-    $('#qrdetails').load('<?php echo base_url();?>Users/load_new_reservation_details/'+rno);
+    $('#qrdetails').load('<?php echo base_url();?>Users/load_manage_reservation_details/'+rno);
 
 });
 </script>	

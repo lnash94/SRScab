@@ -100,6 +100,14 @@ class  Reservation extends CI_Controller{
             	
 			
 		}
+	public function changedriver(){
+			
+		
+				$this->reservation_model->changedriver();
+			
+            	
+			
+		}
 //		load reservation details
 		public function get_reservation(){
             $this->load->model('Reservation_model');

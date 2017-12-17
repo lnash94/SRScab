@@ -42,8 +42,8 @@ class Reservation_model extends CI_Model{
 		$this->db->from('reservation r');
 		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
 		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
-        $this->db->where('r.driver_id',null);
-        $query=$this->db->get('reservation');
+        $this->db->where('r.driver_id',0);
+        $query=$this->db->get();
         $result=$query->result_array();
         return $result;
 		
@@ -54,7 +54,7 @@ class Reservation_model extends CI_Model{
 		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
 		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
         $this->db->where('r.reservation_No',$rno);
-        $query=$this->db->get('reservation');
+        $query=$this->db->get();
         $result=$query->row_array();
         return $result;
 		
@@ -64,8 +64,8 @@ class Reservation_model extends CI_Model{
 		$this->db->from('reservation r');
 		$this->db->join('customer1 c', 'r.Customer_customer_Id = c.customer_id'); // this joins the customer
 		$this->db->join('vehicle v', 'v.L_No = r.Vehicle_L_No'); // this joins the vehicle table
-        $this->db->where('r.driver_id',null);
-        $query=$this->db->get('reservation');
+        $this->db->where('r.driver_id',0);
+        $query=$this->db->get();
         $result=$query->num_rows();
         return $result;
 		

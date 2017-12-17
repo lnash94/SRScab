@@ -103,7 +103,6 @@
                 </li>
                 <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
               
-    <?php endif;?>
 
                 <?php if ($this->session->userdata('logged_in')&&($this->session->userdata('user')==="Customer")):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>

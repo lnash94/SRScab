@@ -182,35 +182,8 @@
 </html>
 <script>
     $('#acceptlocation').click(function () {
-        var searchbox=$('#searchbox').val();
 
-        $.ajax({
-            type:'post',
-            data:{'searchbox':searchbox},
-            url:'<?php echo base_url('Reservation/reservecar')?>',
-            success:function(data){
-                if($('#alert')!=null){
-                    $('#alert').remove();
-                }
-                if(data=="success"){
-                    $("<div id=\"alert\" class=\"alert alert-success col-md-10 col-md-offset-1\"><strong>Success!</strong>Location Selected</div>").insertAfter('#map');
-
-                    $('#searchbox').val("");
-                    window.location.replace("<?php echo base_url()?>Reservation/get_newreservation");
-
-
-                    //window.scrollTo(0,0);
-                    //('#imageLink').val();
-                }
-                else{
-                    //$("<div id=\"alert\" class=\"alert alert-danger col-md-10 col-md-offset-1\"><strong>Error!</strong>"+data+"</div>").insertAfter('#pheader');
-                    //window.scrollTo(0,0);
-                    window.location.replace("<?php echo base_url()?>Reservation/get_newreservation");
-
-                }
-            }
-        });
-
-        //window.location.replace("<?php echo base_url()?>Reservation/get_newreservation");
+        window.location.replace("<?php echo base_url()?>Reservation/get_newreservation");
     });
+
 </script>

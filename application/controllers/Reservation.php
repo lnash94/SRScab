@@ -48,6 +48,7 @@ class  Reservation extends CI_Controller{
 
         }
     public function get_newreservation(){
+        //$location1['location']=  $location;
         $this->load->view('template/header');
         $this->load->view('Customer/dashbord');
         $this->load->view('Customer/reservation');

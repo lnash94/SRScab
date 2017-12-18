@@ -104,6 +104,7 @@
 //                         dataType: 'json',
                 success: function(data){
                     if($.trim(data)=="success") {
+                        alert('reservation is successfully deleted.!');
                         location.reload();
                         window.scrollTo(0, 0);
                     }

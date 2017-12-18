@@ -99,7 +99,7 @@
                         </form>
                     </div>
                     <div class="col-md-5 pull-left">
-                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" id="vimage" width="100%"></br></br>
+<!--                        <img src="--><?php //echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?><!--" height="200px;" id="vimage" width="100%"></br></br>-->
                     </div>
                 </div>
                 <div>
@@ -242,7 +242,7 @@
                     $('#rno').val(data1.reservation_No);
                     $('#sdate').val(data1.start_Date);
                     $('#edate').val(data1.end_Date);
-                    $("#vimage").attr("src",data1.imageLink);
+                    //$("#vimage").attr("src",data1.imageLink);
                     jQuery.noConflict(); //to avoid jquery conflict
                     $('#reservation_modal').modal('show');
                 }

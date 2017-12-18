@@ -4,18 +4,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
     <title>SRScabs</title>
 	 <!-- JQuery -->
 	<script src="<?php echo base_url();?>assets/js/jquery-3.1.1.min.js"></script>
-    <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/gt_favicon.png">
+    <link rel="icon" href="<?php echo base_url();?>assets/images/gt_favicon.png">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
@@ -88,10 +85,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Self-Drive</a></li>
-                        <li><a href="sidebar-right.html">With Driver/Tours</a></li>
-                        <li><a href="sidebar-right.html">Airport/City</a></li>
-                        <li><a href="sidebar-right.html">Wedding and Events</a></li>
+                        <li><a href="<?php echo base_url();?>Selfdrive">Self-Drive</a></li>
+                        <li><a href="<?php echo base_url();?>Withdriver">With Driver/Tours</a></li>
+                        <li><a href="<?php echo base_url();?>Airport">Airport/City</a></li>
+                        <li><a href="<?php echo base_url();?>Wedding">Wedding and Events</a></li>
                     </ul>
                 </li>
 
@@ -104,13 +101,10 @@
                         <li><a href="<?php echo base_url();?>Ccarview">Classic And Vintage</a></li>
                     </ul>
                 </li>
-                <?php if (($this->session->userdata('logged_in'))&&($this->session->userdata('user')==="Admin")):?>
+                <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
+              
 
-                    <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
-                    <li><a href="<?php echo base_url();?>users/newdriver">New Driver test</a></li>
-                <?php endif;?>
-
-                <?php if ($this->session->userdata('logged_in')):?>
+                <?php if ($this->session->userdata('logged_in')&&($this->session->userdata('user')==="Customer")):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
@@ -127,7 +121,7 @@
 
 <!--                    --><?php //echo $this->session->userdata('customer name')?>
 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" style="font-size: 20px;"></i>   &nbsp; Profile&nbsp;<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        <li><a href="<?php echo base_url();?>users/dashbord"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashbord</a></li>
                         <li><a href="<?php echo base_url();?>users/load_customer_profile"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit profile</a></li>

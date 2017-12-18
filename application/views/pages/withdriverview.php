@@ -1,7 +1,19 @@
 <div style="margin-top: 100px;"></div>			
 <div style="height: 100%; width: 100%">
 
-<div class="container col-md-12" style="background-color: white;">	
+<div class="container col-md-12" style="background-color:#A8A8A8; text-align: center; "><h1> Tour Driver Service </h1></div>
+<div class=" container row">
+  <div class="col-sm-3" style="margin-top: 5%;"> <img src="<?php echo base_url();?>assets/images/with_driver.jpg" alt="With Driver Package"></div> <!-- 25% -->
+  <div class="col-sm-9 "><h1> Want go for a tour with friends ?? </h1> <br>
+  <p style="font-size: 20px; text-align: justify; " > If you hope to go for a trip with your friends, then we "SRS CABS" offers you the Tour Driver Package. For groups with a large number of people. We can provide you vehicles with enough seats for many passengers. And you no need to worry about the driving. We also give you a trusted driver to go anywhere you like. We have a list of vehicles from different prices. So you can choose any of them according to your budget.<br><br></p>
+<p style="font-size: 15px;">
+   * below vehicles are only available under this package and other than that you can ask for a driver for any type of vehicle you booking from us. (extra charge will be added) </p>
+   <h3>Below mentioned vehicles are only allowed for this Package</h3>
+   </div> <!-- 75% -->
+
+</div>
+
+<div class="container col-md-12" style="background-color: white; margin-top: 2%;">	
 		        
        <?php
 	foreach($vehicles as  $vehicle){
@@ -30,8 +42,7 @@
 				<i class=\"fa fa-plus-circle\" aria-hidden=\"true\" style=\"font-size:19px;\"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.".$vehicle['excess_mileage']." per extra mile 
 				</div>
 			</div>"; ?>
-		
-				
+			
 	<?php		echo"</div>";
 	}
        ?>

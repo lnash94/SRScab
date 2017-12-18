@@ -14,7 +14,7 @@
     <br> <br>
     <h2 class="thin">The best place to find your ride in Sri Lanka</h2>
     <p class="text-muted">
-        With over 5 years of experience in the industry, we strive to offer the highest levels of customer service and a highly personalised service to all our customers who are on the lookout for Sri Lanka car rental opportunities. With one of the largest and most modern and varied fleets in Sri Lanka, our service is backed by a networked front office, fully-fledged mechanical servicing and valet servicing onsite.
+        With over 5 years of experience in the industry, we strive to offer the highest levels of customer service and a highly personalized service to all our customers who are on the lookout for Sri Lanka car rental opportunities. With one of the largest and most modern and varied fleets in Sri Lanka, our service is backed by a networked front office, fully-fledged mechanical servicing and valet servicing on site.
     </p>
 </div>
 <!-- /Intro-->
@@ -26,19 +26,19 @@
         <h3 class="text-center thin">What you need?</h3>
 
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/self_drive.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/self_drive.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Selfdrive" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Self-Drive</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/with_driver.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/with_driver.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Withdriver" class="linker">
                 <div class="overlay"></div><div class="ridetitle">With diver/Tours</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/airport.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/airport.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Airport" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Airport/City</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/wedding.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/wedding.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Wedding" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Weddings and events</div>
             </a>    
             </div>
@@ -54,19 +54,19 @@
         <h3 class="text-center thin">Choose Your Ride</h3>
 
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/luxury/bmw-m3.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/luxury/bmw-m3.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Lcarview" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Luxury Cars</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/genaral/genaral.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/genaral/genaral.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Gcarview" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Genaral Cars</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/vanbus4wd/nissand21.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/vanbus4wd/nissand21.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Vbusview" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Buses,Vans,4WD/SUV</div>
             </a>    
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/classic/classic.jpg);padding: 0 ;"><a href="#" class="linker">
+            <div class="col-md-3 col-sm-6 col-xs-6 highlight ridetype" style="background-image: url(<?php echo base_url();?>assets/images/vehicles/classic/classic.jpg);padding: 0 ;"><a href="<?php echo base_url();?>Ccarview" class="linker">
                 <div class="overlay"></div><div class="ridetitle">Classic And Vintage</div>
             </a>    
             </div>

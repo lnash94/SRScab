@@ -101,10 +101,13 @@
                         <li><a href="<?php echo base_url();?>Ccarview">Classic And Vintage</a></li>
                     </ul>
                 </li>
+                <?php if ($this->session->userdata('logged_in')&&($this->session->userdata('user')==="Admin")):?>
+                
                 <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
               
-
-                <?php if ($this->session->userdata('logged_in')&&($this->session->userdata('user')==="Customer")):?>
+				<?php endif;?>
+                
+                <?php if ($this->session->userdata('logged_in')):?>
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>

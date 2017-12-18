@@ -99,7 +99,7 @@
                         </form>
                     </div>
                     <div class="col-md-5 pull-left">
-                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" id="vimage" width="100%"></br></br>
+<!--                        <img src="<?php echo base_url().'assets/images/vehicles/'.$newservation['imageLink']?>" height="200px;" id="vimage" width="100%"></br></br>-->
                     </div>
                 </div>
                 <div>

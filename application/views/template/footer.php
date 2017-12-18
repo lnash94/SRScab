@@ -11,9 +11,9 @@
                     <h3 class="widget-title">Contact</h3>
                     <div class="widget-body">
                         <p>+234 23 9873237<br>
-                            <a href="mailto:#">some.email@somewhere.com</a><br>
+                            <a href="mailto:#">srscabs@gmail.com</a><br>
                             <br>
-                            234 Hidden Pond Road, Ashland City, TN 37015
+                            224 Polwaththa, Ambalangoda, Sri lanka
                         </p>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <a href="about.html">About</a> |
                             <a href="sidebar-right.html">Sidebar</a> |
                             <a href="contact.html">Contact</a> |
-                            <b><a href="signup.html">Sign up</a></b>
+<!--                            <b><a href="signup.html">Sign up</a></b>-->
                         </p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="col-md-6 widget">
                     <div class="widget-body">
                         <p class="text-right">
-                            Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
+                            Copyright &copy; 2017, srscabs. Designed by <a href="http://gettemplate.com/" rel="designer">srscabs</a>
                         </p>
                     </div>
                 </div>

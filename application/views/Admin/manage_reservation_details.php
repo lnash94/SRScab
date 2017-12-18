@@ -65,7 +65,8 @@
 			<div class="form-group col-sm-4">
 				<label>Driver Name</label>
 				<select id="did" class="form-control">
-					<option value="">Select</option>
+					
+					<option value="<?php echo($newservation['driver_Id'])  ?>"><?php echo($newservation['Fname']." ".$newservation['Lname'])  ?></option>
 				<?php 
 					foreach($drivers as $driver){
 						if(in_array($driver['driver_Id'], $reserveddrivers)){
@@ -84,7 +85,7 @@
 			</div>
 			<div class="form-group col-sm-3">
 			<label>&nbsp;</label>
-			<button id="assign" class="btn btn-success btn-sm form-control" >Assign driver</button>
+			<button id="assign" class="btn btn-success btn-sm form-control" >Change driver</button>
 			</div>		
 		</form>
 	</div>
@@ -98,7 +99,7 @@ $('#assign').click(function(){
 	var did=$('#did').val();
 	$.ajax({
 		type:'post',
-		url:'<?php echo base_url()?>/Reservation/assigndriver',
+		url:'<?php echo base_url()?>/Reservation/changedriver',
 		data:{rno:rno,did:did},
 		success:function(data){
 			if(data!=""){

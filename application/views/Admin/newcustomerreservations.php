@@ -50,11 +50,11 @@
 <div class="container">	
 		<ol class="breadcrumb">
 			<li><a href="#">Admin</a></li>
-			<li class="active">New customer reservations</li>
+			<li class="active">New reservations</li>
 			
 		</ol>
 		<header class="page-header" id="pheader">
-					<h1 class="page-title">New customer reservations</h1>
+					<h1 class="page-title">New reservations</h1>
 		</header>
 <div class="col-md-3" id="newreservationsdiv">
 <ul id="newreservation">
@@ -78,7 +78,7 @@
 </div>		
 </div>	
 <script>
-	
+var frgfr;
 $('#newreservation a li').click(function(){//element to be click to load the page in the div
 	var rno=$(this).val();
 	

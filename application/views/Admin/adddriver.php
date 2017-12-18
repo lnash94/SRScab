@@ -10,12 +10,6 @@
 		<div id="newdriverform" class="col-md-10 col-md-offset-1">
 		<?php echo form_open('Adddriver/add')?>
 		<div class="col-md-7">
-		<label>Driver ID</label>
-            <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" name="driverid" id="driverid" placeholder="Driver ID" required></br>
-            </div>
-
             <label>First Name</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

@@ -1,7 +1,17 @@
 <div style="margin-top: 100px;"></div>			
 <div style="height: 100%; width: 100%">
 
-<div class="container col-md-12" style="background-color: white;">	
+<div class="container col-md-12" style="background-color:#A8A8A8; text-align: center; "><h1> Wedding Car Service </h1></div>
+<div class=" container row">
+  <div class="col-sm-3" style="margin-top: 5%;"> <img src="<?php echo base_url();?>assets/images/wedding.jpg" alt="Wedding car Package"></div> <!-- 25% -->
+  <div class="col-sm-9 "><h1> Need a Wedding car ?? </h1> <br>
+  <p style="font-size: 20px; text-align: justify; " > "SRS CABS" us now introducing you our Wedding car Package. We have Luxury, Genaral or Classical type cars available for you. No extra charge. We giving you the Vehicle for you in Whole day with our driver. Beautifull Decorations will be Provided free on your Special Day from us. We Know this is your big day. So We Specially considering on punctuality and the safety by giving you our most experianced drivers. <br><br></p>
+   <h3>Below mentioned vehicles are only allowed for this Package</h3>
+   </div> <!-- 75% -->
+
+</div>
+
+<div class="container col-md-12" style="background-color: white; margin-top: 2%;">	
 		        
        <?php
 	foreach($vehicles as  $vehicle){
@@ -30,8 +40,7 @@
 				<i class=\"fa fa-plus-circle\" aria-hidden=\"true\" style=\"font-size:19px;\"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.".$vehicle['excess_mileage']." per extra mile 
 				</div>
 			</div>"; ?>
-		
-				
+			
 	<?php		echo"</div>";
 	}
        ?>

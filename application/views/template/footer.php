@@ -32,8 +32,8 @@
 
                 <div class="col-md-6 widget">
                     <h3 class="widget-title">Text widget</h3>
-                    <p class="widget-body">
-                        <p>The pioneer in shaping the cab/taxi service industry in Sri Lanka, SRSCabs is Sri Lanka’s Number one cab/taxi service provider occupying 70% of the market share in the industry today. Thus providing complete bouquet of end to end transportation solutions through its fleet of 400 cars varying in a wide range of luxury to semi luxury cars.</p>
+                    <div class="widget-body">
+                        <p>With over 5 years of experience in the industry, we strive to offer the highest levels of customer service and a highly personalized service to all our customers who are on the lookout for Sri Lanka car rental opportunities. With one of the largest and most modern and varied fleets in Sri Lanka, our service is backed by a networked front office, fully-fledged mechanical servicing and valet servicing on site.</p>
                     </div>
                 </div>
 

@@ -85,10 +85,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Self-Drive</a></li>
-                        <li><a href="sidebar-right.html">With Driver/Tours</a></li>
-                        <li><a href="sidebar-right.html">Airport/City</a></li>
-                        <li><a href="sidebar-right.html">Wedding and Events</a></li>
+                        <li><a href="<?php echo base_url();?>Selfdrive">Self-Drive</a></li>
+                        <li><a href="<?php echo base_url();?>Withdriver">With Driver/Tours</a></li>
+                        <li><a href="<?php echo base_url();?>Airport">Airport/City</a></li>
+                        <li><a href="<?php echo base_url();?>Wedding">Wedding and Events</a></li>
                     </ul>
                 </li>
 
@@ -111,6 +111,7 @@
                 <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
                 <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
+                <li><a href="<?php echo base_url();?>search_vehicles/available_vehicle">search</a></li>
 
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
                 <?php if (!$this->session->userdata('logged_in')):?>

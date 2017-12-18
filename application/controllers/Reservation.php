@@ -5,13 +5,16 @@ class  Reservation extends CI_Controller{
          parent::__construct();
          $this->load->model('reservation_model');
      }
+    public  function mynewreservation(){
+         $this->reservation_model->addmyreservation();
 
+    }
     public function reservecar(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('searchbox','Search Field','required');
 		$this->form_validation->set_rules('pickupdate','Pick up Date','required');
 		$this->form_validation->set_rules('dropoffdate','Drop off Date','required');
-		$this->form_validation->set_rules('passengers','No of Passengers');
+
 
 		if ($this->form_validation->run()=== FALSE){
             echo validation_errors();
@@ -47,11 +50,12 @@ class  Reservation extends CI_Controller{
 
 
         }
-    public function get_newreservation(){
-        //$location1['location']=  $location;
+
+    public function get_newreservation2(){
+        $location1['location']= "University of Moratuwa, Moratuwa, Western Province, Sri Lanka";
         $this->load->view('template/header');
         $this->load->view('Customer/dashbord');
-        $this->load->view('Customer/reservation');
+        $this->load->view('Customer/reservation',$location1);
         $this->load->view('template/footer');
 
 

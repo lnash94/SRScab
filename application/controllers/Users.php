@@ -254,10 +254,22 @@ class  Users extends CI_Controller{
          $this->load->view('template/footer');
 	}*/
 	public function dashbord($page='myreservation'){
-		$this->load->view('template/header');
-		$this->load->view('Customer/dashbord');
-		$this->load->view('Customer/'.$page);
-		$this->load->view('template/footer');
+		if($page=="reservation"){
+            $location1['location']= "";
+            $this->load->view('template/header');
+
+            $this->load->view('Customer/dashbord');
+            $this->load->view('Customer/' . $page,$location1);
+            $this->load->view('template/footer');
+
+        }
+	    else {
+            $this->load->view('template/header');
+
+            $this->load->view('Customer/dashbord');
+            $this->load->view('Customer/' . $page);
+            $this->load->view('template/footer');
+        }
 	}
   /*   public function dashbord($page='dashbord'){
          $this->load->view('template/header');

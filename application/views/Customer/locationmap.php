@@ -183,7 +183,7 @@
 <script>
     $('#acceptlocation').click(function () {
 
-        window.location.replace("<?php echo base_url()?>Reservation/get_newreservation");
+        window.location.replace("<?php echo base_url()?>Reservation/get_newreservation2");
     });
 
 </script>

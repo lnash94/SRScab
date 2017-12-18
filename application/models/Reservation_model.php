@@ -7,7 +7,7 @@ class Reservation_model extends CI_Model{
     		'location' =>$this->input->post('location'),
     		'pickup_Date'=>$this->input->post('pickupdate'),
     		'dropoff_Date'=>$this->input->post('dropoffdate'),
-    		'no_of_passengers'=>$this->input->post('Nopassengers')
+            'amount'=>"15000"
     			
     		);
     	//insert reservation details into database
@@ -21,6 +21,22 @@ class Reservation_model extends CI_Model{
         $query=$this->db->get('reservation');
         $result=$query->result();
         return $result;
+    }
+    public function addmyreservation(){
+
+        $reservation_data =array(
+            'location' =>$this->input->post('locationdata'),
+            'pickup_Date'=>$this->input->post('pickupdate'),
+            'dropoff_Date'=>$this->input->post('dropoffdate'),
+            'amount'=>15000,
+            'Vehicle_L_No'=>$this->input->post('lno'),
+            driver_id=>0
+        );
+        //insert reservation details into database
+        $insertdata= $this->db->insert('reservation', $reservation_data);
+        return $insertdata;
+
+
     }
     public function get_cancel_reservation($customer_id){
         //        get current date to compare reservation end date days

@@ -64,7 +64,7 @@
 				echo("
                   
                     <a href=\"#\"><li value=\"".$newreservation['reservation_No']."\">
-                      New reservation from ".$newreservation['customer_fname']." ".$newreservation['customer_lname']."
+                      New reservation from ".$newreservation['customer_fname']." ".$newreservation['customer_lname']." ".$newreservation['start_Date']."
                     </li></a>
                   ");
 					  

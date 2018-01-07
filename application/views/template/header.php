@@ -103,15 +103,15 @@
                 </li>
                 <?php if ($this->session->userdata('logged_in')&&($this->session->userdata('user')==="Admin")):?>
                 
-                <li><a href="<?php echo base_url();?>users/admindashbord">Admin test</a></li>
+                <li><a href="<?php echo base_url();?>users/admindashbord">Admin</a></li>
               
 				<?php endif;?>
                 
                 <?php if ($this->session->userdata('logged_in')):?>
-                <li><a href="<?php echo base_url();?>users/customerpayment">Payment Test</a></li>
+                <li><a href="<?php echo base_url();?>users/customerpayment">Payment</a></li>
                 <?php endif;?>
                 <li><a href="<?php echo base_url();?>about">About us</a></li>
-                <li><a href="<?php echo base_url();?>search_vehicles/available_vehicle">search</a></li>
+<!--                <li><a href="<?php echo base_url();?>search_vehicles/available_vehicle">search</a></li>-->
 
                 <li><a href="<?php echo base_url();?>contact">Contact us</a></li>
                 <?php if (!$this->session->userdata('logged_in')):?>

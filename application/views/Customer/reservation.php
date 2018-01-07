@@ -63,7 +63,7 @@
 
     });
     $('#nextbtn').click(function(){ //element to be click to load the page in the div
-
+		
         pickupdate=$('#pickupdate').val();
         dropoffdate=$('#dropoffdate').val();
         passengers=$('#passengers').val();
